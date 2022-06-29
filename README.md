@@ -38,7 +38,7 @@ Você deve, substituir o conteúdo do arquivo **README.md** e escrever a documen
 - **Link do projeto pronto**
 
 #### 4 - Faça uma Pull Request
-Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório.
+Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório, avise o recrutador.
 
 ## Critérios de Aceitação
 Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperados, ele deve:
@@ -50,6 +50,8 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 - Código TS escrito com base em algum guia de estilos: [AirBnB Standards](https://github.com/airbnb/javascript) ou [TypeScript Google Guide](https://google.github.io/styleguide/tsguide.html).
 - Utilizar padrões semânticos em mensagens de commit. (Gostamos do padrão de commits do repositório [AngularJS](http://karma-runner.github.io/3.0/dev/git-commit-msg.html))
 - Projeto feito upload: [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart?hl=pt-br) ou [GitHub Pages](https://pages.github.com/).
+- Caso você nao consiga completar tudo e tenha algum receio, não se preocupe, iremos avaliar o que foi entregue, mesmo com pendências.
+- O diferencial para este desafio, layout, ux e ui, bem como implementação de boas práticas de segurança, performance e/ou estrutura.
 
 
 ## Dicas e Informações Valiosas
@@ -57,8 +59,10 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 #### O que gostaríamos de ver em seu teste:
 - Upload do projeto.
 - Convenção de nome em classes, objetos, variáveis, métodos e etc.
-- layout elegante
+- layout encantador
+- Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
 - uso de libs como bootstrap, material
+- Hooks é legal use e abuse no projeto.
 - Animações, coidado com UX e Sobras. 
 - Projeto feito usando TypeScript
 - **Bônus** Dark Mode sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
