@@ -4,7 +4,7 @@ Desafio para Frontend Developer na DoroTech
 
 # Frontend na DoroTech
 
-Somos uma empresa com cliente que atua em vários segmentos de mercado, com diferentes tecnologias, culturas e desafios. Por isso, gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resiliêntes, questionadores e curiosos. Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software, sempre buscando a melhor composição de tecnologias para cada cenário.
+Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios. Por isso, gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resiliêntes, questionadores e curiosos. Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
 
 ## Orientações
 Para executar o desafio de **Frontend Developer**, você **deverá utilizar framework React**, seguindo o [passo-a-passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
@@ -33,9 +33,9 @@ git checkout -b joao-silva
 #### 3 - Escreva a documentação da sua aplicação
 Você deve, substituir o conteúdo do arquivo **README.md** e escrever a documentação da sua aplicação, com os seguintes tópicos: 
 - **Projeto**: Descreva o projeto e como você o executou. Seja objetivo.
-- **Tecnologias**: Descreva quais tecnologias foram utilizadas, enumerando versões (se necessário) e os links para suas documentações, bem como, qual guia de estilos de código você utilizou com o link para a sua documentação.
+- **Tecnologias**: Descreva quais tecnologias foram utilizadas, enumerando versões (se necessário) e os links para suas documentações, bem como, qual guia de estilos de código você utilizou com o link para a sua documentação, quais bibliotecas instalou e porque.
 - **Como rodar**: Descreva como iniciar a sua aplicação
-- **Link do projeto pronto**: 
+- **Link do projeto pronto**
 
 #### 4 - Faça uma Pull Request
 Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório.
@@ -68,7 +68,6 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 
 #### O que não gostaríamos de ver no seu teste:
 - Saber que não foi você quem implementou.
-- Chaves de segurança do firebase 'hardcode'
 - Varias bibliotecas instaladas sem uso.
 - Falta de organização de código.
 - Falta de documentação.
