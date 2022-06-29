@@ -75,7 +75,7 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 
 **Observação:** Nenhum dos itens acima é obrigatório.
 
-#### O que não gostaríamos de ver no seu teste:
+#### O que o seu Teste não deve ter:
 - Saber que não foi você quem implementou o projeto.
 - Varias bibliotecas instaladas sem uso.
 - Falta de organização de código.
