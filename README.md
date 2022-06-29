@@ -17,6 +17,7 @@ Os requisitos da aplicação:
 - Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens, contendo **foto**, **nome** e **status**.
 - Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas.
 - Como usuário, desejo filtrar os personagens por **nome**, **espécie** e **status**.
+- Seja criativo no layout, filtros, icones e menus são bem vindos.
 
 ## Etapas
 
