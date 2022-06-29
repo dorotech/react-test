@@ -22,7 +22,7 @@ Os requisitos da aplicação:
 
 #### 1 - Fazer um fork desse repositório
 
-![https://github.dev/dorotech/frontend-test/blob/77dc7dbaaa506793f3a2cdf2b75d896210908b83/img/print-tutorial-1.png](https://github.dev/dorotech/frontend-test/blob/77dc7dbaaa506793f3a2cdf2b75d896210908b83/img/print-tutorial-1.png)
+![https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png](https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png)
 
 
 #### 2 - Criar um branch com o seu primeiro e último nome
