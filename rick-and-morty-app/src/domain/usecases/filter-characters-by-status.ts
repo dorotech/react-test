@@ -9,5 +9,5 @@ export namespace FilterCharactersByStatus {
     status: string
     page: number
   }
-  export type Result = CharacterResponseModel
+  export type Result = CharacterResponseModel | null
 }
