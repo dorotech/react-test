@@ -17,7 +17,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
-  "rules": {},
+  "rules": { "@typescript-eslint/no-namespace": "off" },
   "settings": {
     "import/resolver": {
       "typescript": {}
