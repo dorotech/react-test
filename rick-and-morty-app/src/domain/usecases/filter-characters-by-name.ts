@@ -7,6 +7,7 @@ export interface FilterCharactersByName {
 export namespace FilterCharactersByName {
   export type Params = {
     name: string
+    page: number
   }
   export type Result = CharacterResponseModel
 }

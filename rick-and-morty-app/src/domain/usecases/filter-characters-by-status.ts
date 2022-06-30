@@ -7,6 +7,7 @@ export interface FilterCharactersByStatus {
 export namespace FilterCharactersByStatus {
   export type Params = {
     status: string
+    page: number
   }
   export type Result = CharacterResponseModel
 }

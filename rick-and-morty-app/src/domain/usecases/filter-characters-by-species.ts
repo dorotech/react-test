@@ -7,6 +7,7 @@ export interface FilterCharactersBySpecies {
 export namespace FilterCharactersBySpecies {
   export type Params = {
     species: string
+    page: number
   }
   export type Result = CharacterResponseModel
 }

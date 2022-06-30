@@ -1,9 +1,12 @@
 import { CharacterResponseModel } from '../models'
 
 export interface GetCharacters {
-  perform(): Promise<GetCharacters.Result>
+  perform(params: GetCharacters.Params): Promise<GetCharacters.Result>
 }
 
 export namespace GetCharacters {
+  export type Params = {
+    page: number
+  }
   export type Result = CharacterResponseModel
 }
