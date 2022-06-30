@@ -5,5 +5,5 @@ export interface GetCharactersRepository {
 }
 
 export namespace GetCharactersRepository {
-  export type Result = GetCharacters
+  export type Result = GetCharacters.Result
 }
