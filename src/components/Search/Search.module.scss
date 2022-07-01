@@ -1,0 +1,8 @@
+.input {
+    width: 40%;
+    padding: 10px 15px;
+    &:focus {
+        outline: none;
+        box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.5);
+    }
+}
