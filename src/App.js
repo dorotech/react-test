@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import Filters from "./components/Filters/Filters";
+import Cards from './components/Cards/Cards';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   let [fetchData,updateFetchedData] = useState([]);
   let {info, results} = fetchData;
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
-  
+
   useEffect(() => {
     //função imediatamente invocada
     (async function(){
@@ -31,7 +32,7 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-             
+             <Cards results={results}/>
             </div>
           </div>
         </div>
