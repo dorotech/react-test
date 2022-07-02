@@ -8,7 +8,7 @@ export default function RouterList() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='news/:id' element={<SingleCharacter />} />
+        <Route path='character/:id' element={<SingleCharacter />} />
       </Routes>
     </BrowserRouter>
   )
