@@ -1,11 +1,11 @@
 import React from 'react'
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import logo from './../assets/logo.png'
-import './Header.style.scss'
+import styles from './Header.module.scss'
 export const Header = () => {
   return (
-    <Box className='container'>
-      <img className='logo' src={logo} alt='logo' />
+    <Box className={styles.container}>
+      <img className={styles.logo} src={logo} alt='logo' />
     </Box>
   )
 }

@@ -10,7 +10,7 @@ import {
   Select,
 } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import './Filter.style.scss'
+import styles from './Filter.module.scss'
 
 interface IProps {
   filterType: string
@@ -30,7 +30,7 @@ export const FilterComponent = ({
     setFilterValue('')
   }
   return (
-    <Box className='container'>
+    <Box className={styles.container}>
       <FormControl variant='standard' fullWidth>
         <InputLabel>Filtrar por</InputLabel>
         <Select

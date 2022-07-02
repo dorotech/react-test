@@ -5,7 +5,7 @@ import { FilterComponent } from '../../components/Filter'
 import { CharCard } from '../../components/CharCard'
 import { CharacterModel } from '../../../domain/models'
 import { useCharacter } from '../../hooks/useCharacter'
-import './style.scss'
+import styles from './Home.module.scss'
 
 export const Home = () => {
   const {
@@ -21,9 +21,9 @@ export const Home = () => {
   } = useCharacter()
 
   return (
-    <Box className='body'>
+    <Box className={styles.body}>
       <Header />
-      <Box className='main'>
+      <Box className={styles.main}>
         <FilterComponent
           filterType={filterType}
           filterValue={filterValue}
@@ -31,12 +31,12 @@ export const Home = () => {
           setFilterValue={setFilterValue}
         />
         {loading && <LinearProgress />}
-        <Box className='characters'>
+        <Box className={styles.characters}>
           {data?.map((char: CharacterModel) => (
             <CharCard key={char.id} char={char} />
           ))}
         </Box>
-        <Box className='pagination'>
+        <Box className={styles.pagination}>
           <Pagination
             size='large'
             count={count}
