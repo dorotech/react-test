@@ -34,17 +34,18 @@ export const FilterComponent = ({
       <FormControl variant='standard' fullWidth>
         <InputLabel>Filtrar por</InputLabel>
         <Select
-          defaultValue={''}
+          defaultValue={'Nenhum'}
           onChange={(e) => {
             setFilterType(e.target.value)
           }}
         >
+          <MenuItem value={'Nenhum'}>Nenhum</MenuItem>
           <MenuItem value={'status'}>Status</MenuItem>
           <MenuItem value={'espécie'}>Espécie</MenuItem>
           <MenuItem value={'nome'}>Nome</MenuItem>
         </Select>
       </FormControl>
-      {filterType !== '' && (
+      {filterType !== 'Nenhum' && (
         <FormControl fullWidth variant='standard'>
           <InputLabel>Pesquisar por {filterType}</InputLabel>
           <Input
