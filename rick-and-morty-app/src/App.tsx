@@ -1,12 +1,12 @@
-import { ThemeProvider } from '@mui/material'
 import React from 'react'
-
-import RouterList from './presentation/routes/RouterList'
+import { CssBaseline, ThemeProvider } from '@mui/material'
 import { theme } from './presentation/theme/theme'
+import RouterList from './presentation/routes/RouterList'
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <RouterList />
     </ThemeProvider>
   )
