@@ -7,16 +7,14 @@
   position: relative;
   height: 400px;
   margin: 30px;
-}
-.MuiCardMedia-root{
-  border-radius: 50% !important;
-  width: min-content  !important;
-  align-self: center;
-  position: absolute ;
-  z-index: 1;
 
 }
 
+.cardContent{
+  width: 100%;
+  margin-top: 185px;
+  position: absolute;
+}
 .containerContent{
   display: flex;
   flex-direction: column;
