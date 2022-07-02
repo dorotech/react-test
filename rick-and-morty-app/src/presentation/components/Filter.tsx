@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
   Button,
@@ -26,7 +26,7 @@ export const FilterComponent = ({
   setFilterValue,
 }: IProps) => {
   const handleResetFilters = () => {
-    setFilterType('')
+    setFilterType('Nenhum')
     setFilterValue('')
   }
   return (
@@ -41,7 +41,7 @@ export const FilterComponent = ({
         >
           <MenuItem value={'Nenhum'}>Nenhum</MenuItem>
           <MenuItem value={'status'}>Status</MenuItem>
-          <MenuItem value={'espécie'}>Espécie</MenuItem>
+          <MenuItem value={'especie'}>Espécie</MenuItem>
           <MenuItem value={'nome'}>Nome</MenuItem>
         </Select>
       </FormControl>
