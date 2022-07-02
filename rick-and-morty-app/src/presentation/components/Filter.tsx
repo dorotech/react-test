@@ -12,10 +12,19 @@ import {
 import SearchIcon from '@mui/icons-material/Search'
 import './Filter.style.scss'
 
-export const FilterComponent = () => {
-  const [filterType, setFilterType] = useState('')
-  const [filterValue, setFilterValue] = useState('')
+interface IProps {
+  filterType: string
+  filterValue: string
+  setFilterType: (value: string) => void
+  setFilterValue: (value: string) => void
+}
 
+export const FilterComponent = ({
+  filterType,
+  filterValue,
+  setFilterType,
+  setFilterValue,
+}: IProps) => {
   const handleResetFilters = () => {
     setFilterType('')
     setFilterValue('')
