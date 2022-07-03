@@ -16,10 +16,10 @@ const Pagination = ({ pageNumber, setPageNumber, info }) => {
   return (
     <Fragment>
       <style jsx>{`
-          a {
-            color: var(--bs-white);
-            text-decoration: none !important;
-          }
+        .prev > a,
+        .next > a {
+          color: var(--bs-white);
+          text-decoration: none !important;
         }
         @media (max-width: 768px) {
           .next,
