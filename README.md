@@ -1,16 +1,15 @@
 # PROJETO:
 
-### Criei uma wiki dos personagens de Rick and Morty com a ajuda de um professor indiano.
+Criei uma wiki dos personagens de Rick and Morty com a ajuda de um professor indiano.
+Segui os passos do vídeo Joy Shaheb e adaptei algumas coisas que julguei necessárias para o projeto
 
-### Segui os passos do vídeo Joy Shaheb e adaptei algumas coisas que julguei necessárias para o projeto
-
-### (Link do vídeo) [https://www.youtube.com/watch?v=35QCQnohLg8&ab_channel=JoyShaheb]
+- [Link do vídeo](https://www.youtube.com/watch?v=35QCQnohLg8&ab_channel=JoyShaheb)
 
 # TECNOLOGIAS:
 
 ## Host:
 
-Firebase - npm install firebase
+- Firebase - npm install firebase
 
 ## Pacotes usados:
 
