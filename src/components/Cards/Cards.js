@@ -20,27 +20,23 @@ const Cards = ({ results }) => {
           badgeColor = "bg-secondary";
       }
       return (
-        <div
+        <button
+          className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 align-items-start position-relative border-0 bg-transparent"
           key={id}
-          className="col-lg-4 col-md-6 col-12 position-relative mb-4"
+          data-bs-toggle="modal"
+          data-bs-target={`#module${id}`}
         >
-          <button
-            className="border border-none bg-transparent"
-            data-bs-toggle="modal"
-            data-bs-target={`#module${id}`}
+          <div className="d-flex flex-column justify-content-center border border-primary border-3 rounded">
+            <img src={image} className="img-fluid" alt="" />
+            <div className="fs-3 m-2">{name}</div>
+          </div>
+          <div
+            className={`${styles.badge} position-absolute badge ${badgeColor}`}
           >
-            <div className="border border-primary border border-3 rounded">
-              <img src={image} className="img-fluid" alt="" />
-              <div className="fs-3 m-2">{name}</div>
-            </div>
-            <div
-              className={`${styles.badge} badge ${badgeColor} position-absolute`}
-            >
-              {status}
-            </div>
-          </button>
+            {status}
+          </div>
           <CardModal id={id} />
-        </div>
+        </button>
       );
     });
   } else {

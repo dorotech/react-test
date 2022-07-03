@@ -48,7 +48,7 @@ const CardModal = ({ id }) => {
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Close

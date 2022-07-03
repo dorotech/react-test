@@ -3,7 +3,7 @@ import styles from "./FilterBtn.module.scss";
 
 const FilterBtn = ({ task, setPageNumber, name, item, index }) => {
   return (
-    <div className="form-check">
+    <div className="form-check p-0">
       <input
         onClick={() => {
           setPageNumber(1);
@@ -14,7 +14,7 @@ const FilterBtn = ({ task, setPageNumber, name, item, index }) => {
         name={name}
         id={`${name}-${index}`}
       />
-      <label className="btn btn-primary" for={`${name}-${index}`}>
+      <label className="col-12 btn btn-primary" for={`${name}-${index}`}>
         {item}
       </label>
     </div>
