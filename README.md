@@ -1,19 +1,33 @@
 ### PROJETO:
+
 ## Criei uma wiki dos personagens de Rick and Morty com a ajuda de um professor indiano.
+
 ## Segui os passos do vídeo Joy Shaheb e adaptei algumas coisas que julguei necessárias para o projeto
+
 ## [Link do vídeo] (https://www.youtube.com/watch?v=35QCQnohLg8&ab_channel=JoyShaheb)
 
 ### TECNOLOGIAS:
+
+## Host:
+
+# Firebase - npm install firebase
+
 ## Pacotes usados:
+
 # Bootstrap - npm install bootstrap
+
 # Popperjs - npm install @popperjs/core --save
-# Sass  - npm install sass
-# React paginate - npm install react-paginate --save 
+
+# Sass - npm install sass
+
+# React paginate - npm install react-paginate --save
 
 ### LINK:
+
 ## Rick and Morty wiki
 
 ### Como rodar:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
