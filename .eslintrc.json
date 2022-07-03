@@ -39,6 +39,7 @@
     ],
     "react/jsx-one-expression-per-line": "off",
     "react-hooks/rules-of-hooks": "error",
+    "react/jsx-no-constructed-context-values": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": "off",
     "react/jsx-filename-extension": [
