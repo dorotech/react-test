@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../../node_modules/bootstrap/dist/js/bootstrap";
+import styles from "./CardModal.module.scss";
 
 const CardModal = ({ id }) => {
   let [fetchData, updateFetchedData] = useState([]);
@@ -27,7 +26,10 @@ const CardModal = ({ id }) => {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id={`module${id}`}>
+            <h5
+              class={`${styles.infos} modal-title fs-5 m-2`}
+              id={`module${id}`}
+            >
               {name}
             </h5>
             <button
@@ -39,11 +41,15 @@ const CardModal = ({ id }) => {
           </div>
           <div class="d-flex flex-column modal-body">
             <img src={image} className="img-fluid" alt="" />
-            <div className="fs-5 m-2">Gender: {gender}</div>
-            <div className="fs-5 m-2">Status: {status}</div>
-            <div className="fs-5 m-2">Specie: {species}</div>
-            <div className="fs-5 m-2">Location: {location?.name}</div>
-            <div className="fs-5 m-2">Origin: {origin?.name}</div>
+            <div className={`${styles.infos} fs-5 m-2`}>Gender: {gender}</div>
+            <div className={`${styles.infos} fs-5 m-2`}>Status: {status}</div>
+            <div className={`${styles.infos} fs-5 m-2`}>Specie: {species}</div>
+            <div className={`${styles.infos} fs-5 m-2`}>
+              Location: {location?.name}
+            </div>
+            <div className={`${styles.infos} fs-5 m-2`}>
+              Origin: {origin?.name}
+            </div>
           </div>
           <div class="modal-footer">
             <button

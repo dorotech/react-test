@@ -11,8 +11,9 @@ Pacotes usados:
 
 - Bootstrap - npm install bootstrap
 - Popperjs - npm install @popperjs/core --save
-- Sass - npm install sass
+- Sass - npm install -g sass
 - React paginate - npm install react-paginate --save
+- autoprefixer - npm install postcss-cli autoprefixer
 
 Host:
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import "bootstrap/dist/js/bootstrap";
 import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
