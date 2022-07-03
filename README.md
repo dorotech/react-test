@@ -4,7 +4,7 @@
 
 ## Segui os passos do vídeo Joy Shaheb e adaptei algumas coisas que julguei necessárias para o projeto
 
-## [Link do vídeo] (https://www.youtube.com/watch?v=35QCQnohLg8&ab_channel=JoyShaheb)
+## (Link do vídeo) [https://www.youtube.com/watch?v=35QCQnohLg8&ab_channel=JoyShaheb]
 
 ### TECNOLOGIAS:
 
