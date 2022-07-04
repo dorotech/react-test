@@ -28,14 +28,12 @@ export const useCharacter = () => {
               if (data) {
                 setData(data.results)
                 setCount(data.info.pages)
-                console.log(data)
               }
               setLoading(false)
             })
         }
         break
       case 'especie':
-        console.log('especie')
         if (debouncedSearchTerm) {
           setLoading(true)
           makeRemoteFilterCharactersBySpecies()
@@ -44,14 +42,12 @@ export const useCharacter = () => {
               if (data) {
                 setData(data.results)
                 setCount(data.info.pages)
-                console.log(data)
               }
               setLoading(false)
             })
         }
         break
       case 'nome':
-        console.log('nome')
         if (debouncedSearchTerm) {
           setLoading(true)
           makeRemoteFilterCharactersByName()
@@ -60,21 +56,19 @@ export const useCharacter = () => {
               if (data) {
                 setData(data.results)
                 setCount(data.info.pages)
-                console.log(data)
               }
               setLoading(false)
             })
         }
         break
       case 'Nenhum':
-        console.log('default')
         setLoading(true)
         makeRemoteGetCharacters()
           .perform({ page })
           .then((data) => {
             setData(data.results)
             setCount(data.info.pages)
-            console.log(data)
+
             setLoading(false)
           })
 

@@ -14,8 +14,8 @@ export const SingleCharacter = () => {
   const params = useParams()
   const [character, setCharacter] = useState<CharacterModel>()
   const [loading, setLoading] = useState(false)
+
   useEffect(() => {
-    console.log(params)
     if (params.id) {
       setLoading(true)
       makeRemoteGetCharacterById()
@@ -26,6 +26,7 @@ export const SingleCharacter = () => {
         })
     }
   }, [])
+
   return (
     <Box className='body'>
       <Header />
