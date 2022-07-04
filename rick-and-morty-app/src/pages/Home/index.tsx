@@ -1,25 +1,15 @@
 import { useEffect, useState } from 'react';
+import CharacterCard from '../../components/CharacterCard';
 
-export type CharacterProps = {
+interface CharacterData {
   id: number,
   name: string,
   status: string,
-  species: string,
-  type: string,
-  gender: string,
-  origin: {
-    name: string,
-    url: string,
-  },
-  location: {
-    name: string,
-    url: string,
-  },
   image: string,
-};
+}
 
 export default function Home() {
-  const [characters, setCharacters] = useState<CharacterProps[]>([]);
+  const [characters, setCharacters] = useState<CharacterData[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -33,19 +23,7 @@ export default function Home() {
     <main>
       {
         characters.map((character) => (
-          <div>
-            <img src={character.image} alt={character.name} />
-            <p>
-              Nome:
-              {' '}
-              {character.name}
-            </p>
-            <p>
-              Status:
-              {' '}
-              {character.status}
-            </p>
-          </div>
+          <CharacterCard key={character.id} character={character} />
         ))
       }
     </main>
