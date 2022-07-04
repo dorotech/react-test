@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Box,
   Button,
@@ -29,12 +29,17 @@ export const FilterComponent = ({
     setFilterType('Nenhum')
     setFilterValue('')
   }
+  useEffect(() => {
+    if (filterType === 'Nenhum') {
+      handleResetFilters()
+    }
+  }, [filterType])
   return (
     <Box className={styles.container}>
       <FormControl variant='standard' fullWidth>
         <InputLabel>Filtrar por</InputLabel>
         <Select
-          defaultValue={'Nenhum'}
+          value={filterType || 'Nenhum'}
           onChange={(e) => {
             setFilterType(e.target.value)
           }}
