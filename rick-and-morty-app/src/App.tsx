@@ -1,5 +1,8 @@
+import Home from './pages/Home';
 import './styles/global.scss';
 
 export default function App() {
-  return <h1>Hello world</h1>;
+  return (
+    <Home />
+  );
 }
