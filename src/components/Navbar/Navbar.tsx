@@ -20,8 +20,8 @@ interface NavLinks {
   url: string;
 }
 const navItems: NavLinks[] = [
-  { id: 1, url: "/", name: "Início" },
-  { id: 2, url: "/favoritos", name: "Favoritos" },
+  { id: 1, url: "/", name: "Home" },
+  { id: 2, url: "/favorites", name: "Favorites" },
 ];
 
 export default function DrawerAppBar() {
@@ -83,7 +83,11 @@ export default function DrawerAppBar() {
           </Box>
         </Toolbar>
       </AppBar>
-      <Toolbar />
+      {/*
+       * Essa toolbar vazia é para manter a app bar no topo sem
+       * ficar por cima dos itens da página.
+       */}
+      <Toolbar sx={{ marginBottom: "2rem" }} />
       <Box component="nav">
         <Drawer
           variant="temporary"
