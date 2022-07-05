@@ -56,11 +56,11 @@ export default function Character() {
         </p>
         <p>
           Origin:
-          {character.origin.name}
+          {character?.origin?.name}
         </p>
         <p>
           Location:
-          {character.location.name}
+          {character?.location?.name}
         </p>
       </div>
     </main>
