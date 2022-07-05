@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 type CharacterData = {
   character: {
     id: number,
@@ -9,7 +11,7 @@ type CharacterData = {
 
 export default function CharacterCard({ character }: CharacterData) {
   return (
-    <>
+    <Link to={`character/${character.id}`}>
       <img src={character.image} alt={character.name} />
       <p>
         Nome:
@@ -21,6 +23,6 @@ export default function CharacterCard({ character }: CharacterData) {
         {' '}
         {character.status}
       </p>
-    </>
+    </Link>
   );
 }
