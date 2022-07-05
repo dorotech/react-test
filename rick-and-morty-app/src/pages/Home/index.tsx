@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch('https://rickandmortyapi.com/api/character');
+      const response = await fetch('https://rickandmortyapi.com/api/character?LIMIT=20');
       const responseJson = await response.json();
       setCharacters(responseJson.results);
     })();
