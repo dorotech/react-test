@@ -43,4 +43,11 @@ export interface Character {
   episode?: Episode[];
   url?: string;
   created?: string;
+  // atributo que só existe no front para criação
+  // de lista de favoritos.
+  favorite: boolean;
+}
+
+export interface LocalStorageInfo {
+  characters?: Character[];
 }
