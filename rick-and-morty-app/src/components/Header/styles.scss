@@ -1,0 +1,24 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 24px;
+
+  .logo{
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    span{
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+  }
+
+  .change-theme{
+    background: transparent;
+    border: 0;
+  }
+}

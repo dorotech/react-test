@@ -1,6 +1,8 @@
 import Logo from '../Logo';
 import { Moon } from '../IconsTheme';
 
+import './styles.scss';
+
 export default function Header() {
   return (
     <header>
