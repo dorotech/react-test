@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import './styles.scss';
+
 interface CharacterData {
   id: number,
   name: string,
@@ -31,37 +33,25 @@ export default function Character() {
   }, []);
 
   return (
-    <main>
-      <div>
+    <main className="container-character">
+      <h1>{character.name}</h1>
+
+      <div className="details">
         <img src={character.image} alt={character.name} />
-        <p>
-          Name:
-          {character.name}
-        </p>
-        <p>
-          Status:
-          {character.status}
-        </p>
-        <p>
-          Species:
-          {character.species}
-        </p>
-        <p>
-          Type:
-          {character.type}
-        </p>
-        <p>
-          Gender:
-          {character.gender}
-        </p>
-        <p>
-          Origin:
-          {character?.origin?.name}
-        </p>
-        <p>
-          Location:
-          {character?.location?.name}
-        </p>
+
+        <div className="infos">
+          <h3>Details</h3>
+          <div className="status">
+            <span className="status-symbol alive" />
+            <span className="status-name">{character.status}</span>
+          </div>
+          <p>Origin: {character?.origin?.name}</p>
+          <p>Location: {character?.location?.name}</p>
+          <p>Species: {character.species}</p>
+          <p>Gender: {character.gender}</p>
+          <p>Type: {character.type || '--'}</p>
+        </div>
+
       </div>
     </main>
   );
