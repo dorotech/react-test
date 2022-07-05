@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./Theme/AppDark.css";
+import "./Theme/AppLight.css";
 import "bootstrap/dist/js/bootstrap";
 import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
@@ -57,6 +58,7 @@ function App() {
           </div>
         </div>
         <div className="row">
+          <div className="col-lg-3 col-12" />
           <Pagination
             pageNumber={pageNumber}
             setPageNumber={setPageNumber}

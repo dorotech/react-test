@@ -17,11 +17,11 @@ const Cards = ({ results }) => {
           badgeColor = "bg-danger";
           break;
         default:
-          badgeColor = "bg-secondary";
+          badgeColor = "bg-info";
       }
       return (
         <button
-          className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 align-items-start position-relative border-0 bg-transparent"
+          className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative border-0 bg-transparent"
           key={id}
           data-bs-toggle="modal"
           data-bs-target={`#module${id}`}
