@@ -1,23 +1,39 @@
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Box, CardActionArea, CardHeader } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import { useState } from "react";
 import { Character } from "../../types";
+import CustomSnackbar from "../CustomSnackbar/CustomSnackbar";
+import { useCharacter } from "../../contexts/CharacterContext";
+import CustomCard from "../CharacterCard/CustomCard/CustomCard";
+import CustomCardHeader from "../CharacterCard/CustomCardHeader/CustomCardHeader";
+import CustomCardActionArea from "../CharacterCard/CustomCardActionArea/CustomCardActionArea";
+import CustomCardContent from "../CharacterCard/CustomCardContent/CustomCardContent";
 
 interface CharacterListProps {
   characters: Character[];
 }
 
 function CharacterList({ characters }: CharacterListProps) {
+  const { setToFavorites, favoritesCharacters } = useCharacter();
+  const [copiedToClipboard, setCopiedToClipboard] = useState(false);
+
+  async function copyToClipboard(id: string) {
+    const character = await navigator.clipboard
+      .writeText(`localhost:3000/character/${id}`)
+      .then(() => {
+        setCopiedToClipboard(true);
+      });
+
+    return character;
+  }
+
+  function handleCloseSnackbar() {
+    setCopiedToClipboard(false);
+  }
+
   return (
     <Box
       sx={{
@@ -29,57 +45,63 @@ function CharacterList({ characters }: CharacterListProps) {
     >
       {characters.map((character) => {
         return (
-          <Card key={character.id} sx={{ maxWidth: 300 }}>
-            <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="name">
-                  {character.name
-                    .split(" ")
-                    .map((char) => char[0])
-                    .join(".")}
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title={character.name}
+          <CustomCard key={character.id}>
+            <CustomCardHeader
+              avatarName={character.name}
+              titleName={character.name}
               subheader={new Intl.DateTimeFormat("pt-br", {
                 day: "2-digit",
                 month: "short",
                 year: "2-digit",
               }).format(new Date(character.created ?? ""))}
             />
-            <CardActionArea>
-              <Link to={`/character/${character.id}` ?? ""}>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={character.image}
-                  alt={character.name}
+            <CustomCardActionArea
+              id={character.id}
+              imageUrl={character.image}
+              alt={character.name}
+            />
+            <CardActions
+              disableSpacing
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <IconButton
+                aria-label="add to favorites"
+                onClick={() => setToFavorites(character.id)}
+              >
+                <FavoriteIcon
+                  color={
+                    favoritesCharacters.find(
+                      (favoriteCharacter) =>
+                        favoriteCharacter.id === character.id
+                    )
+                      ? "success"
+                      : "inherit"
+                  }
                 />
-              </Link>
-            </CardActionArea>
-            <CardContent>
-              <span>
-                <Typography>STATUS</Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  {character.status}
-                </Typography>
-              </span>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
               </IconButton>
-              <IconButton aria-label="share">
-                <ShareIcon />
+              <IconButton
+                aria-label="copy"
+                onClick={() => copyToClipboard(character.id)}
+              >
+                <ContentCopyIcon />
               </IconButton>
             </CardActions>
-          </Card>
+            <CustomCardContent
+              gender={character.gender}
+              origin={character.origin?.name}
+              species={character.species}
+              status={character.status}
+              type={character.type}
+            />
+          </CustomCard>
         );
       })}
+      <CustomSnackbar
+        message="Copiado com sucesso!"
+        open={copiedToClipboard}
+        onClose={() => handleCloseSnackbar()}
+        severity="success"
+      />
     </Box>
   );
 }
