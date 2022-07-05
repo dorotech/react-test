@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+
 import CharacterCard from '../../components/CharacterCard';
+
+import './styles.scss';
 
 interface CharacterData {
   id: number,
@@ -20,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className="container">
       {
         characters.map((character) => (
           <CharacterCard key={character.id} character={character} />
