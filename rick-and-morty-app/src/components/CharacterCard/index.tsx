@@ -28,7 +28,7 @@ export default function CharacterCard({ character }: CharacterData) {
           </div>
         </div>
         <Link to={`character/${character.id}`}>
-          <span className="more-details">Ver mais</span>
+          <span className="more-details">Show More</span>
         </Link>
       </div>
 
