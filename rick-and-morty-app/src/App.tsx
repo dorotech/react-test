@@ -28,9 +28,7 @@ export default function App() {
           onToggleTheme={handleToggleTheme}
           selectedTheme={theme}
         />
-        <Router
-          selectedTheme={theme}
-        />
+        <Router />
       </ThemeProvider>
 
     </BrowserRouter>
