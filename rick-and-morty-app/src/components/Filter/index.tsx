@@ -43,21 +43,17 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
     handleChangeSearchParams(param);
   }
 
-  function handleClearNameField() {
-    searchParams.delete('name');
-    setNameSearch('');
-    handleChangeSearchParams(searchParams);
-  }
+  function handleClearField(field: string) {
+    searchParams.delete(field);
 
-  function handleClearStatusField() {
-    searchParams.delete('status');
-    setStatusSearch('');
-    handleChangeSearchParams(searchParams);
-  }
+    if (field === 'name') {
+      setNameSearch('');
+    } else if (field === 'status') {
+      setStatusSearch('');
+    } else if (field === 'species') {
+      setSpecieSearch('');
+    }
 
-  function handleClearSpecieField() {
-    searchParams.delete('species');
-    setSpecieSearch('');
     handleChangeSearchParams(searchParams);
   }
 
@@ -85,9 +81,9 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
       </form>
 
       <div className="items-filter">
-        {searchParams.get('name') && <span onClick={handleClearNameField} className="filterSearch">Name: {searchParams.get('name')} <Empty /></span>}
-        {searchParams.get('status') && <span onClick={handleClearStatusField} className="filterSearch">Status: {searchParams.get('status')} <Empty /></span>}
-        {searchParams.get('species') && <span onClick={handleClearSpecieField} className="filterSearch">Specie: {searchParams.get('species')} <Empty /></span>}
+        {searchParams.get('name') && <span onClick={() => handleClearField('name')} className="filterSearch">Name: {searchParams.get('name')} <Empty /></span>}
+        {searchParams.get('status') && <span onClick={() => handleClearField('status')} className="filterSearch">Status: {searchParams.get('status')} <Empty /></span>}
+        {searchParams.get('species') && <span onClick={() => handleClearField('species')} className="filterSearch">Specie: {searchParams.get('species')} <Empty /></span>}
       </div>
 
     </section>
