@@ -5,7 +5,7 @@ import CharacterCard from '../../components/CharacterCard';
 import Filter from '../../components/Filter';
 import { LoadingSpinner } from '../../components/Icons';
 
-import './styles.scss';
+import { Container, List } from './styles';
 
 interface CharacterData {
   id: number,
@@ -45,19 +45,19 @@ export default function Home() {
 
   if (loading) {
     return (
-      <main className="container">
+      <Container>
         <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
-        <section className="characters-list">
+        <List>
           <LoadingSpinner />
-        </section>
-      </main>
+        </List>
+      </Container>
     );
   }
 
   return (
-    <main className="container">
+    <Container>
       <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
-      <section className="characters-list">
+      <List>
 
         {
           characters
@@ -70,9 +70,9 @@ export default function Home() {
               <h1>Not found characters</h1>
             )
         }
-      </section>
+      </List>
 
-    </main>
+    </Container>
 
   );
 }
