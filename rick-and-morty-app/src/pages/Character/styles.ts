@@ -17,11 +17,15 @@ export const Container = styled.div`
     margin-bottom: 24px;
   }
 
-  .back{
+  button{
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 24px;
+    background: transparent;
+    outline: 0;
+    border: 0;
+
 
     svg{
       transform: rotate(-90deg);
@@ -33,6 +37,8 @@ export const Container = styled.div`
 
     span{
       font-weight: 500;
+      color: ${(props: ThemeProps) => props.theme.textColor};
+      font-size: 1rem;
     }
   }
 `;

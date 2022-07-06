@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {
+  useNavigate, useParams,
+} from 'react-router-dom';
 
 import { Arrow, LoadingSpinner } from '../../components/Icons';
 
@@ -26,6 +28,7 @@ export default function Character() {
   const { id } = useParams();
   const [character, setCharacter] = useState<CharacterData>({} as CharacterData);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -39,12 +42,10 @@ export default function Character() {
   if (loading) {
     return (
       <Container>
-        <Link to="/">
-          <div className="back">
-            <Arrow />
-            <span>Back</span>
-          </div>
-        </Link>
+        <button type="button" onClick={() => navigate(-1)}>
+          <Arrow />
+          <span>Back</span>
+        </button>
         <LoadingSpinner />
       </Container>
     );
@@ -52,12 +53,10 @@ export default function Character() {
 
   return (
     <Container>
-      <Link to="/">
-        <div className="back">
-          <Arrow />
-          <span>Back</span>
-        </div>
-      </Link>
+      <button type="button" onClick={() => navigate(-1)}>
+        <Arrow />
+        <span>Back</span>
+      </button>
 
       <h1>{character.name}</h1>
 
