@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
+import { Arrow } from '../../components/Icons';
 
 import './styles.scss';
 
@@ -34,6 +36,13 @@ export default function Character() {
 
   return (
     <main className="container-character">
+      <Link to="/">
+        <div className="back">
+          <Arrow />
+          <span>Voltar</span>
+        </div>
+      </Link>
+
       <h1>{character.name}</h1>
 
       <div className="details">

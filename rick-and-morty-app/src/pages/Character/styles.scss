@@ -5,12 +5,31 @@
   margin: 0 auto;
   padding: 16px;
 
+  a{
+    text-decoration: none;
+  }
+
   h1{
     text-align: center;
     font-weight: 700;
     font-size: 2.5rem;
 
     margin-bottom: 24px;
+  }
+
+  .back{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    svg{
+      transform: rotate(-90deg);
+    }
+
+    span{
+      font-weight: 500;
+    }
   }
 
   .details{
