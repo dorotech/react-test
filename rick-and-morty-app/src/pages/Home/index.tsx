@@ -43,25 +43,32 @@ export default function Home() {
     })();
   }, [searchParams]);
 
+  if (loading) {
+    return (
+      <main className="container">
+        <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
+        <section className="characters-list">
+          <LoadingSpinner />
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="container">
       <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
       <section className="characters-list">
 
         {
-        loading
-          ? <LoadingSpinner />
-          : (
-            characters
-              ? (
-                characters.map((character) => (
-                  <CharacterCard key={character.id} character={character} />
-                ))
-              )
-              : (
-                <h1>Not found characters</h1>
-              )
-          )
+          characters
+            ? (
+              characters.map((character) => (
+                <CharacterCard key={character.id} character={character} />
+              ))
+            )
+            : (
+              <h1>Not found characters</h1>
+            )
         }
       </section>
 

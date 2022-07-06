@@ -36,6 +36,20 @@ export default function Character() {
     })();
   }, []);
 
+  if (loading) {
+    return (
+      <main className="container-character">
+        <Link to="/">
+          <div className="back">
+            <Arrow />
+            <span>Back</span>
+          </div>
+        </Link>
+        <LoadingSpinner />
+      </main>
+    );
+  }
+
   return (
     <main className="container-character">
       <Link to="/">
@@ -45,34 +59,25 @@ export default function Character() {
         </div>
       </Link>
 
-      {
-        loading
-          ? <LoadingSpinner />
-          : (
-            <>
-              <h1>{character.name}</h1>
+      <h1>{character.name}</h1>
 
-              <div className="details">
-                <img src={character.image} alt={character.name} />
+      <div className="details">
+        <img src={character.image} alt={character.name} />
 
-                <div className="infos">
-                  <h3>Details</h3>
-                  <div className="status">
-                    <span className={`status-symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
-                    <span className="status-name">{character.status}</span>
-                  </div>
-                  <p>Origin: {character?.origin?.name}</p>
-                  <p>Location: {character?.location?.name}</p>
-                  <p>Species: {character.species}</p>
-                  <p>Gender: {character.gender}</p>
-                  <p>Type: {character.type || '--'}</p>
-                </div>
+        <div className="infos">
+          <h3>Details</h3>
+          <div className="status">
+            <span className={`status-symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
+            <span className="status-name">{character.status}</span>
+          </div>
+          <p>Origin: {character?.origin?.name}</p>
+          <p>Location: {character?.location?.name}</p>
+          <p>Species: {character.species}</p>
+          <p>Gender: {character.gender}</p>
+          <p>Type: {character.type || '--'}</p>
+        </div>
 
-              </div>
-            </>
-          )
-      }
-
+      </div>
     </main>
   );
 }
