@@ -28,7 +28,11 @@ const Cards = ({ results }) => {
         >
           <div className="d-flex flex-column justify-content-center border border-primary border-3 rounded">
             <img src={image} className="img-fluid" alt="" />
-            <div className={`${styles.name} fs-3 m-2`}>{name}</div>
+            <div
+              className={`${styles.name} d-flex flex-column justify-content-center fs-3 m-2`}
+            >
+              {name}
+            </div>
           </div>
           <div
             className={`${styles.badge} position-absolute badge ${badgeColor}`}
