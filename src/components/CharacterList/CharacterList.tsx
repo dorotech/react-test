@@ -43,7 +43,7 @@ function CharacterList({ characters }: CharacterListProps) {
         gap: "2rem",
       }}
     >
-      {characters.map((character) => {
+      {characters?.map((character) => {
         return (
           <CustomCard key={character.id}>
             <CustomCardHeader
@@ -70,9 +70,8 @@ function CharacterList({ characters }: CharacterListProps) {
               >
                 <FavoriteIcon
                   color={
-                    favoritesCharacters.find(
-                      (favoriteCharacter) =>
-                        favoriteCharacter.id === character.id
+                    favoritesCharacters.some(
+                      (favChar) => favChar.id === character.id
                     )
                       ? "success"
                       : "inherit"
@@ -90,7 +89,7 @@ function CharacterList({ characters }: CharacterListProps) {
               gender={character.gender}
               origin={character.origin?.name}
               species={character.species}
-              status={character.status}
+              status={character?.status}
               type={character.type}
             />
           </CustomCard>

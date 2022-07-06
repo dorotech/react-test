@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LinkIcon from "@mui/icons-material/Link";
 
 interface CustomCardContentProps {
-  status: string;
+  status?: string;
   gender: string | undefined;
   species: string | undefined;
   type: string | undefined;

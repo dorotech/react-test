@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 
 interface CustomSnackbarProps {
   open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   severity: "error" | "warning" | "info" | "success";
   message: string;
 }

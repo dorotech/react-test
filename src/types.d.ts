@@ -33,7 +33,7 @@ export interface Episode {
 export interface Character {
   id: string;
   name: string;
-  status: "Alive" | "Dead" | "unknown";
+  status?: "Alive" | "Dead" | "unknown";
   species?: string;
   type?: string;
   gender?: "Female" | "Male" | "Genderless" | "unknown";
