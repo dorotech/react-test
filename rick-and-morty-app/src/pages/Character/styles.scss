@@ -82,6 +82,10 @@
           &.dead{
             background: red;
           }
+
+          &.unknown{
+            background: gray;
+          }
         }
       }
 

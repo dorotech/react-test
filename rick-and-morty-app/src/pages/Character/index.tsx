@@ -39,7 +39,7 @@ export default function Character() {
       <Link to="/">
         <div className="back">
           <Arrow />
-          <span>Voltar</span>
+          <span>Back</span>
         </div>
       </Link>
 
@@ -51,7 +51,7 @@ export default function Character() {
         <div className="infos">
           <h3>Details</h3>
           <div className="status">
-            <span className="status-symbol alive" />
+            <span className={`status-symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
             <span className="status-name">{character.status}</span>
           </div>
           <p>Origin: {character?.origin?.name}</p>
