@@ -1,10 +1,7 @@
 .input[type="radio"] {
   display: none;
-  background-color: white !important;
-  color: white !important;
 }
 
-.label {
-  background: white !important;
-  color: white !important;
+.input:checked + label {
+  background: #69c8ec;
 }

@@ -14,7 +14,10 @@ const FilterBtn = ({ task, setPageNumber, name, item, index }) => {
         name={name}
         id={`${name}-${index}`}
       />
-      <label className="col-12 btn btn-primary" for={`${name}-${index}`}>
+      <label
+        className={`${styles.label} col-12 btn border border-primary my-1`}
+        for={`${name}-${index}`}
+      >
         {item}
       </label>
     </div>
