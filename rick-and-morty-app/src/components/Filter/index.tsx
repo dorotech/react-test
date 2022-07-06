@@ -84,9 +84,11 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
         </button>
       </form>
 
-      {searchParams.get('name') && <span onClick={handleClearNameField} className="filterSearch">Name: {searchParams.get('name')} <Empty /></span>}
-      {searchParams.get('status') && <span onClick={handleClearStatusField} className="filterSearch">Status: {searchParams.get('status')} <Empty /></span>}
-      {searchParams.get('species') && <span onClick={handleClearSpecieField} className="filterSearch">Specie: {searchParams.get('species')} <Empty /></span>}
+      <div className="items-filter">
+        {searchParams.get('name') && <span onClick={handleClearNameField} className="filterSearch">Name: {searchParams.get('name')} <Empty /></span>}
+        {searchParams.get('status') && <span onClick={handleClearStatusField} className="filterSearch">Status: {searchParams.get('status')} <Empty /></span>}
+        {searchParams.get('species') && <span onClick={handleClearSpecieField} className="filterSearch">Specie: {searchParams.get('species')} <Empty /></span>}
+      </div>
 
     </section>
   );

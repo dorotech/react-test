@@ -1,13 +1,17 @@
-.filter{
+.filter {
   margin-bottom: 48px;
 
-  form{
-    display: flex;
+  form {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1.5fr 1fr 1fr 0.5fr;
     align-items: center;
     gap: 16px;
     margin-bottom: 16px;
 
-    input, select, button{
+    input,
+    select,
+    button {
       border: 1px solid #e5e5e5;
       outline: 0;
       background: #fff;
@@ -18,26 +22,75 @@
       font-size: 0.9rem;
     }
 
-    button{
+    button {
       background: #e5e5e5;
       font-weight: 500;
     }
   }
 
-  .filterSearch{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  .items-filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
 
-    background: #e5e5e5;
-    font-weight: 500;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    padding: 4px;
+    max-width: 600px;
+    width: 100%;
+    .filterSearch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
 
-    & + .filterSearch{
-      margin-left: 16px;
+      background: #e5e5e5;
+      font-weight: 500;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      padding: 4px;
     }
   }
 
+}
+
+@media(max-width: 655px) {
+  .filter {
+    margin-left: auto;
+    margin-right: auto;
+
+    form {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: 1fr 1fr;
+
+      input {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+  }
+}
+
+@media(max-width: 435px) {
+  .filter {
+    margin-left: auto;
+    margin-right: auto;
+
+    form {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns: 1fr;
+
+      input {
+        grid-column-start: 1;
+        grid-column-end: 1;
+      }
+    }
+  }
+}
+
+@media(max-width: 350px){
+  .filter .items-filter{
+    grid-template-columns: 1fr;
+  }
 }
