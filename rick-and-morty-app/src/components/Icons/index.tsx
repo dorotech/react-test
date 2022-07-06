@@ -41,3 +41,21 @@ export function Empty() {
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
   );
 }
+
+export function LoadingSpinner() {
+  return (
+    <svg
+      style={{
+        margin: '0 auto', display: 'block', shapeRendering: 'auto',
+      }}
+      width="150px"
+      height="150px"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle cx="50" cy="50" fill="none" stroke="#505050" strokeWidth="6" r="32" strokeDasharray="150.79644737231007 52.26548245743669">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1" />
+      </circle>
+    </svg>
+  );
+}

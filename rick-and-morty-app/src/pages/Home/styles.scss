@@ -9,18 +9,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+
+    svg{
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
   }
 }
 
 @media(max-width: 1000px){
-  .characters-list{
+  .container .characters-list{
     grid-template-columns: 1fr 1fr;
   }
 }
 
 
 @media(max-width: 680px){
-  .characters-list{
+  .container .characters-list{
     grid-template-columns: 1fr;
   }
 }
