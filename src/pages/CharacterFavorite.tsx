@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import CharacterFavoriteList from "../components/CharacterFavoriteList/CharacterFavoriteList";
 import { useCharacter } from "../contexts/CharacterContext";
 
@@ -7,7 +7,11 @@ function CharacterFavorite() {
 
   return (
     <Container disableGutters maxWidth={false}>
-      <CharacterFavoriteList favoriteCharacters={favoritesCharacters} />
+      {favoritesCharacters !== undefined && favoritesCharacters.length !== 0 ? (
+        <CharacterFavoriteList favoriteCharacters={favoritesCharacters} />
+      ) : (
+        <Box>Você não possui nenhum personagem favorito</Box>
+      )}
     </Container>
   );
 }

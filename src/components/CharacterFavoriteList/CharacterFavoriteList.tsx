@@ -19,7 +19,7 @@ interface CharacterListFavoriteProps {
 function CharacterFavoriteList({
   favoriteCharacters,
 }: CharacterListFavoriteProps) {
-  const { setToFavorites } = useCharacter();
+  const { setToFavorites, favoritesCharacters } = useCharacter();
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
 
   async function copyToClipboard(id: string) {
@@ -71,7 +71,13 @@ function CharacterFavoriteList({
                 onClick={() => setToFavorites(character.id)}
               >
                 <FavoriteIcon
-                  color={character.favorite ? "success" : "inherit"}
+                  color={
+                    favoritesCharacters.some(
+                      (favChar) => favChar.id === character.id
+                    )
+                      ? "success"
+                      : "inherit"
+                  }
                 />
               </IconButton>
               <IconButton
