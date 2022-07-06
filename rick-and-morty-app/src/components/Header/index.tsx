@@ -1,15 +1,20 @@
+import { Link } from 'react-router-dom';
+
 import Logo from '../Logo';
-import { Moon } from '../IconsTheme';
+import { Moon } from '../Icons';
 
 import './styles.scss';
 
 export default function Header() {
   return (
     <header>
-      <div className="logo">
-        <Logo />
-        <span>Rick and Morty</span>
-      </div>
+      <Link to="/">
+        <div className="logo">
+          <Logo />
+          <span>Rick and Morty</span>
+        </div>
+      </Link>
+
       <button type="button" className="change-theme">
         <Moon />
       </button>
