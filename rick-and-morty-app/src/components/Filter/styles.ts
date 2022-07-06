@@ -4,6 +4,16 @@ import { ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
   margin-bottom: 48px;
+
+  @media(max-width: 655px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media(max-width: 435px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const Form = styled.form`
@@ -38,6 +48,31 @@ export const Form = styled.form`
     background: ${(props: ThemeProps) => props.theme.inputBackgroundColor};
     font-weight: 500;
   }
+
+  @media(max-width: 655px) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr;
+
+    input {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+
+  @media(max-width: 435px) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr;
+
+    input {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+  }
+
 `;
 
 export const ContainerItems = styled.div`
@@ -59,5 +94,9 @@ export const ContainerItems = styled.div`
     border-radius: 4px;
     font-size: 0.9rem;
     padding: 4px;
+  }
+
+  @media(max-width: 350px){
+    grid-template-columns: 1fr;
   }
 `;
