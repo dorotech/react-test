@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { Arrow, LoadingSpinner } from '../../components/Icons';
 
-import './styles.scss';
+import { Container, Details } from './styles';
 
 interface CharacterData {
   id: number,
@@ -38,7 +38,7 @@ export default function Character() {
 
   if (loading) {
     return (
-      <main className="container-character">
+      <Container>
         <Link to="/">
           <div className="back">
             <Arrow />
@@ -46,12 +46,12 @@ export default function Character() {
           </div>
         </Link>
         <LoadingSpinner />
-      </main>
+      </Container>
     );
   }
 
   return (
-    <main className="container-character">
+    <Container>
       <Link to="/">
         <div className="back">
           <Arrow />
@@ -61,14 +61,14 @@ export default function Character() {
 
       <h1>{character.name}</h1>
 
-      <div className="details">
+      <Details>
         <img src={character.image} alt={character.name} />
 
-        <div className="infos">
+        <div className="details--infos">
           <h3>Details</h3>
-          <div className="status">
-            <span className={`status-symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
-            <span className="status-name">{character.status}</span>
+          <div className="details--status">
+            <span className={`details--status--symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
+            <span className="details--status--name">{character.status}</span>
           </div>
           <p>Origin: {character?.origin?.name}</p>
           <p>Location: {character?.location?.name}</p>
@@ -77,7 +77,7 @@ export default function Character() {
           <p>Type: {character.type || '--'}</p>
         </div>
 
-      </div>
-    </main>
+      </Details>
+    </Container>
   );
 }
