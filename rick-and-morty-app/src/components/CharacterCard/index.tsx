@@ -23,7 +23,7 @@ export default function CharacterCard({ character }: CharacterData) {
             <p>{character.name}</p>
           </Link>
           <div className="status">
-            <span className="status-symbol alive" />
+            <span className={`status-symbol ${character.status === 'Dead' && 'dead'} ${character.status === 'Alive' && 'alive'} ${character.status === 'unknown' && 'unknown'}`} />
             <span className="status-name">{character.status}</span>
           </div>
         </div>
