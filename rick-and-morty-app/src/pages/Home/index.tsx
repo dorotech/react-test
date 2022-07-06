@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 import CharacterCard from '../../components/CharacterCard';
 import Filter from '../../components/Filter';
@@ -13,11 +13,22 @@ interface CharacterData {
   image: string,
 }
 
+type SearchData = {
+  name?: string,
+  status?: string,
+  species?: string
+}
+
 export default function Home() {
   const [characters, setCharacters] = useState<CharacterData[]>([]);
 
+  const [searchParams, setSearchParams] = useSearchParams();
   const { search } = useLocation();
   const urlSearch = search ? `${search}&` : '?';
+
+  function handleChangeSearchParams(params: SearchData) {
+    setSearchParams(params);
+  }
 
   useEffect(() => {
     (async () => {
@@ -26,11 +37,11 @@ export default function Home() {
 
       setCharacters(responseJson.results);
     })();
-  }, [search]);
+  }, [searchParams]);
 
   return (
     <main className="container">
-      <Filter />
+      <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
       <section className="characters-list">
         {
           characters
