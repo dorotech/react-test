@@ -1,6 +1,8 @@
 import { BaseSyntheticEvent, useState } from 'react';
 import { Empty, Search } from '../Icons';
 
+import './styles.scss';
+
 type SearchData = {
   name?: string,
   status?: string,

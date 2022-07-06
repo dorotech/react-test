@@ -1,0 +1,43 @@
+.filter{
+  margin-bottom: 48px;
+
+  form{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    input, select, button{
+      border: 1px solid #e5e5e5;
+      outline: 0;
+      background: #fff;
+      border-radius: 4px;
+
+      padding: 0 16px;
+      height: 2.5rem;
+      font-size: 0.9rem;
+    }
+
+    button{
+      background: #e5e5e5;
+      font-weight: 500;
+    }
+  }
+
+  .filterSearch{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #e5e5e5;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 4px;
+
+    & + .filterSearch{
+      margin-left: 16px;
+    }
+  }
+
+}
