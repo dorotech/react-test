@@ -1,4 +1,4 @@
-# Projeto
+# Projetos
 
 Projeto de Front-End, consumindo a api The Rick And Morty API(https://rickandmortyapi.com), desenvolvido com conceito Mobile First 
 
