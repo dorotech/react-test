@@ -16,6 +16,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${(props: ThemeProps) => props.theme.textColor};
   }
 
   button {
