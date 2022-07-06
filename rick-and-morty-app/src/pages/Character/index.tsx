@@ -12,7 +12,7 @@ interface CharacterData {
   image: string,
   species: string,
   type: string,
-  gender: 'Male' | 'Female',
+  gender: 'Female' | 'Male' | 'Genderless' | 'unknown',
   origin: {
     name: string,
   },
