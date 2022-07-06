@@ -1,7 +1,7 @@
 import { BaseSyntheticEvent, useState } from 'react';
 import { Empty, Search } from '../Icons';
 
-import './styles.scss';
+import { Container, ContainerItems, Form } from './styles';
 
 type SearchData = {
   name?: string,
@@ -58,8 +58,8 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
   }
 
   return (
-    <section className="filter">
-      <form onSubmit={handleSubmit}>
+    <Container>
+      <Form onSubmit={handleSubmit}>
         <input type="text" placeholder="Name" onChange={handleChangeNameSearch} value={nameSearch as string} />
 
         <select onChange={handleChangeStatusSearch} value={statusSearch as string}>
@@ -78,14 +78,14 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
         <button type="submit">
           <Search />
         </button>
-      </form>
+      </Form>
 
-      <div className="items-filter">
-        {searchParams.get('name') && <span onClick={() => handleClearField('name')} className="filterSearch">Name: {searchParams.get('name')} <Empty /></span>}
-        {searchParams.get('status') && <span onClick={() => handleClearField('status')} className="filterSearch">Status: {searchParams.get('status')} <Empty /></span>}
-        {searchParams.get('species') && <span onClick={() => handleClearField('species')} className="filterSearch">Specie: {searchParams.get('species')} <Empty /></span>}
-      </div>
+      <ContainerItems>
+        {searchParams.get('name') && <span onClick={() => handleClearField('name')}>Name: {searchParams.get('name')} <Empty /></span>}
+        {searchParams.get('status') && <span onClick={() => handleClearField('status')}>Status: {searchParams.get('status')} <Empty /></span>}
+        {searchParams.get('species') && <span onClick={() => handleClearField('species')}>Specie: {searchParams.get('species')} <Empty /></span>}
+      </ContainerItems>
 
-    </section>
+    </Container>
   );
 }

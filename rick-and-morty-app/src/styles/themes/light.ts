@@ -4,4 +4,5 @@ export default {
   textColor: '#222',
   borderColor: '#e5e5e5',
   backgroundColorCard: '#ddd',
+  inputBackgroundColor: '#fff',
 };
