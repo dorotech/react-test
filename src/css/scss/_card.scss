@@ -1,0 +1,61 @@
+.characters-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.characters-container div{
+  width: 30%;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #111;
+  padding: 1rem;
+}
+.characters-container div img{
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+.characters-container div img,
+.characters-container div p{
+  margin-bottom: 1rem;
+}
+.characters-container .name{
+  font-size: 24px;
+}
+.characters-container div span{
+  padding: 4px 16px;
+  border-radius: 24px;
+  background: #0009;
+  font-size: 16px;
+}
+.characters-container div svg.Alive{
+  color: green;
+}
+.characters-container div svg.Dead{
+  color: red;
+}
+.characters-container div svg.unknown{
+  color: grey;
+}
+.characters-container div a{
+  background: #f7d354;
+  border: 2px solid #f7d354;
+  border-radius: 4px;
+  color: #000;
+  padding: 1rem .5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: all .4s ease-in-out;
+}
+.characters-container div a:hover{
+  background: transparent;
+  color: #f7d354;
+}
