@@ -1,0 +1,33 @@
+.character-page{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 2rem auto;
+}
+.character-page svg{
+  font-size: 1.5rem;
+  color: #f7d354;
+}
+.character-page svg.Alive{
+  color: green;
+}
+.character-page svg.Dead{
+  color: red
+}
+.character-page svg.unknown{
+  color: grey;
+}
+.character-page p{
+  margin-bottom: 1rem;
+}
+.character-card .name{
+  font-size: 24px;
+  margin-top: 1rem;
+}
+.character-card span{
+  padding: 4px 16px;
+  border-radius: 24px;
+  background: #fff3;
+  font-size: 16px;
+}
