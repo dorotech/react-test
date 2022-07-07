@@ -34,18 +34,25 @@ export interface Character {
   id: string;
   name: string;
   status?: "Alive" | "Dead" | "unknown";
-  species?: string;
+  // eslint-disable-next-line prettier/prettier
+  species?: "Animal" | "Humanoid" | "Robot" | "Disease" | "unknown" | "Human" | "Poopybutthole" | "Alien" | "Cronenberg" | "Mythological Creature";
   type?: string;
   gender?: "Female" | "Male" | "Genderless" | "unknown";
   origin?: Origin;
   location?: Location;
   image: string;
-  episode?: Episode[];
+  episode?: Episode["url"][];
   url?: string;
   created?: string;
   // atributo que só existe no front para criação
   // de lista de favoritos.
   favorite: boolean;
+}
+
+export interface CharacterSearch {
+  name?: Character["name"] | "";
+  species?: Character["species"] | "";
+  status?: Character["status"] | "";
 }
 
 export interface LocalStorageInfo {

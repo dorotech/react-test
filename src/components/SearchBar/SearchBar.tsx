@@ -9,14 +9,38 @@ import {
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useCharacter } from "../../contexts/CharacterContext";
-import { Character } from "../../types";
+import { useCustomTheme } from "../../contexts/CustomThemeContext";
+import { CharacterSearch } from "../../types";
 
 function SearchBar() {
-  const { searchCharacters, handleClearSearch } = useCharacter();
-  const [status, setStatus] = useState<Character["status"]>("unknown");
-  const [name, setName] = useState<string>("");
-  const [species, setSpecie] = useState<Character["species"]>("");
+  const { searchCharacters } = useCharacter();
+  const { mode } = useCustomTheme();
+
+  const [status, setStatus] = useState<CharacterSearch["status"]>("");
+  const [name, setName] = useState<CharacterSearch["name"]>("");
+  const [species, setSpecie] = useState<CharacterSearch["species"]>("");
+
+  const speciesOptions = [
+    "Animal",
+    "Humanoid",
+    "Robot",
+    "Disease",
+    "unknown",
+    "Human",
+    "Poopybutthole",
+    "Alien",
+    "Cronenberg",
+    "Mythological Creature",
+  ];
+
+  function handleClearSearch() {
+    setStatus("");
+    setName("");
+    setSpecie("");
+    searchCharacters({ name: "", species: "", status: "" });
+  }
 
   return (
     <Box
@@ -39,28 +63,34 @@ function SearchBar() {
           justifyContent: "center",
         }}
       >
+        <TextField
+          id="name"
+          label="Name"
+          color={mode === "light" ? "primary" : "secondary"}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <FormControl fullWidth>
-          <InputLabel id="status-label">Status</InputLabel>
+          <InputLabel
+            color={mode === "light" ? "primary" : "secondary"}
+            id="status-label"
+          >
+            Status
+          </InputLabel>
           <Select
             labelId="status-select"
             id="status"
             value={status}
             label="Status"
-            onChange={(e) => setStatus(e.target.value as Character["status"])}
+            onChange={(e) =>
+              setStatus(e.target.value as CharacterSearch["status"])
+            }
           >
             <MenuItem value="alive">Alive</MenuItem>
             <MenuItem value="dead">Dead</MenuItem>
             <MenuItem value="unknown">Unknown</MenuItem>
           </Select>
         </FormControl>
-
-        <TextField
-          id="name"
-          label="Name"
-          variant="outlined"
-          defaultValue={name}
-          onChange={(e) => setName(e.target.value)}
-        />
       </Box>
       <Box
         sx={{
@@ -71,21 +101,42 @@ function SearchBar() {
           justifyContent: "center",
         }}
       >
-        <TextField
-          id="specie"
-          label="Specie"
-          variant="outlined"
-          defaultValue={species}
-          onChange={(e) => setSpecie(e.target.value)}
-        />
+        <FormControl fullWidth>
+          <InputLabel
+            color={mode === "light" ? "primary" : "secondary"}
+            id="species-label"
+          >
+            Species
+          </InputLabel>
+          <Select
+            labelId="species-select"
+            id="species"
+            value={species}
+            label="Species"
+            onChange={(e) =>
+              setSpecie(e.target.value as CharacterSearch["species"])
+            }
+          >
+            {speciesOptions.map((specie) => (
+              <MenuItem key={specie} value={specie}>
+                {specie}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <ButtonGroup fullWidth>
           <Button
             onClick={() => searchCharacters({ status, name, species })}
             variant="contained"
+            color={mode === "light" ? "primary" : "secondary"}
           >
             Search
           </Button>
-          <Button variant="outlined" onClick={() => handleClearSearch()}>
+          <Button
+            color={mode === "light" ? "primary" : "secondary"}
+            variant="outlined"
+            onClick={() => handleClearSearch()}
+          >
             Clear
           </Button>
         </ButtonGroup>
