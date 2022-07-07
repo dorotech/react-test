@@ -1,86 +1,49 @@
 # frontend-test
 
-Desafio para Frontend Developer na DoroTech
+## Projeto
+O projeto utiliza-se da api do seriado Rick and Morty. É apresentada uma listagem dos personagens, com uma paginação. Além disso, há um filtro, que se pode utilizar dos parâmetros passados pela url. Ao clicar em um personagem, há o direcionamento para um página com mais detalhes deste personagem. Por fim, há os temas dark e light.
 
-# Frontend na DoroTech
+## Tecnologias
+- [React](https://pt-br.reactjs.org/docs/getting-started.html)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+  - Guia de estilo [AirBnB Standards](https://github.com/airbnb/javascript)
+- [Firebase](https://firebase.google.com/docs/web/setup)
 
-Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios.
+### Bibliotecas
+- [React Router v6](https://reactrouter.com/docs/en/v6): para fazer o roteamento para uma página específica para cada personagem.
+- [Styled Components](https://styled-components.com/docs): usado principalmente para fazer a opção de temas, tendo o tema light e dark.
+- [EsLint](https://eslint.org/docs/latest/): para padronização de código e guia de estilo.
 
-Gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resilientes, questionadores e curiosos. 
-Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
+## Como Rodar
+### Requisitos
 
-## Orientações
-Para executar o desafio de **Frontend Developer**, você **deverá utilizar framework React**, seguindo o [passo a passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
+- É necessário que tenha instalado [Yarn](https://yarnpkg.com/) para rodar o projeto.
 
-## Desafio
-Nossa equipe é apaixonada por **Rick and Morty**, o seu desafio será criar uma aplicação utilizando a API pública da série [https://rickandmortyapi.com/](https://rickandmortyapi.com/), para exibir a lista de  personagens. 
-Veja a documentação [https://rickandmortyapi.com/documentation/#rest](https://rickandmortyapi.com/documentation/#rest).
-
-Os requisitos da aplicação:
-
-- Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens, contendo **foto**, **nome** e **status**.
-- Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas.
-- Como usuário, desejo filtrar os personagens por **nome**, **espécie** e **status**.
-- Seja criativo no layout: filtros, icones e menus são bem vindos.
-
-## Etapas
-
-#### 1 - Fazer um fork desse repositório
-
-![https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png](https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png)
-
-
-#### 2 - Criar um branch com o seu primeiro e último nome
+**Clone o projeto com o comando abaixo e acesse a pasta**
 ```bash
-git checkout -b joao-silva
+
+$ git clone https://github.com/LeandroFilie/frontend-test.git
+
+$ cd rick-and-morty-app
 ```
 
-#### 3 - Escreva a documentação da sua aplicação
-Você deve, substituir o conteúdo do arquivo **README.md** e escrever a documentação da sua aplicação, com os seguintes tópicos: 
-- **Projeto**: Descreva o projeto e como você o executou. Seja objetivo.
-- **Tecnologias**: Descreva quais tecnologias foram utilizadas, enumerando versões (se necessário) e os links para suas documentações,  qual guia de estilos de código você utilizou com o link para a sua documentação, quais bibliotecas instalou e porque.
-- **Como rodar**: Descreva como iniciar a sua aplicação
-- **Link** para acessar o projeto.
+**Siga os passos a seguir**
 
-#### 4 - Faça uma Pull Request
-Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório, avise o recrutador.
+```bash
 
-## Critérios de Aceitação
-Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperados, ele deve:
-- Atender ao que foi proposto no [Desafio](https://github.com/dorotech/frontend-test#Desafio).
-- Utilização de pré-processadores CSS (Sass, Less).
-- Interfaces responsivas para desktop, tablets e smartphones.
-- Compatibilidade entre browsers.
-- Padrão de escrita CSS (BEM, OOCSS, SMACSS).
-- Código TS escrito com base em algum guia de estilos: [AirBnB Standards](https://github.com/airbnb/javascript) ou [TypeScript Google Guide](https://google.github.io/styleguide/tsguide.html).
-- Utilizar padrões semânticos em mensagens de commit. (Gostamos do padrão de commits do repositório [AngularJS](http://karma-runner.github.io/3.0/dev/git-commit-msg.html))
-- Projeto feito upload: [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart?hl=pt-br) ou [GitHub Pages](https://pages.github.com/).
-- Caso você nao consiga completar tudo e tenha algum receio, não se preocupe, iremos avaliar o que foi entregue, mesmo com pendências.
-- O diferencial para este desafio: layout, ux e ui, bem como implementação de boas práticas de segurança, performance e/ou estrutura.
+# Instalar todas as dependências
 
+$ yarn
 
-## Dicas e Informações Valiosas
+# Iniciar a aplicação em um servidor web
 
-#### O que gostaríamos de ver em seu teste:
-- Upload do projeto em um seviço de hospedagem.
-- Convenção de nome em classes, objetos, variáveis, métodos e etc.
-- layout encantador
-- Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
-- uso de libs como bootstrap, material
-- Hooks é bem-vindo.
-- Animações, coidado com UX e Sobras. 
-- Projeto feito usando TypeScript
-- **Bônus** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
-- **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na url o parametro da busca realizado, caso recaregar a pagina com a url, usar o parametro para preencher os itens da pagina.
+$ yarn start
 
-**Observação:** Nenhum dos itens acima é obrigatório.
+```
+Acesse o App pelo seu navegador pelo endereço: `http://localhost:3000`
 
-#### O que o seu Teste não deve ter:
-- Saber que não foi você quem implementou o projeto.
-- Varias bibliotecas instaladas sem uso.
-- Falta de organização de código.
-- Falta de documentação.
-- Nome de variáveis sem sentido ou padrão de nomes.
-- Histórico de commits desorganizado e despadronizado.
+<br>
 
-## Boa Sorte!! 
+## Link
+Para acessar de forma online: acesse o link: [https://rick-morty-app-leandrofilie.web.app/](https://rick-morty-app-leandrofilie.web.app/)
+
