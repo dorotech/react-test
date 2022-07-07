@@ -1,0 +1,56 @@
+.body{
+  width: 100%;
+}
+.main{
+  display:flex;
+  justify-content: center;
+}
+
+.backIcon{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-image: none !important;
+  position: relative;
+  height: 600px;
+  margin: 30px;
+
+}
+
+.cardContent{
+  width: 100%;
+  margin-top: 280px;
+  position: absolute;
+}
+
+.containerContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-bottom: 10px !important;
+}
+.charDescription{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+.alive{
+  color: #03C03C;
+  font-size: 1rem !important;
+}
+.dead{
+  color: #ff0000;
+  font-size: 1rem !important;
+}

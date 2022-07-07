@@ -1,0 +1,43 @@
+.card {
+  width: 100%;
+  max-width: 345px;
+  display: flex;
+  flex-direction: column;
+  background-image: none !important;
+  position: relative;
+  height: 400px;
+  margin: 30px;
+
+}
+
+.cardContent{
+  width: 100%;
+  margin-top: 185px;
+  position: absolute;
+}
+.containerContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-bottom: 10px !important;
+}
+.charDescription{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 20px !important ;
+}
+.alive{
+  color: #03C03C;
+  font-size: 1rem;
+}
+.dead{
+  color: #ff0000;
+  font-size: 1rem;
+}
+.icon{
+  font-size: 1rem;
+}
