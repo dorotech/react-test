@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 import CharacterCard from '../../components/CharacterCard';
 import Filter from '../../components/Filter';
 import { Arrow, LoadingSpinner } from '../../components/Icons';
+import { PageContext } from '../../contexts/PageContext';
 
 import { Container, List, Navigation } from './styles';
 
@@ -21,10 +22,13 @@ type SearchData = {
 }
 
 export default function Home() {
+  const {
+    pageNumber, setFirstPage, handlePrevPage, handleNextPage,
+  } = useContext(PageContext);
+
   const [characters, setCharacters] = useState<CharacterData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [pageNumber, setPageNumber] = useState(1);
-
+  // const [page, setPage] = useState(1);
   const [maxPageNumber, setMaxPageNumber] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,7 +38,7 @@ export default function Home() {
   function handleChangeSearchParams(params: SearchData) {
     setLoading(true);
     setSearchParams(params);
-    setPageNumber(1);
+    setFirstPage();
   }
 
   useEffect(() => {
@@ -50,12 +54,12 @@ export default function Home() {
 
   function nextPage() {
     setLoading(true);
-    setPageNumber((prevState) => prevState + 1);
+    handleNextPage();
   }
 
   function prevPage() {
     setLoading(true);
-    setPageNumber((prevState) => prevState - 1);
+    handlePrevPage();
   }
 
   if (loading) {

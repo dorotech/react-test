@@ -8,6 +8,7 @@ import Header from './components/Header';
 
 import GlobalStyle from './styles/global';
 import themes from './styles/themes';
+import PageProvider from './contexts/PageContext';
 
 type Theme = 'light' | 'dark';
 
@@ -28,7 +29,9 @@ export default function App() {
           onToggleTheme={handleToggleTheme}
           selectedTheme={theme}
         />
-        <Router />
+        <PageProvider>
+          <Router />
+        </PageProvider>
       </ThemeProvider>
 
     </BrowserRouter>
