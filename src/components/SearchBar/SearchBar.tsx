@@ -9,7 +9,6 @@ import {
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { useCustomTheme } from "../../contexts/CustomThemeContext";
 import { CharacterSearch } from "../../types";
