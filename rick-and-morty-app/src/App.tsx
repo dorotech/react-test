@@ -1,14 +1,14 @@
 import { useMemo, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+
 import { ThemeProvider } from 'styled-components';
 
+import PageProvider from './contexts/PageContext';
 import Router from './Router';
-
 import Header from './components/Header';
 
 import GlobalStyle from './styles/global';
 import themes from './styles/themes';
-import PageProvider from './contexts/PageContext';
 
 type Theme = 'light' | 'dark';
 
