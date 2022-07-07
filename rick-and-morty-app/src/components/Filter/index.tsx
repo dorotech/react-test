@@ -71,8 +71,16 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
 
         <select onChange={handleChangeSpecieSearch} value={specieSearch as string}>
           <option value="">Select the specie</option>
-          <option value="Human">Human</option>
           <option value="Alien">Alien</option>
+          <option value="Animal">Animal</option>
+          <option value="Cronenberg">Cronenberg</option>
+          <option value="Disease">Disease</option>
+          <option value="Human">Human</option>
+          <option value="Humanoid">Humanoid</option>
+          <option value="Mythological Creature">Mythological Creature</option>
+          <option value="Poopybutthole">Poopybutthole</option>
+          <option value="Robot">Robot</option>
+          <option value="unknown">unknown</option>
         </select>
 
         <button type="submit">
