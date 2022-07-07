@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { useCustomTheme } from "../../contexts/CustomThemeContext";
 import { CharacterSearch } from "../../types";
@@ -20,6 +21,8 @@ function SearchBar() {
   const [status, setStatus] = useState<CharacterSearch["status"]>("");
   const [name, setName] = useState<CharacterSearch["name"]>("");
   const [species, setSpecie] = useState<CharacterSearch["species"]>("");
+
+  const [search] = useSearchParams();
 
   const speciesOptions = [
     "Animal",
@@ -41,6 +44,20 @@ function SearchBar() {
     searchCharacters({ name: "", species: "", status: "" });
   }
 
+  useEffect(() => {
+    const filters = {
+      name: search.get("name") || "",
+      status: search.get("status") || "",
+      species: search.get("species") || "",
+    } as CharacterSearch;
+
+    searchCharacters(filters);
+
+    setStatus(filters.status);
+    setName(filters.name);
+    setSpecie(filters.species);
+  }, []);
+
   return (
     <Box
       component="form"
@@ -49,6 +66,7 @@ function SearchBar() {
         flexDirection: { xs: "column", sm: "column", md: "row" },
         alignItems: "center",
         justifyContent: "center",
+        py: 4,
       }}
       noValidate
       autoComplete="off"

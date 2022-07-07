@@ -1,5 +1,4 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import CharacterById from "../pages/CharacterById/CharacterById";
 import CharacterFavorite from "../pages/CharacterFavorite";
 import EpisodeById from "../pages/CharacterById/EpisodeById";
@@ -8,13 +7,6 @@ import Layout from "../pages/Layout";
 import NotFound from "../pages/NotFound";
 
 function CustomRouter() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (location.pathname === "/") navigate("/character");
-  }, []);
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

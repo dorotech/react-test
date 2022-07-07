@@ -5,6 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { URLSearchParamsInit, useSearchParams } from "react-router-dom";
 import { Character, CharacterSearch, Info } from "../types";
 
 const baseURL = "https://rickandmortyapi.com/api";
@@ -33,6 +34,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
   );
   const [searchError, setSearchError] = useState<string>("");
   const [page, setPage] = useState<Info["next"]>();
+  const [, setSearch] = useSearchParams();
 
   useEffect(() => {
     async function getAllCharacters() {
@@ -86,6 +88,8 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     }
 
     setCharacters(data.results);
+
+    setSearch(filter as URLSearchParamsInit, { replace: true });
   }
 
   function clearSearchError() {
