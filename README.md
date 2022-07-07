@@ -1,86 +1,80 @@
-# frontend-test
+# Lista de Personagens da Série Animada Rick and Morty
 
-Desafio para Frontend Developer na DoroTech
+## Link do projeto: https://rick-and-morty-list.web.app/
 
-# Frontend na DoroTech
+---
 
-Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios.
+## O projeto:
 
-Gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resilientes, questionadores e curiosos. 
-Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
+Uma aplicação web que faz a listagem personagens da série [Rick and Morty](https://en.wikipedia.org/wiki/Rick_and_Morty) utilizando a API https://rickandmortyapi.com/.
 
-## Orientações
-Para executar o desafio de **Frontend Developer**, você **deverá utilizar framework React**, seguindo o [passo a passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
+---
 
-## Desafio
-Nossa equipe é apaixonada por **Rick and Morty**, o seu desafio será criar uma aplicação utilizando a API pública da série [https://rickandmortyapi.com/](https://rickandmortyapi.com/), para exibir a lista de  personagens. 
-Veja a documentação [https://rickandmortyapi.com/documentation/#rest](https://rickandmortyapi.com/documentation/#rest).
+## Features:
 
-Os requisitos da aplicação:
+- Listar personagens por filtro de **Nome**, **Status**, **Specie**.
+- Acessar página com informação individual do personagem e quais episódios ele estava presente.
+    - Ao clicar em um episódio você vê quais outros personagens também estavam naquele episódio.
+- É possível também você criar a sua lista de favoritos que será salva de forma local no seu navegador([localStorage](https://www.w3schools.com/html/html5_webstorage.asp)).
+- Possui tema escuro.
 
-- Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens, contendo **foto**, **nome** e **status**.
-- Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas.
-- Como usuário, desejo filtrar os personagens por **nome**, **espécie** e **status**.
-- Seja criativo no layout: filtros, icones e menus são bem vindos.
+---
 
-## Etapas
+## Tecnologias:
 
-#### 1 - Fazer um fork desse repositório
+- [ReactJS](https://reactjs.org/) - Uma biblioteca JavaScript para construção de interfaces Web
+- [TypeScript](https://www.typescriptlang.org/) - É uma linguagem fortemente tipada criada em cima do [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) - Guia de estilo de código.
 
-![https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png](https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png)
+---
 
+## Bibliotecas:
 
-#### 2 - Criar um branch com o seu primeiro e último nome
-```bash
-git checkout -b joao-silva
-```
+- [Material UI](https://mui.com/) - Para criação de componentes estilizados.
+- [React Router Dom v6](https://reactrouter.com/docs/en/v6) - Para fazer o gerenciamento de rotas pelo lado do cliente.
+- [Eslint](https://eslint.org/) - Para seguir uma padronização de código e verificação de sintaxe
+- [Prettier](https://prettier.io/) - Para ajudar na formatação do código como identação, semi-colons, aspas duplas ou não.
+- [Vite](https://vitejs.dev/) - ferramenta utilizada para construção do projeto inicial com pré configurações que auxiliam no desenvolvimento e explora funcionalidades como [navite ES module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-#### 3 - Escreva a documentação da sua aplicação
-Você deve, substituir o conteúdo do arquivo **README.md** e escrever a documentação da sua aplicação, com os seguintes tópicos: 
-- **Projeto**: Descreva o projeto e como você o executou. Seja objetivo.
-- **Tecnologias**: Descreva quais tecnologias foram utilizadas, enumerando versões (se necessário) e os links para suas documentações,  qual guia de estilos de código você utilizou com o link para a sua documentação, quais bibliotecas instalou e porque.
-- **Como rodar**: Descreva como iniciar a sua aplicação
-- **Link** para acessar o projeto.
+---
 
-#### 4 - Faça uma Pull Request
-Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório, avise o recrutador.
+## Como rodar o projeto em seu computador:
 
-## Critérios de Aceitação
-Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperados, ele deve:
-- Atender ao que foi proposto no [Desafio](https://github.com/dorotech/frontend-test#Desafio).
-- Utilização de pré-processadores CSS (Sass, Less).
-- Interfaces responsivas para desktop, tablets e smartphones.
-- Compatibilidade entre browsers.
-- Padrão de escrita CSS (BEM, OOCSS, SMACSS).
-- Código TS escrito com base em algum guia de estilos: [AirBnB Standards](https://github.com/airbnb/javascript) ou [TypeScript Google Guide](https://google.github.io/styleguide/tsguide.html).
-- Utilizar padrões semânticos em mensagens de commit. (Gostamos do padrão de commits do repositório [AngularJS](http://karma-runner.github.io/3.0/dev/git-commit-msg.html))
-- Projeto feito upload: [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart?hl=pt-br) ou [GitHub Pages](https://pages.github.com/).
-- Caso você nao consiga completar tudo e tenha algum receio, não se preocupe, iremos avaliar o que foi entregue, mesmo com pendências.
-- O diferencial para este desafio: layout, ux e ui, bem como implementação de boas práticas de segurança, performance e/ou estrutura.
+### Pré-requisitos:
 
+- [nodejs](https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz) - para rodar a aplicação web local.
+- [git](https://git-scm.com/) - para clonar o projeto.
 
-## Dicas e Informações Valiosas
-
-#### O que gostaríamos de ver em seu teste:
-- Upload do projeto em um seviço de hospedagem.
-- Convenção de nome em classes, objetos, variáveis, métodos e etc.
-- layout encantador
-- Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
-- uso de libs como bootstrap, material
-- Hooks é bem-vindo.
-- Animações, coidado com UX e Sobras. 
-- Projeto feito usando TypeScript
-- **Bônus** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
-- **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na url o parametro da busca realizado, caso recaregar a pagina com a url, usar o parametro para preencher os itens da pagina.
-
-**Observação:** Nenhum dos itens acima é obrigatório.
-
-#### O que o seu Teste não deve ter:
-- Saber que não foi você quem implementou o projeto.
-- Varias bibliotecas instaladas sem uso.
-- Falta de organização de código.
-- Falta de documentação.
-- Nome de variáveis sem sentido ou padrão de nomes.
-- Histórico de commits desorganizado e despadronizado.
-
-## Boa Sorte!! 
+1. Clone o projeto :
+    
+    ```bash
+    git clone https://github.com/desogab/rick-and-morty-web-app-list.git && cd rick-and-morty-web-app-list
+    ```
+    
+2. Instale as dependências com npm(vem junto com o nodejs):
+    
+    ```bash
+    npm install
+    
+    #up to date, audited 360 packages in 732ms
+    #
+    #88 packages are looking for funding
+    #  run `npm fund` for details
+    #
+    #found 0 vulnerabilities
+    ```
+    
+3. Após instalada as dependências, rode o comando abaixo para abrir o seu projeto no navegador:
+    
+    ```bash
+    npm run dev
+    
+    #vite v2.9.13 dev server running at:
+    #
+    #  > Local: http://localhost:3000/
+    #  > Network: use `--host` to expose
+    #
+    # ready in 173ms.
+    ```
+    
+4. É só abrir em algum navegador de sua preferência e acessar o projeto em http://localhost:3000/.
