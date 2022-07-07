@@ -36,32 +36,32 @@ export const Navigation = styled.div`
 
   button{
     color: ${(props: ThemeProps) => props.theme.textColor};
-    background: ${(props: ThemeProps) => props.theme.backgroundColorCard};
+    background: ${(props: ThemeProps) => props.theme.cardBackgroundColor};
     border: 0;
     border-radius: 4px;
     padding: 4px 16px;
+
+    &.navigation--prev{
+      margin-left: 0;
+      margin-right: auto;
+      svg{
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.navigation--next{
+      margin-right: 0;
+      margin-left: auto;
+      svg{
+        transform: rotate(90deg);
+      }
+    }
 
     svg{
       width: 16px;
       path{
         stroke: ${(props: ThemeProps) => props.theme.textColor};
       }
-    }
-  }
-
-  .prev{
-    margin-left: 0;
-    margin-right: auto;
-    svg{
-      transform: rotate(-90deg);
-    }
-  }
-
-  .next{
-    margin-right: 0;
-    margin-left: auto;
-    svg{
-      transform: rotate(90deg);
     }
   }
 

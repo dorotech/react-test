@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-import CharacterCard from '../../components/CharacterCard';
-import Filter from '../../components/Filter';
-import { Arrow, LoadingSpinner } from '../../components/Icons';
 import { PageContext } from '../../contexts/PageContext';
+
+import Filter from '../../components/Filter';
+import CharacterCard from '../../components/CharacterCard';
+import { ArrowIcon, LoadingSpinnerIcon } from '../../components/Icons';
 
 import { Container, List, Navigation } from './styles';
 
@@ -23,43 +24,42 @@ type SearchData = {
 
 export default function Home() {
   const {
-    pageNumber, setFirstPage, handlePrevPage, handleNextPage,
+    pageNumberContext, setFirstPageContext, handlePrevPageContext, handleNextPageContext,
   } = useContext(PageContext);
 
   const [characters, setCharacters] = useState<CharacterData[]>([]);
   const [loading, setLoading] = useState(true);
-  // const [page, setPage] = useState(1);
-  const [maxPageNumber, setMaxPageNumber] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { search } = useLocation();
-  const urlSearch = search && search.substring(1);
+  const querySearch = search && search.substring(1);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(`https://rickandmortyapi.com/api/character?page=${pageNumberContext}&${querySearch}`);
+      const responseJson = await response.json();
+
+      setMaxPage(responseJson.info?.pages);
+      setLoading(false);
+      setCharacters(responseJson.results);
+    })();
+  }, [searchParams, pageNumberContext]);
 
   function handleChangeSearchParams(params: SearchData) {
     setLoading(true);
     setSearchParams(params);
-    setFirstPage();
+    setFirstPageContext();
   }
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(`https://rickandmortyapi.com/api/character?page=${pageNumber}&${urlSearch}`);
-      const responseJson = await response.json();
-
-      setMaxPageNumber(responseJson.info?.pages);
-      setLoading(false);
-      setCharacters(responseJson.results);
-    })();
-  }, [searchParams, pageNumber]);
-
-  function nextPage() {
+  function handleNextPage() {
     setLoading(true);
-    handleNextPage();
+    handleNextPageContext();
   }
 
-  function prevPage() {
+  function handlePrevPage() {
     setLoading(true);
-    handlePrevPage();
+    handlePrevPageContext();
   }
 
   if (loading) {
@@ -67,7 +67,7 @@ export default function Home() {
       <Container>
         <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
         <List>
-          <LoadingSpinner />
+          <LoadingSpinnerIcon />
         </List>
       </Container>
     );
@@ -76,40 +76,40 @@ export default function Home() {
   return (
     <Container>
       <Filter handleChangeSearchParams={handleChangeSearchParams} searchParams={searchParams} />
-      <List>
+      <Navigation>
+        {pageNumberContext !== 1 && (
+          <button type="button" onClick={handlePrevPage} className="navigation--prev">
+            <ArrowIcon />
+          </button>
+        )}
 
-        {
-          characters
-            ? (
-              characters.map((character) => (
-                <CharacterCard key={character.id} character={character} />
-              ))
-            )
-            : (
-              <h1>Not found characters</h1>
-            )
-        }
+        {pageNumberContext < maxPage && (
+          <button type="button" onClick={handleNextPage} className="navigation--next">
+            <ArrowIcon />
+          </button>
+        )}
+      </Navigation>
+      <List>
+        {characters
+          ? (characters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          )))
+          : (<h1>Not found characters</h1>)}
       </List>
 
       <Navigation>
-        {
-        pageNumber !== 1 && (
-          <button type="button" onClick={prevPage} className="prev">
-            <Arrow />
+        {pageNumberContext !== 1 && (
+          <button type="button" onClick={handlePrevPage} className="navigation--prev">
+            <ArrowIcon />
           </button>
-        )
-      }
+        )}
 
-        {
-        pageNumber < maxPageNumber && (
-          <button type="button" onClick={nextPage} className="next">
-            <Arrow />
+        {pageNumberContext < maxPage && (
+          <button type="button" onClick={handleNextPage} className="navigation--next">
+            <ArrowIcon />
           </button>
-        )
-      }
+        )}
       </Navigation>
-
     </Container>
-
   );
 }
