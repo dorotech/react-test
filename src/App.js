@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./Theme/AppDark.css";
-import "./Theme/AppLight.css";
+import "./Main.scss";
 import "bootstrap/dist/js/bootstrap";
 import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
-import DarkMode from "./components/DarkMode/DarkMode";
 
 function App() {
   let [search, setSearch] = useState("");
@@ -37,7 +35,7 @@ function App() {
           <Search setSearch={setSearch} setPageNumber={setPageNumber} />
         </div>
         <div className="row">
-          <DarkMode />
+          <div className="col-lg-3 col-12" />
           <Pagination
             pageNumber={pageNumber}
             setPageNumber={setPageNumber}
