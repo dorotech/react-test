@@ -51,7 +51,7 @@ export const Details = styled.div`
   gap: 20px;
 
   padding: 16px;
-  background: ${(props: ThemeProps) => props.theme.backgroundColorCard};
+  background: ${(props: ThemeProps) => props.theme.cardBackgroundColor};
   border-radius: 4px;
 
   font-weight: 500;

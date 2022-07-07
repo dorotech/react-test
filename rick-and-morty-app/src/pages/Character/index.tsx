@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import {
-  useNavigate, useParams,
-} from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import { Arrow, LoadingSpinner } from '../../components/Icons';
+import { ArrowIcon, LoadingSpinnerIcon } from '../../components/Icons';
 
 import { Container, Details } from './styles';
 
@@ -25,9 +23,10 @@ interface CharacterData {
 }
 
 export default function Character() {
-  const { id } = useParams();
   const [character, setCharacter] = useState<CharacterData>({} as CharacterData);
   const [loading, setLoading] = useState(true);
+
+  const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,10 +42,10 @@ export default function Character() {
     return (
       <Container>
         <button type="button" onClick={() => navigate(-1)}>
-          <Arrow />
+          <ArrowIcon />
           <span>Back</span>
         </button>
-        <LoadingSpinner />
+        <LoadingSpinnerIcon />
       </Container>
     );
   }
@@ -54,7 +53,7 @@ export default function Character() {
   return (
     <Container>
       <button type="button" onClick={() => navigate(-1)}>
-        <Arrow />
+        <ArrowIcon />
         <span>Back</span>
       </button>
 
