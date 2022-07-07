@@ -51,7 +51,7 @@ function SearchBar() {
       species: search.get("species") || "",
     } as CharacterSearch;
 
-    searchCharacters(filters);
+    searchCharacters(filters, false);
 
     setStatus(filters.status);
     setName(filters.name);

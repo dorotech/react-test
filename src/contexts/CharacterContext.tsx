@@ -15,7 +15,10 @@ interface CharacterContextData {
   favoritesCharacters: Character[];
   getCharacterById: (id: string) => Promise<Character>;
   setToFavorites: (id: string) => void;
-  searchCharacters: (filter: CharacterSearch) => Promise<void>;
+  searchCharacters: (
+    filter: CharacterSearch,
+    replaceUrl?: boolean
+  ) => Promise<void>;
   searchError: string;
   clearSearchError: () => void;
   handleLoadMore: (characterList: Character[]) => Promise<void>;
@@ -75,7 +78,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     setPage(nextPage.info.next);
   }
 
-  async function searchCharacters(filter: CharacterSearch) {
+  async function searchCharacters(filter: CharacterSearch, replaceUrl = true) {
     const data = await fetch(
       `https://rickandmortyapi.com/api/character/?${new URLSearchParams({
         ...filter,
@@ -89,7 +92,9 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
 
     setCharacters(data.results);
 
-    setSearch(filter as URLSearchParamsInit, { replace: true });
+    if (replaceUrl) {
+      setSearch(filter as URLSearchParamsInit, { replace: true });
+    }
   }
 
   function clearSearchError() {
@@ -115,7 +120,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
 
     const favoriteItems = JSON.parse(localStorage.getItem("favChars") as any);
 
-    const favoriteAlreadyExists = favoritesCharacters.some(
+    const favoriteAlreadyExists = favoritesCharacters?.some(
       (character) => character.id === characterFinded?.id
     );
 
