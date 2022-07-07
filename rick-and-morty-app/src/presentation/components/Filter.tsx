@@ -89,7 +89,7 @@ export const FilterComponent = ({
             </FormControl>
           )}
 
-          {filterType === 'name' && (
+          {filterType === 'nome' && (
             <FormControl variant='standard' fullWidth>
               <InputLabel>Filtrar por nome</InputLabel>
               <Input
