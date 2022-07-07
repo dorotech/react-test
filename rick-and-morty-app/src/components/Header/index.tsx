@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { Moon, Sun } from '../Icons';
-import { Button, Container, Logo } from './styles';
+import { MoonIcon, SunIcon } from '../Icons';
 
-// import './styles.scss';
+import { Button, Container, Logo } from './styles';
 
 type HeaderProps = {
   onToggleTheme: () => void,
@@ -26,7 +25,7 @@ export default function Header({ onToggleTheme, selectedTheme }: HeaderProps) {
       </Link>
 
       <Button type="button" onClick={onToggleTheme}>
-        {selectedTheme === 'dark' ? <Sun /> : <Moon />}
+        {selectedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
       </Button>
     </Container>
   );

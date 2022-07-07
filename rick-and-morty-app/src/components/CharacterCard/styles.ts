@@ -8,7 +8,7 @@ export const Card = styled.div`
 
   height: 10rem;
 
-  background: ${(props: ThemeProps) => props.theme.backgroundColorCard};
+  background: ${(props: ThemeProps) => props.theme.cardBackgroundColor};
   color: ${(props: ThemeProps) => props.theme.textColor};
   border-radius: 4px;
 

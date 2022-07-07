@@ -1,10 +1,10 @@
-export function Moon() {
+export function MoonIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
   );
 }
 
-export function Sun() {
+export function SunIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-sun">
       <circle cx="12" cy="12" r="5" />
@@ -20,7 +20,7 @@ export function Sun() {
   );
 }
 
-export function Arrow() {
+export function ArrowIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M6.66667 17.5L6.66667 2" stroke="#222222" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -30,19 +30,19 @@ export function Arrow() {
   );
 }
 
-export function Search() {
+export function SearchIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
   );
 }
 
-export function Empty() {
+export function EmptyIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
   );
 }
 
-export function LoadingSpinner() {
+export function LoadingSpinnerIcon() {
   return (
     <svg
       style={{

@@ -3,6 +3,6 @@ export default {
   headerBackgroundColor: '#fff',
   textColor: '#222',
   borderColor: '#e5e5e5',
-  backgroundColorCard: '#ddd',
+  cardBackgroundColor: '#ddd',
   inputBackgroundColor: '#fff',
 };

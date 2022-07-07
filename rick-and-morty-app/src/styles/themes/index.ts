@@ -7,7 +7,7 @@ export type ThemeProps = {
     headerBackgroundColor: string,
     textColor: string,
     borderColor: string,
-    backgroundColorCard: string,
+    cardBackgroundColor: string,
     inputBackgroundColor: string,
   }
 }

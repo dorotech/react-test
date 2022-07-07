@@ -1,5 +1,6 @@
 import { BaseSyntheticEvent, useState } from 'react';
-import { Empty, Search } from '../Icons';
+
+import { EmptyIcon, SearchIcon } from '../Icons';
 
 import { Container, ContainerItems, Form } from './styles';
 
@@ -10,14 +11,16 @@ type SearchData = {
 }
 
 type FilterProps = {
-  handleChangeSearchParams: (arg: SearchData) => void,
-  searchParams: any,
+  handleChangeSearchParams: (args: SearchData) => void,
+  searchParams: URLSearchParams,
 }
 
+type SearchDataURLParams = SearchData & URLSearchParams;
+
 export default function Filter({ handleChangeSearchParams, searchParams }: FilterProps) {
-  const [nameSearch, setNameSearch] = useState<String>(searchParams.get('name') || '');
-  const [statusSearch, setStatusSearch] = useState<String>(searchParams.get('status') || '');
-  const [specieSearch, setSpecieSearch] = useState<String>(searchParams.get('species') || '');
+  const [nameSearch, setNameSearch] = useState(searchParams.get('name') || '');
+  const [statusSearch, setStatusSearch] = useState(searchParams.get('status') || '');
+  const [specieSearch, setSpecieSearch] = useState(searchParams.get('species') || '');
 
   function handleChangeNameSearch(event: BaseSyntheticEvent) {
     setNameSearch(event.currentTarget.value);
@@ -54,7 +57,7 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
       setSpecieSearch('');
     }
 
-    handleChangeSearchParams(searchParams);
+    handleChangeSearchParams(searchParams as SearchDataURLParams);
   }
 
   return (
@@ -84,14 +87,14 @@ export default function Filter({ handleChangeSearchParams, searchParams }: Filte
         </select>
 
         <button type="submit">
-          <Search />
+          <SearchIcon />
         </button>
       </Form>
 
       <ContainerItems>
-        {searchParams.get('name') && <span onClick={() => handleClearField('name')}>Name: {searchParams.get('name')} <Empty /></span>}
-        {searchParams.get('status') && <span onClick={() => handleClearField('status')}>Status: {searchParams.get('status')} <Empty /></span>}
-        {searchParams.get('species') && <span onClick={() => handleClearField('species')}>Specie: {searchParams.get('species')} <Empty /></span>}
+        {searchParams.get('name') && <span onClick={() => handleClearField('name')}>Name: {searchParams.get('name')} <EmptyIcon /></span>}
+        {searchParams.get('status') && <span onClick={() => handleClearField('status')}>Status: {searchParams.get('status')} <EmptyIcon /></span>}
+        {searchParams.get('species') && <span onClick={() => handleClearField('species')}>Specie: {searchParams.get('species')} <EmptyIcon /></span>}
       </ContainerItems>
 
     </Container>
