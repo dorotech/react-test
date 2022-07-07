@@ -3,9 +3,9 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 
 import CharacterCard from '../../components/CharacterCard';
 import Filter from '../../components/Filter';
-import { LoadingSpinner } from '../../components/Icons';
+import { Arrow, LoadingSpinner } from '../../components/Icons';
 
-import { Container, List } from './styles';
+import { Container, List, Navigation } from './styles';
 
 interface CharacterData {
   id: number,
@@ -23,25 +23,40 @@ type SearchData = {
 export default function Home() {
   const [characters, setCharacters] = useState<CharacterData[]>([]);
   const [loading, setLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const [maxPageNumber, setMaxPageNumber] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { search } = useLocation();
-  const urlSearch = search ? `${search}&` : '?';
+  const urlSearch = search && search.substring(1);
 
   function handleChangeSearchParams(params: SearchData) {
     setLoading(true);
     setSearchParams(params);
+    setPageNumber(1);
   }
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`https://rickandmortyapi.com/api/character${urlSearch}LIMIT=20`);
+      const response = await fetch(`https://rickandmortyapi.com/api/character?page=${pageNumber}&${urlSearch}`);
       const responseJson = await response.json();
 
+      setMaxPageNumber(responseJson.info?.pages);
       setLoading(false);
       setCharacters(responseJson.results);
     })();
-  }, [searchParams]);
+  }, [searchParams, pageNumber]);
+
+  function nextPage() {
+    setLoading(true);
+    setPageNumber((prevState) => prevState + 1);
+  }
+
+  function prevPage() {
+    setLoading(true);
+    setPageNumber((prevState) => prevState - 1);
+  }
 
   if (loading) {
     return (
@@ -71,6 +86,24 @@ export default function Home() {
             )
         }
       </List>
+
+      <Navigation>
+        {
+        pageNumber !== 1 && (
+          <button type="button" onClick={prevPage} className="prev">
+            <Arrow />
+          </button>
+        )
+      }
+
+        {
+        pageNumber < maxPageNumber && (
+          <button type="button" onClick={nextPage} className="next">
+            <Arrow />
+          </button>
+        )
+      }
+      </Navigation>
 
     </Container>
 
