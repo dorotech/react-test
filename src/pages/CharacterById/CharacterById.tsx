@@ -1,4 +1,4 @@
-import CharacterInfoById from "../components/CharacterById/CharacterInfoById";
+import CharacterInfoById from "../../components/CharacterById/CharacterInfoById";
 
 function CharacterById() {
   return <CharacterInfoById />;

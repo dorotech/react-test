@@ -2,6 +2,8 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -13,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCustomTheme } from "../../contexts/CustomThemeContext";
 
 interface NavLinks {
   id: number;
@@ -26,6 +29,8 @@ const navItems: NavLinks[] = [
 
 export default function DrawerAppBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const { mode, toggleColorMode } = useCustomTheme();
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -51,7 +56,7 @@ export default function DrawerAppBar() {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+      <AppBar component="nav" color="primary" enableColorOnDark>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -70,6 +75,13 @@ export default function DrawerAppBar() {
             Rick and Morty
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <IconButton
+              sx={{ ml: 1 }}
+              onClick={toggleColorMode}
+              color="inherit"
+            >
+              {mode === "light" ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
             {navItems.map((item) => (
               <Button
                 key={item.id}
@@ -87,7 +99,12 @@ export default function DrawerAppBar() {
        * Essa toolbar vazia é para manter a app bar no topo sem
        * ficar por cima dos itens da página.
        */}
-      <Toolbar sx={{ marginBottom: "2rem" }} />
+      <Toolbar
+        sx={{
+          marginBottom: 0.05,
+          bgcolor: mode === "dark" ? "primary.main" : "secondary.dark",
+        }}
+      />
       <Box component="nav">
         <Drawer
           variant="temporary"
@@ -105,6 +122,9 @@ export default function DrawerAppBar() {
           }}
         >
           {drawer}
+          <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
+            {mode === "light" ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
         </Drawer>
       </Box>
     </Box>

@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Divider } from "@mui/material";
-import { Character, Episode } from "../types";
+import { Character, Episode } from "../../types";
 
 function EpisodeById() {
   const { episodeId } = useParams();

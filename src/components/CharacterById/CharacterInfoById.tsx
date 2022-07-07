@@ -15,8 +15,8 @@ function CharacterInfoById() {
 
   useEffect(() => {
     (async () => {
-      const getCharacter = await getCharacterById(id!);
-      setCharacter(getCharacter);
+      const getCharacterInfoById = await getCharacterById(id!);
+      setCharacter(getCharacterInfoById);
     })();
   }, []);
 
@@ -127,33 +127,27 @@ function CharacterInfoById() {
           >
             <Grid item xs>
               <Typography variant="h6">Origin:</Typography>
-              <Link to={character?.origin?.url ?? ""}>
-                <Typography
-                  variant="subtitle1"
-                  sx={{
-                    display: "flex",
-                    gap: "0.2rem",
-                  }}
-                >
-                  {character?.origin?.name}
-                  <LinkIcon />
-                </Typography>
-              </Link>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  display: "flex",
+                  gap: "0.2rem",
+                }}
+              >
+                {character?.origin?.name}
+              </Typography>
             </Grid>
             <Grid item xs>
               <Typography variant="h6">Location:</Typography>
-              <Link to={character?.location?.url ?? ""}>
-                <Typography
-                  variant="subtitle1"
-                  sx={{
-                    display: "flex",
-                    gap: "0.2rem",
-                  }}
-                >
-                  {character?.location?.name}
-                  <LinkIcon />
-                </Typography>
-              </Link>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  display: "flex",
+                  gap: "0.2rem",
+                }}
+              >
+                {character?.location?.name}
+              </Typography>
             </Grid>
           </Grid>
         </Box>
@@ -175,7 +169,7 @@ function CharacterInfoById() {
           <Outlet />
         </Box>
         <Box sx={{ flex: "1 1 auto" }}>
-          <EpisodeList episodes={character?.episode as any} />
+          <EpisodeList episodes={character?.episode} />
         </Box>
       </Box>
     </Box>

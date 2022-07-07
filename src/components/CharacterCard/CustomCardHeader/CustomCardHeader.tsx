@@ -1,6 +1,6 @@
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from "@mui/material/Avatar";
-import { green } from "@mui/material/colors";
+import { useCustomTheme } from "../../../contexts/CustomThemeContext";
 
 interface CustomCardHeaderProps {
   avatarName: string;
@@ -13,10 +13,17 @@ function CustomCardHeader({
   titleName,
   subheader,
 }: CustomCardHeaderProps) {
+  const { mode } = useCustomTheme();
   return (
     <CardHeader
       avatar={
-        <Avatar sx={{ bgcolor: green[500] }} aria-label="name">
+        <Avatar
+          aria-label="name"
+          sx={{
+            bgcolor: mode === "light" ? "primary.dark" : "secondary.dark",
+            color: "white",
+          }}
+        >
           {avatarName
             .split(" ")
             .map((char) => char[0])

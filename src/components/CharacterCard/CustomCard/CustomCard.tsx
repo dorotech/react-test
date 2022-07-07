@@ -6,7 +6,15 @@ interface CustomCardProps {
 }
 
 function CustomCard({ children }: CustomCardProps) {
-  return <Card sx={{ maxWidth: 300 }}>{children}</Card>;
+  return (
+    <Card
+      sx={{
+        maxWidth: 300,
+      }}
+    >
+      {children}
+    </Card>
+  );
 }
 
 export default CustomCard;

@@ -89,7 +89,6 @@ function CharacterFavoriteList({
             </CardActions>
             <CustomCardContent
               gender={character.gender}
-              origin={character.origin?.name}
               species={character.species}
               status={character.status}
               type={character.type}

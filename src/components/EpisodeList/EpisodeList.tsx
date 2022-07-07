@@ -6,9 +6,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Character } from "../../types";
 
 interface AccordionsProps {
-  episodes?: string[];
+  episodes?: Character["episode"];
 }
 
 function EpisodeList({ episodes }: AccordionsProps) {
@@ -36,7 +37,7 @@ function EpisodeList({ episodes }: AccordionsProps) {
       <AccordionDetails>
         <Grid container>
           {episodes?.map((episode) => {
-            const getIdFromUrlEpisode = /episode\/(\d+)/.exec(episode) ?? "";
+            const getIdFromUrlEpisode = /episode\/(\d+)/.exec(episode!) ?? "";
             return (
               <Grid key={episode} item xs={12} sm={12} lg={6}>
                 <Link to={`episode/${getIdFromUrlEpisode[1]}`}>

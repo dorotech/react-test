@@ -5,15 +5,9 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Character } from "../types";
+import { Character, CharacterSearch } from "../types";
 
 const baseURL = "https://rickandmortyapi.com/api";
-
-interface CharacterSearch {
-  name?: Character["name"];
-  species?: Character["species"];
-  status?: Character["status"];
-}
 
 interface CharacterContextData {
   characters: Character[];
@@ -23,7 +17,6 @@ interface CharacterContextData {
   searchCharacters: (filter: CharacterSearch) => Promise<void>;
   searchError: string;
   clearSearchError: () => void;
-  handleClearSearch: () => void;
 }
 
 export const CharacterContext = createContext({} as CharacterContextData);
@@ -38,7 +31,6 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     []
   );
   const [searchError, setSearchError] = useState<string>("");
-  const [clearSearch, setClearSearch] = useState(false);
 
   useEffect(() => {
     async function getAllCharacters() {
@@ -48,7 +40,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
       setCharacters(data.results);
     }
     getAllCharacters();
-  }, [clearSearch]);
+  }, []);
 
   useEffect(() => {
     const favChars = JSON.parse(localStorage.getItem("favChars") as any);
@@ -76,10 +68,6 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
 
   function clearSearchError() {
     setSearchError("");
-  }
-
-  function handleClearSearch() {
-    setClearSearch(!clearSearch);
   }
 
   async function getCharacterById(id: string): Promise<Character> {
@@ -137,7 +125,6 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
   return (
     <CharacterContext.Provider
       value={{
-        handleClearSearch,
         clearSearchError,
         searchError,
         searchCharacters,
