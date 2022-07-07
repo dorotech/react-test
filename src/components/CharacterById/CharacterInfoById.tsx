@@ -1,8 +1,6 @@
 import { Box, CardMedia, Grid, Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
-import LinkIcon from "@mui/icons-material/Link";
-import { Link } from "react-router-dom";
 import EpisodeList from "../EpisodeList/EpisodeList";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { Character } from "../../types";
@@ -20,10 +18,6 @@ function CharacterInfoById() {
     })();
   }, []);
 
-  useEffect(() => {
-    navigate(`/character/${id}`);
-  }, []);
-
   return (
     <Box
       sx={{
@@ -31,6 +25,8 @@ function CharacterInfoById() {
         flexDirection: { xs: "column", sm: "row", md: "row", lg: "row" },
         alignItems: "flex-start",
         justifyContent: "space-between",
+        minHeight: "100vh",
+        pt: 4,
         px: { xs: 0.5, sm: 1, lg: 2 },
         gap: 2,
       }}

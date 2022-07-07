@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
 import CustomSnackbar from "../components/CustomSnackbar/CustomSnackbar";
+import LoadMoreButton from "../components/LoadMoreButton/LoadMoreButton";
 import SearchBar from "../components/SearchBar/SearchBar";
 import { useCharacter } from "../contexts/CharacterContext";
 
@@ -30,6 +31,7 @@ function Home() {
         open={open}
         onClose={() => handleSnack()}
       />
+      <LoadMoreButton characters={characters} />
     </Container>
   );
 }

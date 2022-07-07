@@ -35,7 +35,7 @@ function CharacterFavorite() {
             }}
             variant="h2"
           >
-            F*** THE FAVORITES
+            PEACE AMONG WORLDS
           </Typography>
           <CardMedia
             component="img"

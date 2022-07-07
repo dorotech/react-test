@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Character, CharacterSearch } from "../types";
+import { Character, CharacterSearch, Info } from "../types";
 
 const baseURL = "https://rickandmortyapi.com/api";
 
@@ -17,6 +17,7 @@ interface CharacterContextData {
   searchCharacters: (filter: CharacterSearch) => Promise<void>;
   searchError: string;
   clearSearchError: () => void;
+  handleLoadMore: (characterList: Character[]) => Promise<void>;
 }
 
 export const CharacterContext = createContext({} as CharacterContextData);
@@ -31,6 +32,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     []
   );
   const [searchError, setSearchError] = useState<string>("");
+  const [page, setPage] = useState<Info["next"]>();
 
   useEffect(() => {
     async function getAllCharacters() {
@@ -38,6 +40,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
         method: "GET",
       }).then((response) => response.json());
       setCharacters(data.results);
+      setPage(data.info.next);
     }
     getAllCharacters();
   }, []);
@@ -50,6 +53,25 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     }
     setFavoritesCharacters(favChars?.items);
   }, []);
+
+  async function handleLoadMore() {
+    if (page === null) {
+      return;
+    }
+
+    const nextPage = await fetch(page!).then((response) => response.json());
+
+    const newCharacterList: Character[] = nextPage.results.map(
+      (character: Character) => {
+        return {
+          ...character,
+        };
+      }
+    );
+
+    setCharacters([...characters, ...newCharacterList]);
+    setPage(nextPage.info.next);
+  }
 
   async function searchCharacters(filter: CharacterSearch) {
     const data = await fetch(
@@ -125,6 +147,7 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
   return (
     <CharacterContext.Provider
       value={{
+        handleLoadMore,
         clearSearchError,
         searchError,
         searchCharacters,
