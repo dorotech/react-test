@@ -15,9 +15,9 @@ type FilterProps = {
 }
 
 export default function Filter({ handleChangeSearchParams, searchParams }: FilterProps) {
-  const [nameSearch, setNameSearch] = useState<String>('');
-  const [statusSearch, setStatusSearch] = useState<String>('');
-  const [specieSearch, setSpecieSearch] = useState<String>('');
+  const [nameSearch, setNameSearch] = useState<String>(searchParams.get('name') || '');
+  const [statusSearch, setStatusSearch] = useState<String>(searchParams.get('status') || '');
+  const [specieSearch, setSpecieSearch] = useState<String>(searchParams.get('species') || '');
 
   function handleChangeNameSearch(event: BaseSyntheticEvent) {
     setNameSearch(event.currentTarget.value);
