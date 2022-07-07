@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
-import ImageNotFound from "../assets/notFoundImage.jpg";
+// eslint-disable-next-line import/no-unresolved
+import ImageNotFound from "../../public/assets/notFoundImage.jpg";
 
 function NotFound() {
   return (

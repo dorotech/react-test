@@ -72,7 +72,7 @@ function CharacterFavoriteList({
               >
                 <FavoriteIcon
                   color={
-                    favoritesCharacters.some(
+                    favoritesCharacters?.some(
                       (favChar) => favChar.id === character.id
                     )
                       ? "success"

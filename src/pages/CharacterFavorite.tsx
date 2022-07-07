@@ -1,6 +1,8 @@
 import { Box, CardMedia, Container, Typography } from "@mui/material";
 import CharacterFavoriteList from "../components/CharacterFavoriteList/CharacterFavoriteList";
 import { useCharacter } from "../contexts/CharacterContext";
+// eslint-disable-next-line import/no-unresolved
+import noFavoritesImage from "../../public/assets/noFavorites.jpeg";
 
 function CharacterFavorite() {
   const { favoritesCharacters } = useCharacter();
@@ -39,7 +41,7 @@ function CharacterFavorite() {
           </Typography>
           <CardMedia
             component="img"
-            image="/src/assets/noFavorites.jpeg"
+            image={noFavoritesImage}
             sx={{
               maxWidth: 236,
               maxHeight: 314,

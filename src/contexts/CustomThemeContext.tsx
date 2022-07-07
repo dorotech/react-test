@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
 interface CustomThemeContextData {
