@@ -1,13 +1,10 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
-import {
-  createContext, ReactNode, useState,
-} from 'react';
+import { createContext, ReactNode, useState } from 'react';
 
 type PageContextType = {
-  pageNumber: number,
-  handlePrevPage: () => void,
-  handleNextPage: () => void,
-  setFirstPage: () => void,
+  pageNumberContext: number,
+  setFirstPageContext: () => void,
+  handlePrevPageContext: () => void,
+  handleNextPageContext: () => void,
 }
 
 export const PageContext = createContext({} as PageContextType);
@@ -17,23 +14,23 @@ type PageProviderProps = {
 }
 
 export default function PageProvider({ children }: PageProviderProps) {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumberContext, setPageNumberContext] = useState(1);
 
-  function handleNextPage() {
-    setPageNumber((prevState) => prevState + 1);
+  function handleNextPageContext() {
+    setPageNumberContext((prevState) => prevState + 1);
   }
 
-  function handlePrevPage() {
-    setPageNumber((prevState) => prevState - 1);
+  function handlePrevPageContext() {
+    setPageNumberContext((prevState) => prevState - 1);
   }
 
-  function setFirstPage() {
-    setPageNumber(1);
+  function setFirstPageContext() {
+    setPageNumberContext(1);
   }
 
   return (
     <PageContext.Provider value={{
-      pageNumber, setFirstPage, handlePrevPage, handleNextPage,
+      pageNumberContext, setFirstPageContext, handlePrevPageContext, handleNextPageContext,
     }}
     >
       {children}
