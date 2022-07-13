@@ -17,8 +17,8 @@ Os requisitos da aplicação:
 - Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens incialmente, contendo **foto**, **nome** e **status**, com o tamanho da paginação sendo dinamica, podendo ser selecionando, 5, 10 ou 20 itens por vez.
 - Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas. (seja criativo a api contem diversas informaçoes)
 - Como usuário, desejo filtrar os personagens por **nome**, **gênero**, **espécie** e **status**, alguns filtros são enums, seja criativo.
-- como usuário, desejo combinar varios filtros.
-- como usaário, gostaria de 
+- Como usuário, desejo combinar varios filtros.
+- Como usuário, gostaria de ter uma forma de acessar a imagem do pensonagem, abrindo a imagem em uma nova aba.
 
 ## Etapas
 
