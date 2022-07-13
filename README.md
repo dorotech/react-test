@@ -18,9 +18,10 @@ Veja a documentação [https://rickandmortyapi.com/documentation/#rest](https://
 
 Os requisitos da aplicação:
 
-- Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens, contendo **foto**, **nome** e **status**.
-- Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas.
-- Como usuário, desejo filtrar os personagens por **nome**, **espécie** e **status**.
+- Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens incialmente, contendo **foto**, **nome** e **status**, com o tamanho da paginação sendo dinamica, podendo ser selecionando, 5, 10 ou 20 itens por vez.
+- Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas. (seja criativo a api contem diversas informaçoes)
+- Como usuário, desejo filtrar os personagens por **nome**, **gênero**, **espécie** e **status**.
+- como usuário, desejo combinar varios filtros.
 - Seja criativo no layout: filtros, icones e menus são bem vindos.
 
 ## Etapas
@@ -68,10 +69,13 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 - Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
 - uso de libs como bootstrap, material
 - Hooks é bem-vindo.
-- Animações, coidado com UX e Sobras. 
+- Animações, Sobras, Menus, componentes de Libs de UX implementados. 
 - Projeto feito usando TypeScript
-- **Bônus** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
+- **Bônus 1** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
 - **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na url o parametro da busca realizado, caso recaregar a pagina com a url, usar o parametro para preencher os itens da pagina.
+- **Bônus 3** Listagem de favoritos, com algum mecanismo de cache.
+- **Bônus 4** Outros filtros além dos sugeridos na descrição inicial
+- **Bônus 5** Github action como serviço de publicação do projeto pronto.
 
 **Observação:** Nenhum dos itens acima é obrigatório.
 
