@@ -1,8 +1,4 @@
-# frontend-test
-
-Desafio para Frontend Developer na DoroTech
-
-# Frontend na DoroTech
+# Desafio para Frontend Developer na DoroTech
 
 Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios.
 
@@ -20,9 +16,9 @@ Os requisitos da aplicação:
 
 - Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens incialmente, contendo **foto**, **nome** e **status**, com o tamanho da paginação sendo dinamica, podendo ser selecionando, 5, 10 ou 20 itens por vez.
 - Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas. (seja criativo a api contem diversas informaçoes)
-- Como usuário, desejo filtrar os personagens por **nome**, **gênero**, **espécie** e **status**.
+- Como usuário, desejo filtrar os personagens por **nome**, **gênero**, **espécie** e **status**, alguns filtros são enums, seja criativo.
 - como usuário, desejo combinar varios filtros.
-- Seja criativo no layout: filtros, icones e menus são bem vindos.
+- como usaário, gostaria de 
 
 ## Etapas
 
@@ -58,6 +54,7 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 - Projeto feito upload: [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart?hl=pt-br) ou [GitHub Pages](https://pages.github.com/).
 - Caso você nao consiga completar tudo e tenha algum receio, não se preocupe, iremos avaliar o que foi entregue, mesmo com pendências.
 - O diferencial para este desafio: layout, ux e ui, bem como implementação de boas práticas de segurança, performance e/ou estrutura.
+- [JSDOC](https://jsdoc.app/) nos principais itens do projeto. 
 
 
 ## Dicas e Informações Valiosas
@@ -67,7 +64,7 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 - Convenção de nome em classes, objetos, variáveis, métodos e etc.
 - layout encantador
 - Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
-- uso de libs como bootstrap, material
+- uso de libs como bootstrap, material, Evergreen e etc...
 - Hooks é bem-vindo.
 - Animações, Sobras, Menus, componentes de Libs de UX implementados. 
 - Projeto feito usando TypeScript
@@ -84,7 +81,7 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 - Varias bibliotecas instaladas sem uso.
 - Falta de organização de código.
 - Falta de documentação.
-- Nome de variáveis sem sentido ou padrão de nomes.
+- Nome de variáveis sem sentido ou sem padrão de nomes.
 - Histórico de commits desorganizado e despadronizado.
 
 ## Boa Sorte!! 
