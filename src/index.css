@@ -7,6 +7,13 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(250, 253, 124);
+  background-repeat: cover;
+  background: linear-gradient(
+    30deg,
+    rgba(250, 253, 124, 1) -50%,
+    rgba(183, 228, 249, 1) 150%
+  );
 }
 
 /* Tailwind Css directives */
