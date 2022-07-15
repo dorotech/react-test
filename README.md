@@ -10,13 +10,15 @@ Projeto de [rolodex](https://en.wikipedia.org/wiki/Rolodex) usando a [API do Ric
 
 - [React](https://reactjs.org/)
 
-- Typescript
+- [Typescript](https://www.typescriptlang.org/)
 
 - [TailwindCSS](https://tailwindcss.com/)
 
 - [GH-pages](https://pages.github.com/)
 
 - [Poppins Font](https://fonts.google.com/specimen/Poppins#standard-styles)
+
+- [Font Awesome](https://fontawesome.com/)
 
 ## Getting Started // Iniciando sua aplicação
 

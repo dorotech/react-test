@@ -5,12 +5,13 @@ interface CardProps {
   character: Character;
 }
 
+// TODO: Fix text alignment of status, species, and origin
 const Card = (props: CardProps) => {
   const { name, status, species, gender, image, type, origin, location } =
     props.character;
   return (
     <div className="flex bg-yellow-50 bg-opacity-50 shadow-md rounded-3xl mx-3 my-3">
-      <div className="flex flex-col items-between justify-between inside-card-container m-3">
+      <div className="flex flex-col items-between justify-between m-3">
         <img className="character-image rounded-3xl" src={image} alt="Rick" />
         <div className="shadow-on-name">
           <div className="flex character-name relative rounded-r-full -left-5 -top-5 bg-sky-50">
