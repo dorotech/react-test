@@ -11,7 +11,6 @@ const CardArea = () => {
     });
   }, []);
 
-  console.log(characters);
   return (
     <div className="flex items-center justify-center flex-wrap text-center w-12/12">
       {characters.map((character) => (
