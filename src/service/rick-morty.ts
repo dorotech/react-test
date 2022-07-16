@@ -7,7 +7,7 @@ export const rmService = {
     name?: string,
     status?: string,
     species?: string,
-    type?: string,
+    // type?: string,
     gender?: string
   ) => {
     return axios.get(`${rmService.baseUrl}`, {
@@ -17,7 +17,7 @@ export const rmService = {
         name: name,
         status: status,
         species: species,
-        type: type,
+        // type: type,
         gender: gender,
       },
     });

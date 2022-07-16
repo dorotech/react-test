@@ -5,7 +5,6 @@ import "./pagination.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
-//make interface for pagination
 interface PaginationProps {
   itemsCount: number;
   pageSize: number;
@@ -26,7 +25,7 @@ const Pagination = ({
 
   useEffect(() => {
     setPageInfo(paginate(itemsCount, currentPage, pageSize));
-  }, [currentPage]);
+  }, [currentPage, itemsCount]);
 
   return (
     <div className="flex items-center">
