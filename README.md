@@ -20,6 +20,8 @@ Projeto de [rolodex](https://en.wikipedia.org/wiki/Rolodex) usando a [API do Ric
 
 - [Font Awesome](https://fontawesome.com/)
 
+- [Jason Watmore's Blog - Pure Pagination Logic](https://jasonwatmore.com/post/2018/08/07/javascript-pure-pagination-logic-in-vanilla-js-typescript)
+
 ## Getting Started // Iniciando sua aplicação
 
 <!-- TODO: Insert how to do it -->

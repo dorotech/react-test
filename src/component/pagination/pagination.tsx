@@ -1,26 +1,75 @@
-const Pagination = ({ pages: number = 169 }) => {
+import { useEffect, useState } from "react";
+import { PaginateInfo } from "../../models/paginateInfo";
+import paginate from "../../utils/paginate";
+import "./pagination.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+
+//make interface for pagination
+interface PaginationProps {
+  itemsCount: number;
+  pageSize: number;
+  currentPage: number;
+  onPageChange?: (page: number) => void;
+}
+
+const Pagination = ({
+  itemsCount,
+  pageSize,
+  currentPage,
+  onPageChange,
+}: PaginationProps) => {
+  const [pageInfo, setPageInfo] = useState<PaginateInfo>();
+  useEffect(() => {
+    setPageInfo(paginate(itemsCount, currentPage, pageSize));
+    console.log(pageInfo);
+  }, []);
+
+  useEffect(() => {
+    console.log(pageInfo?.totalPages);
+    setPageInfo(paginate(itemsCount, currentPage, pageSize));
+    console.log(pageInfo);
+  }, [currentPage]);
+
   return (
     <div className="flex items-center">
-      <button className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 my-5 p-3">
-        First
+      <button
+        type="button"
+        className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 p-3"
+        onClick={() => {
+          if (onPageChange) {
+            onPageChange(1);
+          }
+        }}
+      >
+        <FontAwesomeIcon icon={faAnglesLeft} size="lg" />
       </button>
-      <button className="flex items-center justify-center rounded-l-full bg-yellow-50 bg-opacity-50 w-10 h-10 my-5 p-3">
-        1
-      </button>
-      <button className="flex items-center justify-center bg-yellow-50 w-10 h-10 my-5 p-3">
-        2
-      </button>
-      <button className="flex items-center justify-center bg-yellow-50 bg-opacity-50 w-10 h-10 my-5 p-3">
-        3
-      </button>
-      <button className="flex items-center justify-center bg-yellow-50 bg-opacity-50 w-10 h-10 my-5 p-3">
-        ...
-      </button>
-      <button className="flex items-center justify-center rounded-r-full bg-yellow-50 bg-opacity-50 w-10 h-10 my-5 p-3">
-        169
-      </button>
-      <button className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 my-5 p-3">
-        last
+      {pageInfo?.pages.map((page: number) => (
+        <button
+          key={page}
+          type="button"
+          className={`page-item flex items-center justify-center bg-yellow-50 w-10 h-10 p-3 ${
+            page === currentPage ? "active-item" : ""
+          }`}
+          onClick={() => {
+            if (onPageChange) {
+              onPageChange(page);
+            }
+          }}
+        >
+          {page}
+        </button>
+      ))}
+      <button
+        type="button"
+        className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 my-5 p-3"
+        onClick={() => {
+          if (onPageChange) {
+            onPageChange(pageInfo!.totalPages);
+          }
+        }}
+      >
+        <FontAwesomeIcon icon={faAnglesRight} size="lg" />
       </button>
     </div>
   );
