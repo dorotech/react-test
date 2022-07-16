@@ -22,13 +22,10 @@ const Pagination = ({
   const [pageInfo, setPageInfo] = useState<PaginateInfo>();
   useEffect(() => {
     setPageInfo(paginate(itemsCount, currentPage, pageSize));
-    console.log(pageInfo);
   }, []);
 
   useEffect(() => {
-    console.log(pageInfo?.totalPages);
     setPageInfo(paginate(itemsCount, currentPage, pageSize));
-    console.log(pageInfo);
   }, [currentPage]);
 
   return (
