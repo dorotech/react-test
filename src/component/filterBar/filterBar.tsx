@@ -51,7 +51,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
       className="flex flex-wrap items-center justify-center mt-4 mb-2 py-4 text-center w-full rounded-lg bg-yellow-50 bg-opacity-50 dark:bg-opacity-10"
       onSubmit={(e) => handleSubmit(e)}
     >
-      <div className="name-filter my-2 flex items-center mx-2">
+      <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 leading-10">
           <label
             htmlFor="Name"
@@ -70,7 +70,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
           placeholder="Rick Sanchez"
         ></input>
       </div>
-      <div className="status-filter my-2 flex items-center mx-2">
+      <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
           <label
             htmlFor="Status"
@@ -92,7 +92,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
           <option value="unknown">Unknown</option>
         </select>
       </div>
-      <div className="species-filter my-2 flex items-center mx-2">
+      <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
           <label
             htmlFor="Species"
@@ -111,7 +111,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
           placeholder="Human"
         ></input>
       </div>
-      <div className="gender-filter my-2 flex items-center mx-2">
+      <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
           <label
             htmlFor="Gender"
@@ -135,7 +135,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <button
-        className="text-md mx-2 px-4 py-2 m-1 sm:w-auto w-11/12 rounded-md font-semibold bg-yellow-100 dark:bg-gray-900 dark:text-yellow-100 text-gray-700 shadow-md hover:text-gray-900 hover:bg-yellow-50 active:bg-opacity-50 dark:active:bg-opacity-50 transition duration-150"
+        className="btn text-md mx-2 px-4 py-2 sm:w-auto w-11/12"
         type="submit"
       >
         Search

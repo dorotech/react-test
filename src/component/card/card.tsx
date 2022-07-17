@@ -56,7 +56,7 @@ const Card = (props: CardProps) => {
             </div>
           </div>
           <button
-            className="text-4xl mx-2 rounded-md font-semibold bg-yellow-100 text-gray-700 dark:bg-gray-900 dark:text-yellow-100 shadow-md w-3/12 h-full hover:text-gray-900 hover:bg-yellow-50 transition ease-in-out duration-150"
+            className="btn text-4xl mx-2 0 w-3/12 h-full"
             type="button"
             onClick={() => {
               setIsExtraInfoOpen(!isExtraInfoOpen);

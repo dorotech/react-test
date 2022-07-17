@@ -27,7 +27,7 @@ const MoreStats = (props: MoreStatsProps) => {
         </strong>
       </div>
       <button
-        className="my-1 py-2 rounded-md font-semibold bg-yellow-100 text-gray-700 dark:bg-gray-900 dark:text-yellow-100 shadow-md w-full h-full hover:text-gray-900 hover:bg-yellow-50 transition ease-in-out duration-150"
+        className="btn my-1 py-2 w-full h-full"
         type="button"
         onClick={() => {
           window.open(image, "_blank", "noopener,noreferrer");

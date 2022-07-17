@@ -44,7 +44,7 @@ const Pagination = ({
         <button
           key={page}
           type="button"
-          className={`page-item flex items-center justify-center bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 w-10 h-10 p-3 ${
+          className={`page-item flex items-center justify-center bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 w-10 h-10 p-3 transition ${
             page === currentPage ? "active-item" : ""
           }`}
           onClick={() => {
