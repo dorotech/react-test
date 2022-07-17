@@ -143,13 +143,13 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <button
-        className="btn text-md mx-2 px-4 py-2 mt-2 sm:w-auto w-11/12"
+        className="btn text-md mx-1 px-4 py-2 my-2 sm:w-auto w-11/12"
         type="submit"
       >
         Search
       </button>
       <button
-        className="btn text-md mx-2 px-4 py-2 mt-2 sm:w-auto w-11/12"
+        className="btn text-md mx-1 px-4 py-2 my-2 sm:w-auto w-11/12"
         type="button"
         onClick={(e) => handleClear(e)}
       >

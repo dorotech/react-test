@@ -6,7 +6,7 @@ const ThemePicker = () => {
   const [colorTheme, setTheme] = useDarkMode("dark");
   return (
     <div
-      className="btn p-2 my-2 cursor-pointer"
+      className="btn mx-1 p-2 my-1 cursor-pointer"
       onClick={() => setTheme(colorTheme)}
     >
       {colorTheme === "dark" ? (
