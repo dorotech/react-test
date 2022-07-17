@@ -12,7 +12,7 @@ export const ThemeDark = {
 
     shape: '#ffffff',
     title: '#363f5f',
-    text: '#969cb2',
+    text: '#ffffff',
     background: '#333333'
   }
 };
