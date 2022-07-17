@@ -16,7 +16,7 @@ const useDarkMode = (
     bgClass === "dark-bg"
       ? (root.classList.remove("light-bg"), root.classList.add("dark-bg"))
       : (root.classList.remove("dark-bg"), root.classList.add("light-bg"));
-  }, [theme, colorTheme]);
+  }, [theme, colorTheme, bgClass]);
 
   return [colorTheme, setTheme];
 };

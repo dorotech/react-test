@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import ThemePicker from "../themePicker/themePicker";
 interface FilterBarProps {
   handleFilterSearch?: (
@@ -16,12 +17,34 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   const [filterSpecies, setFilterSpecies] = useState("");
   // const [filterType, setFilterType] = useState("");
   const [filterGender, setFilterGender] = useState("");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (handleFilterSearch) {
       handleFilterSearch(filterName, filterStatus, filterSpecies, filterGender);
+      window.history.replaceState(
+        null,
+        "",
+        `?name=${filterName}&status=${filterStatus}&species=${filterSpecies}&gender=${filterGender}`
+      );
     }
   };
+
+  useEffect(() => {
+    setFilterName(searchParams.get("name") || "");
+    if (handleFilterSearch) {
+      setTimeout(() => {
+        handleFilterSearch(
+          searchParams.get("name") || "",
+          searchParams.get("status") || "",
+          searchParams.get("species") || "",
+          searchParams.get("gender") || ""
+        );
+      }, 200);
+    }
+  }, [searchParams]);
 
   return (
     <form
@@ -112,7 +135,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <button
-        className="text-md mx-2 px-4 py-2 m-1 sm:w-auto w-11/12 rounded-md font-semibold bg-yellow-100 dark:bg-gray-900 dark:text-yellow-100 text-gray-700 shadow-md hover:text-gray-900 hover:bg-yellow-50 transition ease-in-out duration-150"
+        className="text-md mx-2 px-4 py-2 m-1 sm:w-auto w-11/12 rounded-md font-semibold bg-yellow-100 dark:bg-gray-900 dark:text-yellow-100 text-gray-700 shadow-md hover:text-gray-900 hover:bg-yellow-50 active:bg-opacity-50 dark:active:bg-opacity-50 transition duration-150"
         type="submit"
       >
         Search

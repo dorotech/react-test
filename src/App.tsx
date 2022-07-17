@@ -1,6 +1,5 @@
 import Banner from "./component/banner/banner";
 import CardArea from "./component/cardArea/cardArea";
-import ThemePicker from "./component/themePicker/themePicker";
 
 const App = () => {
   return (

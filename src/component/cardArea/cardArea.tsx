@@ -31,13 +31,7 @@ const CardArea = () => {
       });
   }, [currentPage]);
 
-  // const [pageSize, setPageSize] = useState(20);
-  useEffect(() => {
-    rmService.getCharacters().then((res) => {
-      setCharacters(res.data.results);
-      setItemsCount(res.data.info.count);
-    });
-  }, []);
+  // const [pageSize, setPageSize] = useState(20);;
 
   const onPageChange = (page: number) => {
     setCurrentPage(page);

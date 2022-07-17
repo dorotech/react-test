@@ -1,4 +1,3 @@
-import ThemePicker from "../themePicker/themePicker";
 // TODO: Adjust height of banner
 
 const Banner = () => {
