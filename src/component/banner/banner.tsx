@@ -1,5 +1,3 @@
-// TODO: Adjust height of banner
-
 const Banner = () => {
   return (
     <>

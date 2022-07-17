@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ThemePicker from "../themePicker/themePicker";
 interface FilterBarProps {
@@ -29,6 +29,14 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         "",
         `?name=${filterName}&status=${filterStatus}&species=${filterSpecies}&gender=${filterGender}`
       );
+    }
+  };
+
+  const handleClear = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    if (handleFilterSearch) {
+      handleFilterSearch("", "", "", "");
+      window.history.replaceState(null, "", "./");
     }
   };
 
@@ -135,10 +143,17 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <button
-        className="btn text-md mx-2 px-4 py-2 sm:w-auto w-11/12"
+        className="btn text-md mx-2 px-4 py-2 mt-2 sm:w-auto w-11/12"
         type="submit"
       >
         Search
+      </button>
+      <button
+        className="btn text-md mx-2 px-4 py-2 mt-2 sm:w-auto w-11/12"
+        type="button"
+        onClick={(e) => handleClear(e)}
+      >
+        Clear Filter
       </button>
       <ThemePicker />
     </form>

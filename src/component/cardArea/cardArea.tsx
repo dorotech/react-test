@@ -30,9 +30,6 @@ const CardArea = () => {
         setItemsCount(res.data.info.count);
       });
   }, [currentPage]);
-
-  // const [pageSize, setPageSize] = useState(20);;
-
   const onPageChange = (page: number) => {
     setCurrentPage(page);
   };
