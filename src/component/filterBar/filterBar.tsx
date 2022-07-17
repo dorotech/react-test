@@ -16,7 +16,6 @@ interface FilterBarProps {
  * @param param0 Needed to pass the handleFilterSearch function.
  * @returns The filter bar component which contains the search bar and the theme picker.
  */
-
 const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   // Filter consts
   const [filterName, setFilterName] = useState('');
@@ -50,6 +49,10 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   const handleClear = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (handleFilterSearch) {
+      setFilterName('');
+      setFilterStatus('');
+      setFilterSpecies('');
+      setFilterGender('');
       handleFilterSearch('', '', '', '');
       window.history.replaceState(null, '', './');
     }
