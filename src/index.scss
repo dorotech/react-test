@@ -58,6 +58,16 @@ body {
     lg:w-auto;
 }
 
+.info-bold {
+  @apply text-gray-700
+  dark:text-sky-50
+    text-right
+    leading-5
+    overflow-hidden
+    whitespace-nowrap  
+    text-ellipsis;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
