@@ -10,7 +10,7 @@ import {
 export function useHome() {
   const [characters, setCharacters] = useState<I_PROPS_CHARACTER[]>([]);
   const [limitItensInPage, setLimitItensInPage] =
-    useState<I_STATE_LIMIT_PAGE>(5);
+    useState<I_STATE_LIMIT_PAGE>(20);
 
   async function getCharactersAndSetInStage() {
     const { data } = await API.get<

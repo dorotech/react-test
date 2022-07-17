@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  filter: blur(4px);
   min-height: 100vh;
   header {
     width: 100vw;
@@ -81,6 +82,7 @@ export const Container = styled.div`
     /* justify-content: center; */
 
     .Main-card {
+      cursor: pointer;
       width: 30.5vw;
       padding: 2vh 1.4vw;
       display: flex;
@@ -108,6 +110,57 @@ export const Container = styled.div`
         span {
           display: block;
           margin-top: 4px;
+        }
+      }
+    }
+  }
+`;
+
+export const ModalDatails = styled.div`
+  .Modal-background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: ${(props) => props.theme.colors.background};
+    opacity: 0.1;
+  }
+
+  .Modal-content {
+    width: 60vw;
+    height: 45vh;
+    background: ${(props) => props.theme.colors.background};
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    margin: 27.5vh 20vw;
+    border-radius: 6px;
+    padding: 20px;
+    border: 1px solid #555;
+    box-shadow: 2px 0px 10px #111;
+
+    header {
+      svg {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: -30px;
+        top: -20px;
+      }
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 6px;
+      }
+
+      .Modal-Description-Infos {
+        flex: 1;
+        padding: 0px 10px;
+        strong {
+          font-size: 1.8rem;
         }
       }
     }
