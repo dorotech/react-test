@@ -13,18 +13,16 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => {
-  const {
-    name,
-    status,
-    species,
-    gender,
-    image,
-  } = props.character;
+  const { name, status, species, gender, image } = props.character;
   const [isExtraInfoOpen, setIsExtraInfoOpen] = useState(false);
   return (
     <div className="flex w-80 bg-yellow-50 bg-opacity-50 dark:bg-opacity-10 shadow-md rounded-3xl mx-3 my-3">
       <div className="flex flex-col items-between justify-between m-3">
-        <img className="character-image rounded-3xl" src={image} alt="Rick" />
+        <img
+          className="character-image rounded-3xl"
+          src={image}
+          alt="Character Image"
+        />
         <div className="shadow-on-name">
           <div className="flex character-name relative rounded-r-full -left-5 -top-5 bg-sky-50 dark:bg-gray-900 dark:text-yellow-100">
             <span className="mx-2 leading-8 font-semibold text-gray-700 dark:bg-gray-900 dark:text-yellow-100">
