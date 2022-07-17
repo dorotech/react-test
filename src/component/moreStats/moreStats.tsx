@@ -11,6 +11,7 @@ const MoreStats = (props: MoreStatsProps) => {
     type,
     origin,
     location,
+    episode,
   } = props.character;
   return (
     <div className="flex flex-col items-start character-extra-info shadow-md bg-opacity-10 rounded-md bg-black w-[296px] px-2 py-1 mt-3">
@@ -33,6 +34,12 @@ const MoreStats = (props: MoreStatsProps) => {
           Location
         </span>
         <strong className="info-bold w-9/12">{location.name}</strong>
+      </div>
+      <div className="flex justify-between w-full">
+        <span className="text-sm text-gray-700 dark:text-sky-50 w-3/12 text-left">
+          Episodes
+        </span>
+        <strong className="info-bold w-9/12">{episode.length}</strong>
       </div>
       <button
         className="btn my-1 py-2 w-full h-full"
