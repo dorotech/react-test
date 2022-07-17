@@ -5,6 +5,11 @@ interface MoreStatsProps {
   character: Character;
 }
 
+/**
+ * @brief Component for the more stats used in the card.
+ * @param props Character data
+ * @returns Extra data that coudln't be seen on card.
+ */
 const MoreStats = (props: MoreStatsProps) => {
   const {
     image,

@@ -11,9 +11,19 @@ import MoreStats from '../moreStats/moreStats';
 interface CardProps {
   character: Character;
 }
-
+/**
+ * @brief Card component for each character. It also uses the MoreStats component.
+ * @param props They are the character data, including name, image, status, etc.
+ * @returns A styled card component with the character data.
+ */
 const Card = (props: CardProps) => {
-  const { name, status, species, gender, image } = props.character;
+  const {
+    name,
+    status,
+    species,
+    gender,
+    image,
+  } = props.character;
   const [isExtraInfoOpen, setIsExtraInfoOpen] = useState(false);
   return (
     <div className="flex w-80 bg-yellow-50 bg-opacity-50 dark:bg-opacity-10 shadow-md rounded-3xl mx-3 my-3">
@@ -21,7 +31,7 @@ const Card = (props: CardProps) => {
         <img
           className="character-image rounded-3xl"
           src={image}
-          alt="Character Image"
+          alt="Character"
         />
         <div className="shadow-on-name">
           <div className="flex character-name relative rounded-r-full -left-5 -top-5 bg-sky-50 dark:bg-gray-900 dark:text-yellow-100">

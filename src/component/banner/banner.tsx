@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * @brief Component for the banner
+ * @returns the top banner component which
+ * changes the background based on the theme.
+ */
 const Banner = () => (
   <>
     <img

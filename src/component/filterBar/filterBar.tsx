@@ -11,6 +11,12 @@ interface FilterBarProps {
   ) => void;
 }
 
+/**
+ * @brief Component for the filter bar with the search and the theme picker.
+ * @param param0 Needed to pass the handleFilterSearch function.
+ * @returns The filter bar component which contains the search bar and the theme picker.
+ */
+
 const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   // Filter consts
   const [filterName, setFilterName] = useState('');
@@ -21,6 +27,10 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
 
   const [searchParams] = useSearchParams();
 
+  /**
+   * @brief Function to handle when user clicks
+   * @param e The event which is triggered when the user clicks the search button.
+   */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (handleFilterSearch) {
@@ -33,6 +43,10 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
     }
   };
 
+  /**
+   * @brief Function to handle the clear. It also cleans the URL on the browser.
+   * @param e The event which is triggered whe nthe user clicks the clear button.
+   */
   const handleClear = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (handleFilterSearch) {

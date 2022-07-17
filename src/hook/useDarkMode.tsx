@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+/**
+ * @brief Component for the Theme Picker which allows the user to change the theme.
+ * Dark or light only.
+ * @param baseTheme The base theme to start if it's the first time accessing.
+ * @returns picked theme and a function to change the theme.
+ */
 const useDarkMode = (
   baseTheme: string = 'dark',
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
