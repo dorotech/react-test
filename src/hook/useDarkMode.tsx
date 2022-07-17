@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useDarkMode = (
   baseTheme: string = "dark"
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
-  const [theme, setTheme] = useState(baseTheme);
+  const [theme, setTheme] = useState(localStorage.theme || baseTheme);
   const colorTheme = theme === "dark" ? "light" : "dark";
   const bgClass = theme === "dark" ? "dark-bg" : "light-bg";
 
@@ -16,6 +16,8 @@ const useDarkMode = (
     bgClass === "dark-bg"
       ? (root.classList.remove("light-bg"), root.classList.add("dark-bg"))
       : (root.classList.remove("dark-bg"), root.classList.add("light-bg"));
+
+    localStorage.setItem("theme", theme);
   }, [theme, colorTheme, bgClass]);
 
   return [colorTheme, setTheme];
