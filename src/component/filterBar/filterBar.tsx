@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ThemePicker from "../themePicker/themePicker";
 interface FilterBarProps {
   handleFilterSearch?: (
     filterName: string,
@@ -24,12 +25,15 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
 
   return (
     <form
-      className="flex flex-wrap items-center justify-start mt-4 mb-2 py-4 text-center w-full rounded-lg bg-yellow-50 bg-opacity-50"
+      className="flex flex-wrap items-center justify-center mt-4 mb-2 py-4 text-center w-full rounded-lg bg-yellow-50 bg-opacity-50 dark:bg-opacity-10"
       onSubmit={(e) => handleSubmit(e)}
     >
       <div className="name-filter my-2 flex items-center mx-2">
-        <div className="flex relative rounded-l-full bg-yellow-50 leading-10">
-          <label htmlFor="Name" className="mx-2 font-semibold text-gray-700">
+        <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 leading-10">
+          <label
+            htmlFor="Name"
+            className="mx-2 font-semibold text-gray-700 dark:text-yellow-100"
+          >
             Name
           </label>
         </div>
@@ -44,8 +48,11 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         ></input>
       </div>
       <div className="status-filter my-2 flex items-center mx-2">
-        <div className="flex relative rounded-l-full bg-yellow-50 leading-10">
-          <label htmlFor="Status" className="mx-2 font-semibold text-gray-700">
+        <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
+          <label
+            htmlFor="Status"
+            className="mx-2 font-semibold text-gray-700 dark:text-yellow-100"
+          >
             Status
           </label>
         </div>
@@ -63,8 +70,11 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <div className="species-filter my-2 flex items-center mx-2">
-        <div className="flex relative rounded-l-full bg-yellow-50 leading-10">
-          <label htmlFor="Species" className="mx-2 font-semibold text-gray-700">
+        <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
+          <label
+            htmlFor="Species"
+            className="mx-2 font-semibold text-gray-700 dark:text-yellow-100"
+          >
             Species
           </label>
         </div>
@@ -79,8 +89,11 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         ></input>
       </div>
       <div className="gender-filter my-2 flex items-center mx-2">
-        <div className="flex relative rounded-l-full bg-yellow-50 leading-10">
-          <label htmlFor="Gender" className="mx-2 font-semibold text-gray-700">
+        <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
+          <label
+            htmlFor="Gender"
+            className="mx-2 font-semibold text-gray-700 dark:text-yellow-100"
+          >
             Gender
           </label>
         </div>
@@ -99,11 +112,12 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
         </select>
       </div>
       <button
-        className="text-md mx-2 px-4 py-2 rounded-md font-semibold bg-yellow-100 text-gray-700 shadow-md hover:text-gray-900 hover:bg-yellow-50 transition ease-in-out duration-150"
+        className="text-md mx-2 px-4 py-2 m-1 sm:w-auto w-11/12 rounded-md font-semibold bg-yellow-100 dark:bg-gray-900 dark:text-yellow-100 text-gray-700 shadow-md hover:text-gray-900 hover:bg-yellow-50 transition ease-in-out duration-150"
         type="submit"
       >
         Search
       </button>
+      <ThemePicker />
     </form>
   );
 };

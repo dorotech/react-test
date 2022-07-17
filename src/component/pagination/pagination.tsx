@@ -31,7 +31,7 @@ const Pagination = ({
     <div className="flex items-center">
       <button
         type="button"
-        className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 p-3"
+        className="flex items-center justify-center rounded-full bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 w-10 h-10 mx-1 p-3"
         onClick={() => {
           if (onPageChange) {
             onPageChange(1);
@@ -44,7 +44,7 @@ const Pagination = ({
         <button
           key={page}
           type="button"
-          className={`page-item flex items-center justify-center bg-yellow-50 w-10 h-10 p-3 ${
+          className={`page-item flex items-center justify-center bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 w-10 h-10 p-3 ${
             page === currentPage ? "active-item" : ""
           }`}
           onClick={() => {
@@ -58,7 +58,7 @@ const Pagination = ({
       ))}
       <button
         type="button"
-        className="flex items-center justify-center rounded-full bg-yellow-50 w-10 h-10 mx-1 my-5 p-3"
+        className="flex items-center justify-center rounded-full bg-yellow-50 dark:bg-gray-900 dark:text-yellow-100 w-10 h-10 mx-1 my-5 p-3"
         onClick={() => {
           if (onPageChange) {
             onPageChange(pageInfo!.totalPages);

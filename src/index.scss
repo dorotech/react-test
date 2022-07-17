@@ -7,12 +7,23 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.light-bg {
   background: rgb(250, 253, 124);
-  background-repeat: cover;
   background: linear-gradient(
     30deg,
     rgba(250, 253, 124, 1) -50%,
-    rgba(183, 228, 249, 1) 150%
+    rgb(183, 228, 249, 1) 150%
+  );
+}
+
+.dark-bg {
+  background: rgba(49, 50, 1, 1);
+  background: linear-gradient(
+    30deg,
+    rgba(49, 50, 1, 1) -50%,
+    rgb(6, 50, 71, 1) 150%
   );
 }
 
