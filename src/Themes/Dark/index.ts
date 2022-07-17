@@ -13,6 +13,6 @@ export const ThemeDark = {
     shape: '#ffffff',
     title: '#363f5f',
     text: '#969cb2',
-    background: '#222222'
+    background: '#333333'
   }
 };
