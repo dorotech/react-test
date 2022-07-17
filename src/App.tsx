@@ -1,4 +1,3 @@
-import "./App.scss";
 import Banner from "./component/banner/banner";
 import CardArea from "./component/cardArea/cardArea";
 

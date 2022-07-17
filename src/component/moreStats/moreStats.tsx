@@ -3,7 +3,7 @@ import { Character } from "../../models/responses/Character";
 interface MoreStatsProps {
   character: Character;
 }
-
+// TODO: Fiz big names to fit in the card like in card.tsx TODO
 const MoreStats = (props: MoreStatsProps) => {
   const { image, type, origin, location } = props.character;
   return (

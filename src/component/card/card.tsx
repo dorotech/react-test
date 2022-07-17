@@ -1,7 +1,7 @@
 import { Character } from "../../models/responses/Character";
 import "./card.scss";
 import {
-  faArrowDownWideShort,
+  faArrowDownShortWide,
   faArrowUpShortWide,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,8 +15,7 @@ interface CardProps {
 // TODO: Fix text alignment of status, species, and origin
 // TODO: Fix name breaking layout when too long
 const Card = (props: CardProps) => {
-  const { name, status, species, gender, image, type, origin, location } =
-    props.character;
+  const { name, status, species, gender, image } = props.character;
   const [isExtraInfoOpen, setIsExtraInfoOpen] = useState(false);
   return (
     <div className="flex bg-yellow-50 bg-opacity-50 shadow-md rounded-3xl mx-3 my-3">
@@ -54,7 +53,7 @@ const Card = (props: CardProps) => {
             {isExtraInfoOpen ? (
               <FontAwesomeIcon icon={faArrowUpShortWide} />
             ) : (
-              <FontAwesomeIcon icon={faArrowDownWideShort} />
+              <FontAwesomeIcon icon={faArrowDownShortWide} />
             )}
           </button>
         </div>
