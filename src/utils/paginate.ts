@@ -1,11 +1,21 @@
+/**
+ * @brief for more info access
+ * https://jasonwatmore.com/post/2018/08/07/javascript-pure-pagination-logic-in-vanilla-js-typescript
+ * @param totalItems Amount of items in the list
+ * @param currentPage Current page
+ * @param pageSize How many items per page
+ * @param maxPages Max number of pages to display
+ * @returns totalItems, currentPage, pageSize, maxPages, startPage, endPage,
+ * startIndex, endIndex, pages(array of page numbers)
+ */
 function paginate(
   totalItems: number = 826,
   currentPage: number = 1,
   pageSize: number = 20,
-  maxPages: number = 5
+  maxPages: number = 5,
 ) {
   // calculate total pages
-  let totalPages = Math.ceil(totalItems / pageSize);
+  const totalPages = Math.ceil(totalItems / pageSize);
 
   // ensure current page isn't out of range
   if (currentPage < 1) {
@@ -14,15 +24,16 @@ function paginate(
     currentPage = totalPages;
   }
 
-  let startPage: number, endPage: number;
+  let startPage: number;
+  let endPage: number;
   if (totalPages <= maxPages) {
     // total pages less than max so show all pages
     startPage = 1;
     endPage = totalPages;
   } else {
     // total pages more than max so calculate start and end pages
-    let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
-    let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+    const maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+    const maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
     if (currentPage <= maxPagesBeforeCurrentPage) {
       // current page near the start
       startPage = 1;
@@ -39,25 +50,25 @@ function paginate(
   }
 
   // calculate start and end item indexes
-  let startIndex = (currentPage - 1) * pageSize;
-  let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
   // create an array of pages to ng-repeat in the pager control
-  let pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
-    (i) => startPage + i
+  const pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
+    (i) => startPage + i,
   );
 
   // return object with all pager properties required by the view
   return {
-    totalItems: totalItems,
-    currentPage: currentPage,
-    pageSize: pageSize,
-    totalPages: totalPages,
-    startPage: startPage,
-    endPage: endPage,
-    startIndex: startIndex,
-    endIndex: endIndex,
-    pages: pages,
+    totalItems,
+    currentPage,
+    pageSize,
+    totalPages,
+    startPage,
+    endPage,
+    startIndex,
+    endIndex,
+    pages,
   };
 }
 

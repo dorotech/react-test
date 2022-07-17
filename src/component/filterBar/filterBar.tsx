@@ -68,7 +68,6 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
       }, 200);
     }
   }, [searchParams]);
-
   return (
     <form
       className="flex flex-wrap items-center justify-center mt-4 mb-2 py-4 text-center w-full rounded-lg bg-yellow-50 bg-opacity-50 dark:bg-opacity-10"

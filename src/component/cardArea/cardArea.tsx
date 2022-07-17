@@ -52,7 +52,12 @@ const CardArea = () => {
    * @brief Function to handle when user clicks
    * to search. Set the filter values and GET the new data.
    */
-  const handleFilterSearch = () => {
+  const handleFilterSearch = (
+    filterName: string,
+    filterStatus: string,
+    filterSpecies: string,
+    filterGender: string
+  ) => {
     setFilterName(filterName);
     setFilterStatus(filterStatus);
     setFilterSpecies(filterSpecies);
