@@ -1,19 +1,25 @@
-import { Character } from "../../models/responses/Character";
-import "./card.scss";
+import React, { useState } from 'react';
+import './card.scss';
 import {
   faArrowDownShortWide,
   faArrowUpShortWide,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MoreStats from "../moreStats/moreStats";
-import { useState } from "react";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Character } from '../../models/responses/Character';
+import MoreStats from '../moreStats/moreStats';
 
 interface CardProps {
   character: Character;
 }
 
 const Card = (props: CardProps) => {
-  const { name, status, species, gender, image } = props.character;
+  const {
+    name,
+    status,
+    species,
+    gender,
+    image,
+  } = props.character;
   const [isExtraInfoOpen, setIsExtraInfoOpen] = useState(false);
   return (
     <div className="flex w-80 bg-yellow-50 bg-opacity-50 dark:bg-opacity-10 shadow-md rounded-3xl mx-3 my-3">
@@ -31,19 +37,19 @@ const Card = (props: CardProps) => {
             <div className="character-status flex justify-between w-full">
               <span className="text-sm text-gray-700 dark:text-sky-50 w-3/12 text-left">
                 Status
-              </span>{" "}
+              </span>
               <strong className="info-bold w-9/12">{status}</strong>
             </div>
             <div className="character-species flex justify-between w-full">
               <span className="text-sm text-gray-700 dark:text-sky-50 w-3/12 text-left">
                 Species
-              </span>{" "}
+              </span>
               <strong className="info-bold w-9/12">{species}</strong>
             </div>
             <div className="character-gender flex justify-between w-full">
               <span className="text-sm text-gray-700 dark:text-sky-50 w-3/12 text-left">
                 Gender
-              </span>{" "}
+              </span>
               <strong className="info-bold w-9/12">{gender}</strong>
             </div>
           </div>

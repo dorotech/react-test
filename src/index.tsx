@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
-import App from "./App";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from './App';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   // <React.StrictMode>
@@ -13,6 +13,6 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
     </Routes>
-  </BrowserRouter>
+  </BrowserRouter>,
   // </React.StrictMode>
 );

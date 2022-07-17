@@ -1,23 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useDarkMode = (
-  baseTheme: string = "dark"
+  baseTheme: string = 'dark',
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
   const [theme, setTheme] = useState(localStorage.theme || baseTheme);
-  const colorTheme = theme === "dark" ? "light" : "dark";
-  const bgClass = theme === "dark" ? "dark-bg" : "light-bg";
-
+  const colorTheme = theme === 'dark' ? 'light' : 'dark';
+  const bgClass = theme === 'dark' ? 'dark-bg' : 'light-bg';
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove(colorTheme);
     root.classList.add(theme);
-    bgClass === "dark-bg"
-      ? (root.classList.remove("light-bg"), root.classList.add("dark-bg"))
-      : (root.classList.remove("dark-bg"), root.classList.add("light-bg"));
+    bgClass === 'dark-bg'
+      ? (root.classList.remove('light-bg'), root.classList.add('dark-bg'))
+      : (root.classList.remove('dark-bg'), root.classList.add('light-bg'));
 
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
   }, [theme, colorTheme, bgClass]);
 
   return [colorTheme, setTheme];

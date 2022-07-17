@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { Character } from "../../models/responses/Character";
-import { rmService } from "../../service/rick-morty";
-import Card from "../card/card";
-import FilterBar from "../filterBar/filterBar";
-import Pagination from "../pagination/pagination";
+import React, { useEffect, useState } from 'react';
+import { Character } from '../../models/responses/Character';
+import { rmService } from '../../service/rick-morty';
+import Card from '../card/card';
+import FilterBar from '../filterBar/filterBar';
+import Pagination from '../pagination/pagination';
 
 const CardArea = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsCount, setItemsCount] = useState(826);
   // Filter consts
-  const [filterName, setFilterName] = useState("");
-  const [filterStatus, setFilterStatus] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState("");
-  // const [filterType, setFilterType] = useState("");
-  const [filterGender, setFilterGender] = useState("");
+  const [filterName, setFilterName] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
+  const [filterSpecies, setFilterSpecies] = useState('');
+  // const [filterType, setFilterType] = useState('');
+  const [filterGender, setFilterGender] = useState('');
 
   useEffect(() => {
     rmService
@@ -23,7 +23,7 @@ const CardArea = () => {
         filterName,
         filterStatus,
         filterSpecies,
-        filterGender
+        filterGender,
       )
       .then((res) => {
         setCharacters(res.data.results);
@@ -34,12 +34,7 @@ const CardArea = () => {
     setCurrentPage(page);
   };
 
-  const handleFilterSearch = (
-    filterName: string,
-    filterStatus: string,
-    filterSpecies: string,
-    filterGender: string
-  ) => {
+  const handleFilterSearch = () => {
     setFilterName(filterName);
     setFilterStatus(filterStatus);
     setFilterSpecies(filterSpecies);

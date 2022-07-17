@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import ThemePicker from "../themePicker/themePicker";
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import ThemePicker from '../themePicker/themePicker';
+
 interface FilterBarProps {
   handleFilterSearch?: (
     filterName: string,
@@ -12,13 +13,13 @@ interface FilterBarProps {
 
 const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   // Filter consts
-  const [filterName, setFilterName] = useState("");
-  const [filterStatus, setFilterStatus] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState("");
-  // const [filterType, setFilterType] = useState("");
-  const [filterGender, setFilterGender] = useState("");
+  const [filterName, setFilterName] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
+  const [filterSpecies, setFilterSpecies] = useState('');
+  // const [filterType, setFilterType] = useState('');
+  const [filterGender, setFilterGender] = useState('');
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,8 +27,8 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
       handleFilterSearch(filterName, filterStatus, filterSpecies, filterGender);
       window.history.replaceState(
         null,
-        "",
-        `?name=${filterName}&status=${filterStatus}&species=${filterSpecies}&gender=${filterGender}`
+        '',
+        `?name=${filterName}&status=${filterStatus}&species=${filterSpecies}&gender=${filterGender}`,
       );
     }
   };
@@ -35,20 +36,20 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
   const handleClear = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (handleFilterSearch) {
-      handleFilterSearch("", "", "", "");
-      window.history.replaceState(null, "", "./");
+      handleFilterSearch('', '', '', '');
+      window.history.replaceState(null, '', './');
     }
   };
 
   useEffect(() => {
-    setFilterName(searchParams.get("name") || "");
+    setFilterName(searchParams.get('name') || '');
     if (handleFilterSearch) {
       setTimeout(() => {
         handleFilterSearch(
-          searchParams.get("name") || "",
-          searchParams.get("status") || "",
-          searchParams.get("species") || "",
-          searchParams.get("gender") || ""
+          searchParams.get('name') || '',
+          searchParams.get('status') || '',
+          searchParams.get('species') || '',
+          searchParams.get('gender') || '',
         );
       }, 200);
     }
@@ -76,7 +77,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
           value={filterName}
           onChange={(e) => setFilterName(e.target.value)}
           placeholder="Rick Sanchez"
-        ></input>
+        />
       </div>
       <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">
@@ -117,7 +118,7 @@ const FilterBar = ({ handleFilterSearch }: FilterBarProps) => {
           value={filterSpecies}
           onChange={(e) => setFilterSpecies(e.target.value)}
           placeholder="Human"
-        ></input>
+        />
       </div>
       <div className="filter-field">
         <div className="flex relative rounded-l-full bg-yellow-50 dark:bg-gray-900 leading-10">

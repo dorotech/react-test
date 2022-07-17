@@ -1,5 +1,6 @@
-import Banner from "./component/banner/banner";
-import CardArea from "./component/cardArea/cardArea";
+import React from 'react';
+import Banner from './component/banner/banner';
+import CardArea from './component/cardArea/cardArea';
 
 const App = () => {
   return (
