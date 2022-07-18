@@ -5,6 +5,9 @@ export const ThemeDark = {
     backgroundHeader: '#222222',
     backgroundCard: '#2229',
     borderCard: '#777',
-    borderHeader: '#444'
+    borderHeader: '#444',
+    boxShadow: '#111',
+
+    colorIconClose: '#cb0a0a'
   }
 };

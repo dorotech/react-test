@@ -5,7 +5,12 @@ import { useHome } from './useHome';
 import { Container, ModalDatails } from './styles';
 import { ButtonTheme } from '../../Components/ButtonTheme';
 
-export function Home() {
+interface I_PROPS_HOME {
+  alterTheme(): void;
+  darkModeIsActived: boolean;
+}
+
+export function Home({ alterTheme, darkModeIsActived }: I_PROPS_HOME) {
   const { FUNCS, STATES, REFS } = useHome();
   const { getCharactersAndSetInStage } = FUNCS;
 
@@ -45,12 +50,7 @@ export function Home() {
               </button>
             </form>
 
-            <ButtonTheme
-              active={true}
-              alterActive={() => {
-                console.log('');
-              }}
-            />
+            <ButtonTheme active={darkModeIsActived} alterActive={alterTheme} />
           </div>
 
           <div className="Header-footer">

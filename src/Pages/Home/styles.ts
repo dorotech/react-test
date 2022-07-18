@@ -154,7 +154,7 @@ export const ModalDatails = styled.div`
     border-radius: 6px;
     padding: 20px;
     border: 1px solid ${(props) => props.theme.colors.borderHeader};
-    box-shadow: 2px 0px 10px #111;
+    box-shadow: 2px 0px 10px ${(props) => props.theme.colors.boxShadow};
 
     header {
       svg {
@@ -163,6 +163,7 @@ export const ModalDatails = styled.div`
         position: absolute;
         right: -30px;
         top: -20px;
+        color: ${(props) => props.theme.colors.colorIconClose};
       }
     }
 

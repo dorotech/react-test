@@ -13,7 +13,7 @@ export function ButtonTheme({ active = false, alterActive }: ISwaper) {
           <span>ON</span>
           <span className="ball active"></span>
         </div>
-        <small>White Mode</small>
+        <small>Dark Mode</small>
       </Container>
     );
   }
