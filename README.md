@@ -1,87 +1,73 @@
 # Desafio para Frontend Developer na DoroTech
 
-Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios.
+Desafio dado para a vaga de Frotend Developer na DoroTech.
 
-Gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resilientes, questionadores e curiosos. 
-Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
+Live: https://rick-morty-rolodex.netlify.app/
 
-## Orientações
-Para executar o desafio de **Frontend Developer**, você **deverá utilizar framework React**, seguindo o [passo a passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
+## Projeto
 
-## Desafio
-Nossa equipe é apaixonada por **Rick and Morty**, o seu desafio será criar uma aplicação utilizando a API pública da série [https://rickandmortyapi.com/](https://rickandmortyapi.com/), para exibir a lista de  personagens. 
-Veja a documentação [https://rickandmortyapi.com/documentation/#rest](https://rickandmortyapi.com/documentation/#rest).
+Projeto de [rolodex](https://en.wikipedia.org/wiki/Rolodex) usando a [API do Rick and Morty](https://en.wikipedia.org/wiki/Rick_and_Morty) para buscar dados sobre os personagens.
 
-Os requisitos da aplicação:
+## Tecnologias
 
-- Como usuário, desejo visualizar na página inicial, uma lista de 20 personagens incialmente, contendo **foto**, **nome** e **status**, com o tamanho da paginação sendo dinamica, podendo ser selecionando, 5, 10 ou 20 itens por vez.
-- Como usuário, desejo clicar em um personagem da lista, para visualizar informações detalhadas. (seja criativo a api contem diversas informaçoes)
-- Como usuário, desejo filtrar os personagens por **nome**, **gênero**, **espécie** e **status**, alguns filtros são enums, seja criativo.
-- Como usuário, desejo combinar varios filtros.
-- Como usuário, gostaria de ter uma forma de acessar a imagem do pensonagem, abrindo a imagem em uma nova aba.
+- [React](https://reactjs.org/)
 
-## Etapas
+This project was supposed to be in React.
 
-#### 1 - Fazer um fork desse repositório
+- [Typescript](https://www.typescriptlang.org/)
 
-![https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png](https://github.com/dorotech/frontend-test/raw/main/img/print-tutorial-1.png)
+As requested by the rules.
 
+- [TailwindCSS](https://tailwindcss.com/)
 
-#### 2 - Criar um branch com o seu primeiro e último nome
-```bash
-git checkout -b joao-silva
-```
+I tried using TailwindCSS as it's all "inline" CSS and I didn't want to use as many separate CSS files. Although I'd say as the project kept going, this started to get burdensome. For a simple project like this, I thought it was fine to use inline CSS. It's also quit easy to implement dark mode with TailWindCSS.
 
-#### 3 - Escreva a documentação da sua aplicação
-Você deve, substituir o conteúdo do arquivo **README.md** e escrever a documentação da sua aplicação, com os seguintes tópicos: 
-- **Projeto**: Descreva o projeto e como você o executou. Seja objetivo.
-- **Tecnologias**: Descreva quais tecnologias foram utilizadas, enumerando versões (se necessário) e os links para suas documentações,  qual guia de estilos de código você utilizou com o link para a sua documentação, quais bibliotecas instalou e porque.
-- **Como rodar**: Descreva como iniciar a sua aplicação
-- **Link** para acessar o projeto.
+- [Poppins Font](https://fonts.google.com/specimen/Poppins#standard-styles)
 
-#### 4 - Faça uma Pull Request
-Após implementada a solução, crie uma [pull request](https://github.com/dorotech/frontend-test/pulls) com o seu projeto para esse repositório, avise o recrutador.
+Cool font so I don't get a page that looks like a Word document.
 
-## Critérios de Aceitação
-Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperados, ele deve:
-- Atender ao que foi proposto no [Desafio](https://github.com/dorotech/frontend-test#Desafio).
-- Utilização de pré-processadores CSS (Sass, Less).
-- Interfaces responsivas para desktop, tablets e smartphones.
-- Compatibilidade entre browsers.
-- Padrão de escrita CSS (BEM, OOCSS, SMACSS).
-- Código TS escrito com base em algum guia de estilos: [AirBnB Standards](https://github.com/airbnb/javascript) ou [TypeScript Google Guide](https://google.github.io/styleguide/tsguide.html).
-- Utilizar padrões semânticos em mensagens de commit. (Gostamos do padrão de commits do repositório [AngularJS](http://karma-runner.github.io/3.0/dev/git-commit-msg.html))
-- Projeto feito upload: [Firebase hosting](https://firebase.google.com/docs/hosting/quickstart?hl=pt-br) ou [GitHub Pages](https://pages.github.com/).
-- Caso você nao consiga completar tudo e tenha algum receio, não se preocupe, iremos avaliar o que foi entregue, mesmo com pendências.
-- O diferencial para este desafio: layout, ux e ui, bem como implementação de boas práticas de segurança, performance e/ou estrutura.
-- [JSDOC](https://jsdoc.app/) nos principais itens do projeto. 
+- [Font Awesome](https://fontawesome.com/)
 
+To get some free icons for the project.
 
-## Dicas e Informações Valiosas
+- [Axios](https://axios-http.com/docs/intro)
 
-#### O que gostaríamos de ver em seu teste:
-- Upload do projeto em um seviço de hospedagem.
-- Convenção de nome em classes, objetos, variáveis, métodos e etc.
-- layout encantador
-- Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
-- uso de libs como bootstrap, material, Evergreen e etc...
-- Hooks é bem-vindo.
-- Animações, Sobras, Menus, componentes de Libs de UX implementados. 
-- Projeto feito usando TypeScript
-- **Bônus 1** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
-- **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na url o parametro da busca realizado, caso recaregar a pagina com a url, usar o parametro para preencher os itens da pagina.
-- **Bônus 3** Listagem de favoritos, com algum mecanismo de cache.
-- **Bônus 4** Outros filtros além dos sugeridos na descrição inicial
-- **Bônus 5** Github action como serviço de publicação do projeto pronto.
+Used to GET the API data.
 
-**Observação:** Nenhum dos itens acima é obrigatório.
+- [Sass](https://sass-lang.com/)
 
-#### O que o seu Teste não deve ter:
-- Saber que não foi você quem implementou o projeto.
-- Varias bibliotecas instaladas sem uso.
-- Falta de organização de código.
-- Falta de documentação.
-- Nome de variáveis sem sentido ou sem padrão de nomes.
-- Histórico de commits desorganizado e despadronizado.
+Barely used since I was using TailwindCSS.
 
-## Boa Sorte!! 
+- [Eslint](https://eslint.org/)
+
+So I can fix my code according to the AirBNB best practices.
+
+- [Jason Watmore's Blog - Pure Pagination Logic](https://jasonwatmore.com/post/2018/08/07/javascript-pure-pagination-logic-in-vanilla-js-typescript)
+
+I needed a fast way to get the pagination going. This tutorial and code helped me quite a lot.
+
+## Getting Started // Iniciando sua aplicação
+
+- Clone this repository
+
+- npm install
+
+- npm start
+
+That would be it!
+
+## Live Project
+
+[Rick and Morty Rolodex - Netlify](https://rick-morty-rolodex.netlify.app/)
+
+## Comments about the project
+
+I didn't have enough time to implement a favorites/bookmark feature as I'd like to do.
+
+Dynamic pagination was/is quite hard to implement when the API only servers you exactly 20 characters at once. It's possible, but would take a lot of time. Check "Jason Watmore's Blog - Pure Pagination Logic" in the [Tecnologias](##Tecnologias) section.
+
+Tailwind CSS was great to start with, but I didn't like the way it was implemented. In the end, I had to change inlines to actual classes so it would at least look better to whoever is reading the code.
+
+AirBNB ESLint rules were a bit confusing to implement many times when using a project in TS.
+
+Although styling is being avaliated, I didn't change favicons and logos that come with the create-react-app template.

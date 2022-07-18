@@ -1,0 +1,14 @@
+.page-item:nth-child(2) {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+.active-item {
+  border-width: 4px;
+  --tw-border-opacity: 0.5;
+  border-color: rgb(234 179 8 / var(--tw-border-opacity));
+}
+
+.page-item:nth-last-child(2) {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
