@@ -4,13 +4,6 @@ type ITHEME_MODE = {
   themeMode: 'DARK' | 'LIGHT';
 };
 
-// function THEMEDARK() {
-//   css`
-//     background-color: ${theme.colors.background};
-//     color: theme.colors.text;
-//   `;
-// }
-
 export const GlobalStyles = createGlobalStyle<ITHEME_MODE>`
   *{
     outline:0;
@@ -34,8 +27,6 @@ export const GlobalStyles = createGlobalStyle<ITHEME_MODE>`
       background: #dad7d7;
     }
 
-    /* background-color: ${({ themeMode, theme }) =>
-      themeMode === 'DARK' ? theme.colors.background : 'white'}; */
 
     ${(props) =>
       props.themeMode === 'DARK' &&

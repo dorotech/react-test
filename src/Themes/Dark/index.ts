@@ -1,18 +1,10 @@
 export const ThemeDark = {
   colors: {
-    primary: '#5636d3',
-    secondary: '#ff872c',
-    secondary_light: 'rgba(255,135,44,0.3)',
-
-    success: '#12a454',
-    success_light: 'rgba(18, 164,84, 0.5)',
-
-    attention: '#e83f5b',
-    attention_light: 'rgba(232,62,91,0.5)',
-
-    shape: '#ffffff',
-    title: '#363f5f',
-    text: '#ffffff',
-    background: '#333333'
+    text: '#efefef',
+    background: '#333333',
+    backgroundHeader: '#222222',
+    backgroundCard: '#2229',
+    borderCard: '#777',
+    borderHeader: '#444'
   }
 };

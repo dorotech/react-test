@@ -14,8 +14,8 @@ export const Container = styled.div<I_CONTAINER_PROPS>`
   header {
     width: 100vw;
     height: 100px;
-    background: #222222;
-    border-bottom: 1px solid #444;
+    background: ${(props) => props.theme.colors.backgroundHeader};
+    border-bottom: 1px solid ${(props) => props.theme.colors.borderHeader};
 
     .Header-separete-filters {
       display: flex;
@@ -103,21 +103,21 @@ export const Container = styled.div<I_CONTAINER_PROPS>`
       width: 30.5vw;
       padding: 2vh 1.4vw;
       display: flex;
-      background: #2229;
+      background: ${(props) => props.theme.colors.backgroundCard};
       border-radius: 4px;
       gap: 8px;
-      border-bottom: 2px solid #777;
+      border-bottom: 2px solid ${(props) => props.theme.colors.borderCard};
 
       img {
         width: 100px;
         height: 100px;
-        border: 3px solid #5553;
+        border: 3px solid ${(props) => props.theme.colors.borderHeader};
         border-radius: 8px;
       }
 
       .Main-card-descriptions {
         display: flex;
-        color: #efefef;
+        color: ${(props) => props.theme.colors.text};
         flex-direction: column;
         padding: 10px;
 
@@ -153,7 +153,7 @@ export const ModalDatails = styled.div`
     margin: 27.5vh 30vw;
     border-radius: 6px;
     padding: 20px;
-    border: 1px solid #555;
+    border: 1px solid ${(props) => props.theme.colors.borderHeader};
     box-shadow: 2px 0px 10px #111;
 
     header {
@@ -188,7 +188,7 @@ export const ModalDatails = styled.div`
         }
 
         a {
-          color: #fff;
+          color: ${(props) => props.theme.colors.text};
           text-decoration: none;
           padding: 4px;
           font-size: 17px;

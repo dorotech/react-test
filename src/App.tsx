@@ -6,7 +6,7 @@ import { Home } from './Pages/Home';
 import { useState } from 'react';
 
 function App() {
-  const [themeMode, setThemeMode] = useState<'DARK' | 'LIGHT'>('DARK');
+  const [themeMode] = useState<'DARK' | 'LIGHT'>('DARK');
 
   return (
     <ThemeProvider theme={ThemeDark}>

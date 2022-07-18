@@ -3,6 +3,7 @@ import { AiOutlineSearch, AiOutlineCloseCircle } from 'react-icons/ai';
 
 import { useHome } from './useHome';
 import { Container, ModalDatails } from './styles';
+import { ButtonTheme } from '../../Components/ButtonTheme';
 
 export function Home() {
   const { FUNCS, STATES, REFS } = useHome();
@@ -10,7 +11,7 @@ export function Home() {
 
   useEffect(() => {
     getCharactersAndSetInStage(null);
-  }, []);
+  }, [getCharactersAndSetInStage]);
 
   return (
     <>
@@ -44,9 +45,12 @@ export function Home() {
               </button>
             </form>
 
-            {/* <button>
-              <BiCog size={14} />
-            </button> */}
+            <ButtonTheme
+              active={true}
+              alterActive={() => {
+                console.log('');
+              }}
+            />
           </div>
 
           <div className="Header-footer">
