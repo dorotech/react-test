@@ -33,4 +33,8 @@ export const Container = styled.div`
     border-radius: 50%;
     background: #9a9a9a;
   }
+
+  @media (max-width: 600px) {
+    top: 100px;
+  }
 `;

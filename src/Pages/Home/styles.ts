@@ -131,6 +131,66 @@ export const Container = styled.div<I_CONTAINER_PROPS>`
       }
     }
   }
+
+  @media (max-width: 1420px) {
+    main {
+      /* padding: 0px px; */
+      .Main-card {
+        width: 30vw;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    main {
+      /* padding: 0px px; */
+      .Main-card {
+        width: 45vw;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    main {
+      .Main-card {
+        width: 40vw;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    header {
+      height: 150px;
+      .Header-separete-filters {
+        display: flex;
+        flex-wrap: wrap;
+
+        .Header-group-inputs {
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          input {
+            width: 90%;
+            height: 40px;
+          }
+
+          button,
+          select {
+            height: 40px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    main {
+      /* padding: 0px px; */
+      .Main-card {
+        width: 93vw;
+      }
+    }
+  }
 `;
 
 export const ModalDatails = styled.div`
@@ -197,6 +257,20 @@ export const ModalDatails = styled.div`
           display: block;
         }
       }
+    }
+  }
+
+  @media (max-width: 1420px) {
+    .Modal-content {
+      width: 69vw;
+      margin: 27.5vh 18vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .Modal-content {
+      width: 89vw;
+      margin: 27.5vh 5vw;
     }
   }
 `;
