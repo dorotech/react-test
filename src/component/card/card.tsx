@@ -3,6 +3,7 @@ import './card.scss';
 import {
   faArrowDownShortWide,
   faArrowUpShortWide,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Character } from '../../models/responses/Character';
@@ -18,6 +19,7 @@ interface CardProps {
  */
 const Card = (props: CardProps) => {
   const {
+    id,
     name,
     status,
     species,
@@ -27,7 +29,14 @@ const Card = (props: CardProps) => {
   const [isExtraInfoOpen, setIsExtraInfoOpen] = useState(false);
   return (
     <div className="flex w-80 bg-yellow-50 bg-opacity-50 dark:bg-opacity-10 shadow-md rounded-3xl mx-3 my-3">
-      <div className="flex flex-col items-between justify-between m-3">
+      <div className="flex flex-col items-between justify-between m-3 relative">
+        <div className="absolute -top-5 -left-5 cursor-pointer"
+        onClick={(e) => {
+          localStorage.setItem('favoritesId', JSON.stringify(id));
+          // TODO: Save ID to localStorage in an array
+        }}>
+          <FontAwesomeIcon className="text-yellow-100 dark:text-gray-900 drop-shadow-lg text-5xl" icon={faStar} />
+        </div>
         <img
           className="character-image rounded-3xl"
           src={image}
