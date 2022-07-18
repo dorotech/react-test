@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Projeto
+Uma pagina simples para listagem de personagem do **The Rick and Morty**.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Para o desenvolvimento quebrei cada item em minitarefa assim ficava focado em apenas 1 item por vez.
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Utilizei um padrão diferente do convencional a onde cada pagina contem apenas o seu HTML e todo o items de estados e funções fica isolado, facilitando a manutenção
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tecnologias
+* [React](https://reactjs.org/docs/getting-started.html)
+* [Styled Component](https://styled-components.com/docs)
+* [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+* [CRA](https://create-react-app.dev/docs/getting-started)
+* [Axios](https://axios-http.com/ptbr/docs/intro)
+* [Eslint](https://eslint.org/docs/latest/)
+* [Prettier](https://prettier.io/docs/en/index.html)
+* [React-Icons](https://react-icons.github.io/react-icons)
 
-### `yarn test`
+## Como rodar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Dependências
+---
+Necessário node 14 e o yarn 1.0 no mínimo
 
-### `yarn build`
+* Recomendo o uso do NVM para gerência a versão do node 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Caso use
+[windows](https://github.com/coreybutler/nvm-windows)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Caso use 
+[linux](https://github.com/nvm-sh/nvm)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Após a instalação rode **npm i -G yarn**
 
-### `yarn eject`
+Após fazer a instalação das ferramentas, rode o comando **yarn** para baixar todas as dependências do projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Iniciando o projeto 
+**yarn start**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Problemas com lint 
+Caso tenha problemas com o eslint rode o comando **yarn lint**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Link

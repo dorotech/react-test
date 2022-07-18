@@ -22,9 +22,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint src --fix"
+    "lint": "npx eslint src --fix"
   },
   "eslintConfig": {
     "extends": [
