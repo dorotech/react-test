@@ -1,12 +1,12 @@
-# Desafio para Frontend Developer na DoroTech
+# Desafio para Front-end Developer na DoroTech
 
 Somos uma empresa com clientes que atuam em vários segmentos do mercado, com diferentes tecnologias, culturas e desafios.
 
 Gostamos de compor nossos times com profissionais multidisciplinares, que tenham alta capacidade de aprendizado, sejam detalhistas, resilientes, questionadores e curiosos. 
-Você, como **Frontend Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
+Você, como **Front-end Developer**, será o responsável por implementar, dar manutenção, aplicar correções e propor soluções em projetos de software.
 
 ## Orientações
-Para executar o desafio de **Frontend Developer**, você **deverá utilizar framework React**, seguindo o [passo a passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
+Para executar o desafio de **Front-end Developer**, você **deverá utilizar framework React**, seguindo o [passo a passo](https://github.com/dorotech/frontend-test#etapas) para a execução, atendendo aos [critérios de aceitação](https://github.com/dorotech/frontend-test#crit%C3%A9rios-de-aceita%C3%A7%C3%A3o).
 
 ## Desafio
 Nossa equipe é apaixonada por **Rick and Morty**, o seu desafio será criar uma aplicação utilizando a API pública da série [https://rickandmortyapi.com/](https://rickandmortyapi.com/), para exibir a lista de  personagens. 
@@ -62,17 +62,17 @@ Para que seu teste tenha o mínimo necessário que atenda aos requisitos esperad
 #### O que gostaríamos de ver em seu teste:
 - Upload do projeto em um seviço de hospedagem.
 - Convenção de nome em classes, objetos, variáveis, métodos e etc.
-- layout encantador
+- Layout encantador
 - Faça commits regulares. Eles são melhores do que um commit gigantesco. Gostaríamos de ver commits organizados e padronizados, então capriche neles!
-- uso de libs como bootstrap, material, Evergreen e etc...
+- Uso de libs como bootstrap, material, Evergreen e etc...
 - Hooks é bem-vindo.
 - Animações, Sobras, Menus, componentes de Libs de UX implementados. 
 - Projeto feito usando TypeScript
 - **Bônus 1** Dark Mode, implementação sendo um botão que mude o padrão de cores da pagina para escuro e claro com 1 click. 
-- **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na url o parametro da busca realizado, caso recaregar a pagina com a url, usar o parametro para preencher os itens da pagina.
+- **Bônus 2** QueryParams para buscas, quando uma busca e realizada, exibir na URL o parâmetro da busca realizado, caso recaregar a página com a URL, usar o parâmetro para preencher os itens da pagina.
 - **Bônus 3** Listagem de favoritos, com algum mecanismo de cache.
 - **Bônus 4** Outros filtros além dos sugeridos na descrição inicial
-- **Bônus 5** Github action como serviço de publicação do projeto pronto.
+- **Bônus 5** GitHub action como serviço de publicação do projeto pronto.
 
 **Observação:** Nenhum dos itens acima é obrigatório.
 
