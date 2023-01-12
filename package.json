@@ -1,0 +1,8 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/WilliamGofe/react-test.git",
+  "author": "William Gomes <76756233+WilliamGofe@users.noreply.github.com>",
+  "license": "MIT"
+}
