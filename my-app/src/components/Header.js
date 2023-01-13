@@ -1,10 +1,13 @@
 
 import RickAndMorty from "../assests/images/HeaderImage";
+import Box from '@mui/material/Box';
 
-
-function Header(params) {
+function Header() {
     return(
-       <RickAndMorty></RickAndMorty>
+    <Box>
+        <RickAndMorty></RickAndMorty>  
+    </Box>
+
     )
 }
 export default Header;
