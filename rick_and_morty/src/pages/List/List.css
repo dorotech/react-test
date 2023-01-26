@@ -1,0 +1,484 @@
+/* font-family: 'Roboto', sans-serif; */
+
+.body-list{
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color:#72C7D0;
+}
+
+.img-logo{
+  width:10%;
+}
+
+.btn-see-character{
+  background-color:#D7F2F2;
+  border:none;
+  padding:8px 30px;
+  border-radius:8px;
+  color: 233160;
+  font-weight:900;
+  cursor: pointer;
+}
+
+.div-hero{
+  display:flex;
+  flex-wrap:nowrap;
+  padding:20px 80px 0px;
+}
+
+.div-img-left{
+  width:100%;
+}
+
+
+
+.text-general{
+  margin-top:40px;
+}
+
+.title-hero{
+  margin-bottom:30px;
+  color:#233160;
+}
+
+.p-hero{
+  color:#233160;
+}
+
+.section-filter{
+  height:50px;
+  background-color:#96C96A;
+  margin-top:-0.2%;
+  
+}
+
+.div-wrap-cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background-color:#72C7D0;
+  padding:64px;
+}
+
+.div-card-character{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  background-color:#D7F2F2;
+  padding:10px;
+  width:20%;
+  border-radius:15px;
+  transition:.5s;
+}
+.div-card-character:hover{
+  transform: scale(.9);
+}
+
+.div-img-card{
+  width:99%;
+  margin-top:10px;
+}
+
+.info-character{
+ display:flex;
+ flex-direction:column;
+}
+
+.img-card{
+  border-radius:15px;
+  width:100%;
+}
+
+.btn-see-more{
+  margin-top:10px;
+  padding:10px 25px;
+  border-radius:5px;
+  border: none;
+  width:100%;
+  background-color:#72C7D0;
+  color:#fff;
+  font-weight:900;
+  cursor: pointer;
+  transition:.5s;
+}
+
+.btn-see-more:hover{
+  background-color:#fff;
+  color:#000;
+  font-weight:900;
+  cursor: pointer;
+}
+
+.name-character{
+  color:#233160;
+  font-weight:bold;
+}
+
+.div_gender{
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align: center;
+  padding:5px;
+  background-color:#96C96A;
+  border-radius:10px;
+  color:#fff;
+}
+
+.span-name{
+  color:#96C96A;
+}
+
+.div-btn-see-more{
+  display:flex;
+  justify-content: center;
+}
+
+.footer{
+    height:50px;
+    background-color:#96C96A;
+    margin-top:-0.2%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-footer{
+  text-decoration: none;
+  color:#233160;
+  font-weight:bold;
+}
+
+.Modal{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#72C7D0;
+  width:30%;
+  margin-left:33%;
+  margin-top:5%;
+  border-radius:15px;
+}
+
+
+.info-card-modal{
+  padding:10px 20px 20px;
+  background-color:#fff;
+  text-align: center;
+  margin-top:20px;
+  width:90%;
+  margin-bottom:20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.span-modal{
+  font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVIDADE  */
+
+
+@media (max-width:319px) {
+
+}
+@media (min-width:320px) and (max-width: 360px){
+
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+
+}
+@media (min-width:361px) and (max-width: 375px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width:376px) and (max-width: 414px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width:415px) and (max-width: 533px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width: 534px) and (max-width: 575px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width: 576px) and (max-width:744px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }	
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+
+
+}
+@media (min-width: 745px) and (max-width: 767px){
+  .img-logo{
+    width:50%;
+  }
+
+  .div-card-character{
+    width:100%;
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .img-logo{
+    width:50%;
+  }
+  
+  .div-card-character{
+    width:29%;
+
+  }
+
+  .div-hero{
+    flex-wrap:wrap;
+    padding:25px;
+  }
+
+  .text-general{
+    text-align: center;
+  }
+
+  .div-wrap-cards{
+    padding:10px;
+  }
+
+  .img-rick-and-morty{
+    width:100%;
+  }
+
+  .Modal{
+    width:90%;
+    margin-left:5%;
+  }
+	
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .text-general{
+    margin-top:0px;
+    margin-bottom:40px;
+  }
+
+  .info-card-modal{
+    width:100%;
+  }
+}
+@media (min-width: 1200px) and (max-width:1359px){
+	
+}
+@media (min-width: 1366px) and (max-width:2599px){
+	
+}
+@media (min-width: 2600px) and (max-width:8000px){
+	
+}
+
