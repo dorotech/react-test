@@ -1,7 +1,12 @@
-.container {
+.page_info {
     grid-template-areas:
-        "a a a a a "
-        "b c c c c"
-        "b c c c c";
+        "filters char char char char";
     display: grid;
+}
+
+.container {
+    grid-template-areas: "topbar"
+        "characters";
+    display: grid;
+    grid-template-rows: 10% 90%;
 }

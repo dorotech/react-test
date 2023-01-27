@@ -23,13 +23,13 @@ const TopAppBar = () => {
         justifyContent: "space-between",
         flexDirection: "row",
         backgroundColor: mode === "light" ? "#5b5f97" : "#2d2f4b",
-        gridArea: "a",
+        gridArea: "topbar",
       }}
     >
       <Typography style={{ display: "flex", alignItems: "center" }}>
         Rick and Morty wiki
       </Typography>
-      <FormGroup>
+      <FormGroup style={{ justifyContent: "center" }}>
         <FormControlLabel
           control={
             <Switch

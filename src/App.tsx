@@ -32,7 +32,7 @@ const App = () => {
         <div
           style={{
             background: mode === "light" ? "#dddeeb" : "#484b78",
-            height: "100vh",
+            height: "100%",
           }}
         >
           <HomePage />

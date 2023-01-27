@@ -14,6 +14,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
     "@mui/types": "^7.2.3",
+    "@types/axios": "^0.14.0",
     "@types/node-sass": "^4.11.3",
     "axios": "^1.2.5",
     "react": "^18.2.0",
