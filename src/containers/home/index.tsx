@@ -1,10 +1,12 @@
 import { TopAppBar } from "../../components/topBar";
+import styles from "./styles.module.scss";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <TopAppBar />
-      <div>djisaidjsajidsaij</div>
+      <div style={{ gridArea: "b" }}>Filtros</div>
+      <div style={{ gridArea: "c" }}>djisaidjsajidsaij</div>
     </div>
   );
 };

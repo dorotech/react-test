@@ -1,0 +1,7 @@
+.container {
+    grid-template-areas:
+        "a a a a a "
+        "b c c c c"
+        "b c c c c";
+    display: grid;
+}

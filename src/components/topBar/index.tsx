@@ -23,6 +23,7 @@ const TopAppBar = () => {
         justifyContent: "space-between",
         flexDirection: "row",
         backgroundColor: mode === "light" ? "#5b5f97" : "#2d2f4b",
+        gridArea: "a",
       }}
     >
       <Typography style={{ display: "flex", alignItems: "center" }}>
