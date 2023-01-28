@@ -33,7 +33,7 @@ export default function CharCard({ character }: CharProps) {
           {location.name}
         </div>
 
-        <button type="button" className="character-card__button">Details</button>
+        <a className="character-card__button">Details</a>
 
       </div>
     </div>
