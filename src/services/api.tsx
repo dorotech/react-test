@@ -7,4 +7,4 @@ const api = axios.create({
   baseURL: 'https://rickandmortyapi.com/api/',
 });
 
-export { api };
+export default api;

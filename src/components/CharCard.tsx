@@ -1,13 +1,15 @@
-import React from "react";
-import { Character } from "../interfaces/Services";
-import "./CharCard.css";
+import React from 'react';
+import { Character } from '../interfaces/Services';
+import './CharCard.css';
 
 interface CharProps {
   character: Character;
 }
 
-export default function CharCard(props: CharProps) {
-  const { image, name, gender, status, location } = props.character;
+export default function CharCard({ character }: CharProps) {
+  const {
+    image, name, gender, status, location,
+  } = character;
 
   return (
     <div className="character-card">
@@ -21,7 +23,7 @@ export default function CharCard(props: CharProps) {
         <div>
           <h2>{name}</h2>
           <span className="character-card__status">
-            <span className="character-card__status-icon"></span>
+            <span className="character-card__status-icon" />
             {`${status} - ${gender}`}
           </span>
         </div>
@@ -31,7 +33,7 @@ export default function CharCard(props: CharProps) {
           {location.name}
         </div>
 
-        <button className="character-card__button">Details</button>
+        <button type="button" className="character-card__button">Details</button>
 
       </div>
     </div>

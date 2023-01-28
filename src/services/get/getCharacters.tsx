@@ -1,7 +1,7 @@
 import { Characters } from '../../interfaces/Services';
-import { api } from '../api';
+import api from '../api';
 
-export async function getCharacters(page: number): Promise<{
+export default async function getCharacters(page: number): Promise<{
   data: Characters;
   status: number;
 }> {
