@@ -1,7 +1,13 @@
-import { Box, useTheme, Paper } from "@mui/material/";
+import {
+  Box,
+  useTheme,
+  Paper,
+  Stack,
+  Switch,
+  FormControlLabel,
+} from "@mui/material/";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button/Button";
-import Icon from "@mui/material/Icon/Icon";
+
 import TextField from "@mui/material/TextField/TextField";
 import { useAppThemeContext } from "../../contexts/ThemeContext";
 import { Environment } from "../../environment";
@@ -32,15 +38,29 @@ export const Header = () => {
           maxWidth: "100%",
         }}
       >
-        <TextField fullWidth placeholder={Environment.INPUT_DE_BUSCA}/>
+        <Stack spacing={4}>
+          <Stack direction="row" spacing={2}>
+            <TextField
+              placeholder={Environment.INPUT_DE_BUSCA}
+              variant="outlined"
+              size="small"
+              fullWidth
+              inputProps={{ maxLength: 25 }}
+            />
+          </Stack>
+        </Stack>
       </Box>
 
       <Box display="flex" justifyContent="end" flex={1}>
-        <Button variant="text" color="primary" onClick={mudarTema} size="small">
-          <Icon>dark_mode</Icon>
-          
-          Dark mode
-        </Button>
+        <FormControlLabel
+          control={
+            <Switch
+              onChange={mudarTema}
+              inputProps={{ "aria-label": "controlled" }}
+            />
+          }
+          label="Dark Mode"
+        />
       </Box>
     </Box>
   );

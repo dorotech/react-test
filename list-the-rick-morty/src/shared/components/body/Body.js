@@ -1,15 +1,6 @@
-import axios from "axios";
 
-import { Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { Environment } from "../../environment";
-import { Image } from "@mui/icons-material";
-
-/* export interface ICharacter {
-  id: number;
-  status: string;
-  image: string;
-} */
 
 export const Body = () => {
   const [characters, setCharacters] = useState([]);
@@ -31,20 +22,18 @@ export const Body = () => {
   }, []);
 
   return (
-    <Box
-      display="flex"
-      gap={2}
-      marginX={1}
-      padding={4}
-      paddingX={2}
-    >
+    <Grid container spacing={3} padding={3} paddingX={2}>
       {characters.map((character) => (
-        <Box key={character.id} boxSizing="border-box" border="2px solid #f9a825" >
-          <img src={character.image} sizes="1px" />
-          <h3>Nome: {character.name}</h3>
-          <p>Status: {character.status}</p>
-        </Box>
+        <Grid item lg={3} md={4} sm={4} xs={12}>
+          <Box key={character.id} borderRadius={2}>
+            <img style={{ width: "100%" }} src={character.image} />
+          </Box>
+          <Typography style={{ fontWeight: 600 }} gutterBottom variant="body1">
+            Nome: {character.name}
+          </Typography>
+          <Typography>Status: {character.status}</Typography>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   );
 };
