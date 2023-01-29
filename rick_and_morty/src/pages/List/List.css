@@ -52,10 +52,29 @@
 }
 
 .section-filter{
+  color:#fff;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
   height:50px;
+  padding:5px 10px;
   background-color:#96C96A;
   margin-top:-0.2%;
-  
+}
+
+
+.inputGeneral, select{
+  border: none;
+  padding:10px 40px;
+  border-radius:5px;
+  font-size:15px;
+}
+
+
+.inputGeneral:focus{
+  box-shadow: none;
+  outline:none;  
 }
 
 .div-wrap-cards{
@@ -120,6 +139,7 @@
 .name-character{
   color:#233160;
   font-weight:bold;
+  font-size:13px;
 }
 
 .div_gender{
@@ -184,7 +204,35 @@
   font-weight:bold;
 }
 
+.div-name-photo{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.link-see-photo{
+  background-color:#96C96A;
+  color:#fff;
+  padding:5px 10px;
+  border-radius:10px;
+  text-decoration:none !important;
+  margin-left:20px;
+  font-size:15px;
+  float:right;
+  transition:.5s;
+}
+
+.link-see-photo:hover{
+  background-color:#fff;
+  color:#96C96A;
+  padding:5px 10px;
+  border-radius:10px;
+  font-weight:900;
+  text-decoration:none !important;
+  margin-left:20px;
+  font-size:15px;
+  float:right;
+}
 
 
 
@@ -235,6 +283,18 @@
     margin-left:5%;
   }
 
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+   flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   
+   margin-bottom:10px;
+  }
+
 }
 @media (min-width:361px) and (max-width: 375px){
   .img-logo{
@@ -266,7 +326,19 @@
     width:90%;
     margin-left:5%;
   }
-	
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
+  }
+
+
 }
 @media (min-width:376px) and (max-width: 414px){
   .img-logo{
@@ -297,6 +369,18 @@
   .Modal{
     width:90%;
     margin-left:5%;
+  }
+
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
   }
 	
 }
@@ -330,6 +414,19 @@
     width:90%;
     margin-left:5%;
   }
+
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
+  }
+  
 	
 }
 @media (min-width: 534px) and (max-width: 575px){
@@ -361,6 +458,19 @@
   .Modal{
     width:90%;
     margin-left:5%;
+  }
+
+
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
   }
 	
 }
@@ -396,6 +506,19 @@
   }
 
 
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
+  }
+
+
 }
 @media (min-width: 745px) and (max-width: 767px){
   .img-logo{
@@ -426,6 +549,17 @@
   .Modal{
     width:90%;
     margin-left:5%;
+  }
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
   }
 	
 }
@@ -460,6 +594,17 @@
     width:90%;
     margin-left:5%;
   }
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display: flex;
+    flex-direction:column;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
+  }
 	
 }
 @media (min-width: 992px) and (max-width: 1199px){
@@ -471,8 +616,21 @@
   .info-card-modal{
     width:100%;
   }
+
+  .section-filter{
+    height:250px;
+    padding-bottom:50px;
+    display: flex;
+    flex-direction:column;
+  }
+
+  .inputGeneral, select{
+   margin-bottom:10px;
+  }
 }
-@media (min-width: 1200px) and (max-width:1359px){
+@media (min-width: 1201px) and (max-width:1358px){
+
+
 	
 }
 @media (min-width: 1366px) and (max-width:2599px){
