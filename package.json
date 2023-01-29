@@ -10,6 +10,9 @@
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx, src"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6",
     "axios": "^1.2.5",
     "git-commit-msg-linter": "^4.5.0",
     "react": "^18.2.0",
