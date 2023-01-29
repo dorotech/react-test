@@ -32,8 +32,12 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <CharList characters={charactersInfo.results}/>
-      <Pagination count={charactersInfo.info.pages} page={page} setPage={(value: string) => setPage(value)}/>
+      <CharList characters={charactersInfo.results} />
+      <Pagination
+        count={charactersInfo.info.pages}
+        page={page}
+        setPage={(value: string) => setPage(value)}
+      />
     </div>
   );
 }

@@ -7,7 +7,6 @@ interface ListProps {
 }
 
 export default function CharList({ characters }: ListProps) {
-
   return (
     <div className="charlist-container">
       {characters.map((character: any) => <CharCard key={character.id} character={character} />)}
