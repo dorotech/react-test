@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Character } from '../interfaces/Services';
 import './CharCard.css';
 
@@ -33,7 +34,7 @@ export default function CharCard({ character }: CharProps) {
           {location.name}
         </div>
 
-        <a className="character-card__button">Details</a>
+        <Link className="character-card__button" to="#">Details</Link>
 
       </div>
     </div>
