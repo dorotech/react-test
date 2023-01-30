@@ -57,7 +57,6 @@ export const Header = () => {
               size="small"
               fullWidth
               inputProps={{ maxLength: 25 }}
-              value={busca}
             />
           </Stack>
         </Stack>
