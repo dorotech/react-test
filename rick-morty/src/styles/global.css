@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #__next {
+    @apply min-h-screen h-full;
+  }
+
+  body {
+    @apply bg-zinc-900 text-zinc-100;
+  }
+}
