@@ -68,7 +68,7 @@ export default function Filters(props: FiltersProps) {
           '.css-v4u5dn-MuiInputBase-root-MuiInput-root:after': {
             borderBottom: '2px solid gray',
           },
-          '.Mui-focused': { color: 'gray' },
+          '& label.Mui-focused': { color: 'gray' },
         }}
       />
 
