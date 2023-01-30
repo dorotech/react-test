@@ -29,7 +29,6 @@ export default function Home() {
   });
 
   const fetchCharacters = async () => {
-    
     setLoading(true);
     const params = serializeParams(queryParams); // remove parametros não utilizados
     const { data } = await getCharacters(params);
@@ -53,7 +52,12 @@ export default function Home() {
   return (
     <div className="main">
       <Header />
-      <Filters setQueryParams={setQueryParams} queryParams={queryParams} setCharList={setCharactersInfo} setLoading={setLoading} />
+      <Filters
+        setQueryParams={setQueryParams}
+        queryParams={queryParams}
+        setCharList={setCharactersInfo}
+        setLoading={setLoading}
+      />
       <CharList characters={charactersInfo.results} />
       <Pagination
         count={charactersInfo.info.pages}

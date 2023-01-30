@@ -1,12 +1,14 @@
-import React from "react";
-import { Button, MenuItem, SelectChangeEvent, TextField } from "@mui/material";
-import "./Filters.css";
-import { Characters } from "../interfaces/Services";
-import SelectComponent from "./Select";
-import { useSearchParams } from "react-router-dom";
-import getCharacters from "../services/get/getCharacters";
-import { FilterParams } from "../interfaces/Filters";
-import serializeParams from "../utils/serializeParams";
+import React from 'react';
+import {
+  Button, MenuItem, SelectChangeEvent, TextField,
+} from '@mui/material';
+import './Filters.css';
+import { useSearchParams } from 'react-router-dom';
+import { Characters } from '../interfaces/Services';
+import SelectComponent from './Select';
+import getCharacters from '../services/get/getCharacters';
+import { FilterParams } from '../interfaces/Filters';
+import serializeParams from '../utils/serializeParams';
 
 interface FiltersProps {
   setCharList: (value: Characters) => void;
@@ -16,8 +18,10 @@ interface FiltersProps {
 }
 
 export default function Filters(props: FiltersProps) {
-  const { queryParams, setQueryParams, setCharList, setLoading } = props;
-  const [_searchParams, setSearchParams] = useSearchParams();
+  const {
+    queryParams, setQueryParams, setCharList, setLoading,
+  } = props;
+  const [, setSearchParams] = useSearchParams();
 
   const handleChange = (event: SelectChangeEvent) => {
     const { name, value } = event.target;
@@ -26,21 +30,21 @@ export default function Filters(props: FiltersProps) {
 
   const fetchFilteredCharacters = async (obj: FilterParams) => {
     setLoading(true);
-    setQueryParams({ ...obj, page: "1" }); // faz com que a paginação volte para a primeira página e atualiza os values das options
+    setQueryParams({ ...obj, page: '1' }); // faz com que a paginação volte para a primeira página e atualiza os values das options
     const params = serializeParams(obj); // remove parametros não utilizados
-    const { data } = await getCharacters({ ...params, page: "1" });
-    setSearchParams({ ...params, page: "1" }); // atualiza a url
+    const { data } = await getCharacters({ ...params, page: '1' });
+    setSearchParams({ ...params, page: '1' }); // atualiza a url
     setCharList(data);
     setLoading(false);
   };
 
   const handleClearFilter = async () => {
     fetchFilteredCharacters({
-      page: "1",
-      gender: "none",
-      status: "none",
-      name: "",
-      species: "none",
+      page: '1',
+      gender: 'none',
+      status: 'none',
+      name: '',
+      species: 'none',
     });
   };
 
@@ -55,23 +59,23 @@ export default function Filters(props: FiltersProps) {
         name="name"
         label="Search by character name"
         variant="standard"
-        value={queryParams["name"]}
+        value={queryParams.name}
         onChange={(e) => handleChange(e as SelectChangeEvent<string>)}
         sx={{
-          input: { color: "white" },
-          label: { color: "gray" },
-          div: { color: "#ffffff" },
-          ".css-v4u5dn-MuiInputBase-root-MuiInput-root:after": {
-            borderBottom: "2px solid gray",
+          input: { color: 'white' },
+          label: { color: 'gray' },
+          div: { color: '#ffffff' },
+          '.css-v4u5dn-MuiInputBase-root-MuiInput-root:after': {
+            borderBottom: '2px solid gray',
           },
-          ".Mui-focused": { color: "gray" },
+          '.Mui-focused': { color: 'gray' },
         }}
       />
 
       <SelectComponent
         name="Status"
         size="small"
-        value={queryParams["status"]}
+        value={queryParams.status}
         handleChange={handleChange}
       >
         <MenuItem value="none">None</MenuItem>
@@ -83,7 +87,7 @@ export default function Filters(props: FiltersProps) {
       <SelectComponent
         name="Gender"
         size="small"
-        value={queryParams["gender"]}
+        value={queryParams.gender}
         handleChange={handleChange}
       >
         <MenuItem value="none">None</MenuItem>
@@ -96,7 +100,7 @@ export default function Filters(props: FiltersProps) {
       <SelectComponent
         name="Species"
         size="small"
-        value={queryParams["species"]}
+        value={queryParams.species}
         handleChange={handleChange}
       >
         <MenuItem value="none">None</MenuItem>

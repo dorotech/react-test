@@ -12,13 +12,12 @@ export default async function getCharacters(params: Filters): Promise<{
   data: Characters;
   status: number;
 }> {
-  let filters = "";
+  let filters = '';
   Object.entries(params).forEach(([key, value]) => {
-    if (value !== "none" && value !== "" && value !== undefined) {
-        if (key == "page") {
-            filters += `?${key}=${value}`;
-        }
-        else filters += `&${key}=${value}`;
+    if (value !== 'none' && value !== '' && value !== undefined) {
+      if (key === 'page') {
+        filters += `?${key}=${value}`;
+      } else filters += `&${key}=${value}`;
     }
   });
 
