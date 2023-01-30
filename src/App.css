@@ -4,5 +4,5 @@
 
 body {
     background: rgb(39, 43, 51);
-    @apply w-fit
+    @apply w-fit min-w-full;
 }
