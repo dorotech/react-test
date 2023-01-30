@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import {
   Box,
   useTheme,
@@ -12,12 +13,22 @@ import TextField from "@mui/material/TextField/TextField";
 import { useAppThemeContext } from "../../contexts/ThemeContext";
 import { Environment } from "../../environment";
 
-export const Header = () => {
-  const theme = useTheme();
+import { useSearchParams } from "react-router-dom";
 
+export const Header = () => {
+  const [search, setSearch] = useState("");
+  const theme = useTheme();
   const { mudarTema } = useAppThemeContext();
 
-  return (
+
+  const [ searchParams, setSearchParams] = useSearchParams();
+
+  const busca = useMemo(() => {
+    return searchParams.get('busca') || '';
+  },[searchParams]);
+
+
+    return (
     <Box
       gap={1}
       marginX={0}
@@ -46,6 +57,7 @@ export const Header = () => {
               size="small"
               fullWidth
               inputProps={{ maxLength: 25 }}
+              value={busca}
             />
           </Stack>
         </Stack>

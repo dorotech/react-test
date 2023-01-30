@@ -1,16 +1,15 @@
-
 import { Box, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Environment } from "../../environment";
 
 export const Body = () => {
   const [characters, setCharacters] = useState([]);
 
   const getApi = async () => {
     try {
-      const response = await fetch("https://rickandmortyapi.com/api/character");
+      const response = await fetch(Environment.URL_BASE);
       const data = await response.json();
 
-      console.log(data.results);
       setCharacters(data.results);
     } catch (error) {
       console.log(error);
