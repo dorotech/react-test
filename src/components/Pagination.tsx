@@ -2,23 +2,30 @@ import React from 'react';
 import { Pagination as MaterialPagination } from '@mui/material';
 import './Pagination.css';
 
+interface QueryParams {
+  page: string;
+  name: string;
+  status: string;
+  gender: string;
+  species: string;
+}
 interface PaginationProps {
   count: number | undefined;
-  page: string;
-  setPage: (value: string) => void;
+  queryParams: QueryParams
+  setQueryParams: React.Dispatch<React.SetStateAction<QueryParams>>;
 }
 
 export default function Pagination(props: PaginationProps) {
-  const { count, page, setPage } = props;
+  const { count, queryParams, setQueryParams: setQuery } = props;
   return (
     <MaterialPagination
       className="pagination"
       count={count}
       variant="outlined"
       shape="rounded"
-      page={+page}
+      page={+queryParams.page}
       onChange={(_event, value) => {
-        setPage(value.toString());
+        setQuery({ ...queryParams, page: value.toString() });
       }}
       sx={{
         button: {
