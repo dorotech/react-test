@@ -9,5 +9,9 @@
       "files": ["./src/**/*.test.tsx"],
       "extends": ["plugin:testing-library/react"]
     }
-  ]
+  ],
+  "rules": {
+    "class-methods-use-this": "off",
+    "consistent-return": "off"
+  }
 }
