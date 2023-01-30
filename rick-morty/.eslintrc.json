@@ -1,10 +1,12 @@
 {
+  "env": {
+    "jest": true
+  },
   "extends": ["next/core-web-vitals", "airbnb-base/legacy", "prettier"],
-  "plugins": ["testing-library"],
   "overrides": [
     // Only uses Testing Library lint rules in test files
     {
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "files": ["./src/**/*.test.tsx"],
       "extends": ["plugin:testing-library/react"]
     }
   ]
