@@ -16,5 +16,6 @@
 * Typescript
 * Material Ui
 * Figma - (https://www.figma.com/file/Jq9FfCP24qXjSgLofPfCBV/List-Rick-and-Morty?node-id=0%3A1&t=RYO7Lj24gEwN8HUe-0)
+* Site no ar - (https://rickandmortyapp-pi.vercel.app/pagina-inicial)
 
 
