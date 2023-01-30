@@ -1,0 +1,7 @@
+.loading-container {
+    @apply flex flex-col items-center h-screen;
+}
+
+.loading-container__progress {
+    @apply h-2/3 flex flex-col items-center justify-center;
+}
