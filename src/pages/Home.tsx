@@ -1,20 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { URLSearchParamsInit, useSearchParams } from 'react-router-dom';
 import CharList from '../components/CharList';
+import Filters from '../components/Filters';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
 import Pagination from '../components/Pagination';
 import { Characters } from '../interfaces/Services';
 import getCharacters from '../services/get/getCharacters';
+import serializeParams from '../utils/serializeParams';
 
 export default function Home() {
-  const [charactersInfo, setCharactersInfo] = useState<Characters | null>(null);
+  const [charactersInfo, setCharactersInfo] = useState<Characters>({
+    info: {
+      pages: 0,
+    },
+    results: [],
+  });
+  const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [page, setPage] = useState(searchParams.get('page') || '1');
+  const searchParamsObj = Object.fromEntries(searchParams.entries());
+
+  const [queryParams, setQueryParams] = useState({
+    page: searchParamsObj.page || '1',
+    name: searchParamsObj.name || '',
+    status: searchParamsObj.status || 'none',
+    gender: searchParamsObj.gender || 'none',
+    species: searchParamsObj.species || 'none',
+  });
 
   const fetchCharacters = async () => {
-    const { data } = await getCharacters(+page);
+    
+    setLoading(true);
+    const params = serializeParams(queryParams); // remove parametros não utilizados
+    const { data } = await getCharacters(params);
+    setLoading(false);
     setCharactersInfo(data);
-    setSearchParams({ page });
+    setSearchParams(params as unknown as URLSearchParamsInit); // atualiza a url
   };
 
   useEffect(() => {
@@ -23,20 +44,21 @@ export default function Home() {
 
   useEffect(() => {
     fetchCharacters();
-  }, [page]);
+  }, [queryParams.page]);
 
-  if (!charactersInfo) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return <Loading />;
   }
 
   return (
-    <div>
+    <div className="main">
       <Header />
+      <Filters setQueryParams={setQueryParams} queryParams={queryParams} setCharList={setCharactersInfo} setLoading={setLoading} />
       <CharList characters={charactersInfo.results} />
       <Pagination
         count={charactersInfo.info.pages}
-        page={page}
-        setPage={(value: string) => setPage(value)}
+        queryParams={queryParams}
+        setQueryParams={setQueryParams}
       />
     </div>
   );
