@@ -1,0 +1,10 @@
+.character-details__container {
+    @apply flex flex-col justify-center items-center;
+}
+
+.character-card--details {
+    background: rgb(60, 62, 68);
+    @apply flex text-white overflow-hidden w-96 rounded-lg m-6;
+    width: 53rem;
+    height: 22rem;
+}

@@ -35,16 +35,15 @@
     height: 0.5rem;
     width: 0.5rem;
     margin-right: 0.375rem;
-    background: rgb(85, 204, 68);
     border-radius: 50%;
 }
 
-.character-card__location {
-    @apply flex flex-col justify-center;
+.character-card__item {
+    @apply flex flex-col justify-center capitalize;
     flex: 1 1 0%;
 }
 
-.character-card__location span {
+.character-card__item span {
     color: rgb(158, 158, 158);
 }
 
