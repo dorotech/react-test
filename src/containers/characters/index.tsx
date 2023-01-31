@@ -1,29 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import axios from "axios";
-import {
-  Alert,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  FormControl,
-  InputBase,
-  InputLabel,
-  MenuItem,
-  OutlinedInput,
-  Select,
-  SelectChangeEvent,
-  Snackbar,
-  TablePagination,
-  Typography,
-} from "@mui/material";
+import { SelectChangeEvent, TablePagination, Typography } from "@mui/material";
 import { LoadingIcon } from "../../components/loading";
 import styles from "./styles.module.scss";
 import { ColorModeContext } from "../../contexts";
 import { CharacterCard } from "../../components/characterCard";
-import SearchIcon from "@mui/icons-material/Search";
+import { SearchInput } from "../../components/searchInput";
+import { SnackBar } from "../../components/snackbar";
+import { PrimaryButton } from "../../components/primaryButton";
+import { FiltersForm } from "./filtersForm";
 
 const CharactersContainer = () => {
   const { mode } = useContext(ColorModeContext);
@@ -103,7 +89,6 @@ const CharactersContainer = () => {
     } = event;
     setGenderName(value);
   };
-  const genderOptions = ["female", "male", "genderless", "unknown"];
 
   const handleChangeSpecie = (event: SelectChangeEvent<typeof genderName>) => {
     const {
@@ -112,8 +97,6 @@ const CharactersContainer = () => {
     setSpeciesName(value);
   };
 
-  const specieOptions = ["human", "humanoid"];
-
   const handleChangeStatus = (event: SelectChangeEvent<typeof genderName>) => {
     const {
       target: { value },
@@ -121,17 +104,12 @@ const CharactersContainer = () => {
     setStatusName(value);
   };
 
-  const statusOptions = ["alive", "dead", "unknown"];
-
-  const handleClickOpenFilters = () => {
-    setOpenMoreFilters(true);
-  };
-  const handleCloseFilters = () => {
-    setOpenMoreFilters(false);
+  const handleToogleFilters = () => {
+    setOpenMoreFilters(!openMoreFilters);
   };
 
-  const handleFilter = () => {
-    handleCloseFilters();
+  const handleFiltersChar = () => {
+    handleToogleFilters();
     getCharactersList(filters);
   };
 
@@ -147,50 +125,24 @@ const CharactersContainer = () => {
       ) : (
         <>
           <Box className={styles.search_container}>
-            <div
-              style={{
-                border: `1px solid ${mode === "light" ? "#36385a" : "#bbbdd6"}`,
-                borderRadius: "100px",
-                display: "flex",
-                alignItems: "center",
-                color: mode === "light" ? "black" : "white",
-                background: mode === "light" ? "#bbbdd6" : "#36385a",
-                minWidth: "300px",
-                padding: "4px 8px 4px 4px",
-              }}
-            >
-              <SearchIcon />
-              <InputBase
-                placeholder="Por nome..."
-                inputProps={{ "aria-label": "search" }}
-                style={{ color: mode === "light" ? "black" : "white" }}
-                value={nameToSearch}
-                onChange={(e) => setNameToSearch(e.target.value)}
+            <SearchInput
+              nameToSearch={nameToSearch}
+              setNameToSearch={setNameToSearch}
+            />
+            <Box style={{ display: "flex" }}>
+              <PrimaryButton
+                buttonName="Pesquisar"
+                handleClick={handleSearchByName}
               />
-            </div>
-            <div style={{ display: "flex" }}>
-              <Button
-                onClick={handleSearchByName}
-                variant="text"
-                style={{ color: mode === "light" ? "#36385a" : "#bbbdd6" }}
-              >
-                Pesquisar
-              </Button>
-              <Button
-                variant="text"
-                style={{ color: mode === "light" ? "#36385a" : "#bbbdd6" }}
-                onClick={handleClickOpenFilters}
-              >
-                Mais filtros
-              </Button>
-              <Button
-                onClick={handleClearFilters}
-                variant="text"
-                style={{ color: mode === "light" ? "#36385a" : "#bbbdd6" }}
-              >
-                Limpar filtros
-              </Button>
-            </div>
+              <PrimaryButton
+                buttonName="Mais filtros"
+                handleClick={handleToogleFilters}
+              />
+              <PrimaryButton
+                buttonName="Limpar filtros"
+                handleClick={handleClearFilters}
+              />
+            </Box>
           </Box>
           <div>
             <Typography
@@ -223,90 +175,22 @@ const CharactersContainer = () => {
           </div>
         </>
       )}
-
-      <Dialog open={openMoreFilters} onClose={handleCloseFilters}>
-        <Box
-          style={{
-            background: mode === "light" ? "#dddeeb" : "#484b78",
-            color: mode === "light" ? "black" : "white",
-          }}
-        >
-          <DialogTitle style={{ display: "flex", justifyContent: "center" }}>
-            Mais Filtros
-          </DialogTitle>
-          <DialogContent
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "24px 12px",
-            }}
-          >
-            <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel>Gênero</InputLabel>
-              <Select
-                value={genderName}
-                onChange={handleChangeGender}
-                input={<OutlinedInput label="Gender" />}
-              >
-                {genderOptions.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel>Status</InputLabel>
-              <Select
-                value={statusName}
-                onChange={handleChangeStatus}
-                input={<OutlinedInput label="Status" />}
-              >
-                {statusOptions.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, width: 300 }}>
-              <InputLabel>Espécie</InputLabel>
-              <Select
-                value={speciesName}
-                onChange={handleChangeSpecie}
-                input={<OutlinedInput label="Specie" />}
-              >
-                {specieOptions.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    {name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              style={{
-                color: mode === "light" ? "#484b78" : "#dddeeb",
-              }}
-              onClick={handleFilter}
-            >
-              Filtrar
-            </Button>
-          </DialogActions>
-        </Box>
-      </Dialog>
-
-      <Snackbar
+      <FiltersForm
+        open={openMoreFilters}
+        handleClose={handleToogleFilters}
+        handleFilter={handleFiltersChar}
+        genderName={genderName}
+        handleGenderName={handleChangeGender}
+        speciesName={speciesName}
+        handleSpecieName={handleChangeSpecie}
+        statusName={statusName}
+        handleStatusName={handleChangeStatus}
+      />
+      <SnackBar
         open={loading === "error"}
-        autoHideDuration={6000}
         onClose={handleCloseSnackBar}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert severity="error">
-          Não foram encontrado personagens usando esse filtro!
-        </Alert>
-      </Snackbar>
+        type="error"
+      />
     </Box>
   );
 };

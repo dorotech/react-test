@@ -1,26 +1,23 @@
 import { useContext, useState } from "react";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Chip,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Typography,
 } from "@mui/material";
 import { ColorModeContext } from "../../contexts";
-import MaleIcon from "@mui/icons-material/Male";
-import FemaleIcon from "@mui/icons-material/Female";
-import TransgenderIcon from "@mui/icons-material/Transgender";
-import BlockIcon from "@mui/icons-material/Block";
-import BabyChangingStationIcon from "@mui/icons-material/BabyChangingStation";
-import { Box } from "@mui/system";
+import { DetailsCard } from "./detailsCard";
+import styles from "./styles.module.scss";
+import { PrimaryButton } from "../primaryButton";
+import { CharacterData } from "../../types";
 
-const CharacterCard = ({ charData }: any) => {
+interface CharacterCardProps {
+  charData: CharacterData;
+}
+
+const CharacterCard = ({ charData }: CharacterCardProps) => {
   const { mode } = useContext(ColorModeContext);
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -30,57 +27,15 @@ const CharacterCard = ({ charData }: any) => {
     unknown: "warning",
   };
 
-  const GenderList: any = {
-    Male: (
-      <MaleIcon
-        style={{
-          color: mode === "light" ? "#484b78" : "#dddeeb",
-        }}
-      />
-    ),
-    Female: (
-      <FemaleIcon
-        style={{
-          color: mode === "light" ? "#484b78" : "#dddeeb",
-        }}
-      />
-    ),
-    genderless: (
-      <TransgenderIcon
-        style={{
-          color: mode === "light" ? "#484b78" : "#dddeeb",
-        }}
-      />
-    ),
-    unknown: (
-      <BlockIcon
-        style={{
-          color: mode === "light" ? "#484b78" : "#dddeeb",
-        }}
-      />
-    ),
-  };
-
-  const handleClickOpen = () => {
-    setOpenDialog(true);
-  };
-  const handleClose = () => {
-    setOpenDialog(false);
+  const handleToogleDialog = () => {
+    setOpenDialog(!openDialog);
   };
 
   return (
     <Card
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        height: "150px",
-        background: mode === "light" ? "#dddeeb" : "#484b78",
-        color: mode === "light" ? "black" : "white",
-        boxShadow:
-          mode === "light"
-            ? "1px 1px 1px 1px #484b78"
-            : "1px 1px 1px 1px #dddeeb",
-      }}
+      className={`${styles.card_container} ${
+        mode !== "light" && styles.card_container_dark_mode
+      }`}
     >
       <CardMedia
         component="img"
@@ -89,77 +44,23 @@ const CharacterCard = ({ charData }: any) => {
         style={{ width: "40%" }}
         onClick={() => window.open(`${charData.image}`, "_blank")}
       />
-      <CardContent
-        style={{
-          paddingBottom: "0px",
-          padding: "8px",
-          width: "100%",
-          position: "relative",
-        }}
-      >
+      <CardContent className={styles.card_content}>
         <Typography component="div" variant="h6">
           {charData.name}
         </Typography>
         <Chip label={charData.status} color={ColorStatus[charData.status]} />
-        <CardActions
-          style={{
-            padding: "0px",
-            position: "absolute",
-            bottom: "0",
-            right: "0",
-          }}
-        >
-          <Button
-            onClick={handleClickOpen}
-            style={{
-              color: mode === "light" ? "#484b78" : "#dddeeb",
-            }}
-          >
-            Detalhes
-          </Button>
+        <CardActions className={styles.card_actions}>
+          <PrimaryButton
+            buttonName="Detalhes"
+            handleClick={handleToogleDialog}
+          />
         </CardActions>
       </CardContent>
-      <Dialog open={openDialog} onClose={handleClose}>
-        <Box
-          style={{
-            background: mode === "light" ? "#dddeeb" : "#484b78",
-            color: mode === "light" ? "black" : "white",
-          }}
-        >
-          <DialogTitle style={{ display: "flex", justifyContent: "center" }}>
-            {charData.name}
-          </DialogTitle>
-          <DialogContent>
-            <Typography style={{ display: "flex" }}>
-              <b>Espécie:</b> {charData.species}
-            </Typography>
-            <Typography style={{ display: "flex" }}>
-              <b>Gênero:</b> {GenderList[charData.gender]}
-            </Typography>
-            <Typography style={{ display: "flex" }}>
-              <b>Nascimento:</b> {charData.origin.name}
-              <BabyChangingStationIcon
-                style={{
-                  color: mode === "light" ? "#484b78" : "#dddeeb",
-                }}
-              />
-            </Typography>
-            <Typography style={{ display: "flex" }}>
-              <b>Localização:</b> {charData.location.name}
-            </Typography>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={handleClose}
-              style={{
-                color: mode === "light" ? "#484b78" : "#dddeeb",
-              }}
-            >
-              Fechar
-            </Button>
-          </DialogActions>
-        </Box>
-      </Dialog>
+      <DetailsCard
+        open={openDialog}
+        handleClose={handleToogleDialog}
+        charData={charData}
+      />
     </Card>
   );
 };
