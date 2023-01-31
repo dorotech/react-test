@@ -9,6 +9,7 @@ import SelectComponent from './Select';
 import getCharacters from '../services/get/getCharacters';
 import { FilterParams } from '../interfaces/Filters';
 import serializeParams from '../utils/serializeParams';
+import { useToast } from '../hooks/useToast';
 
 interface FiltersProps {
   setCharList: (value: Characters) => void;
@@ -18,6 +19,7 @@ interface FiltersProps {
 }
 
 export default function Filters(props: FiltersProps) {
+  const { toast } = useToast();
   const {
     queryParams, setQueryParams, setCharList, setLoading,
   } = props;
@@ -30,11 +32,19 @@ export default function Filters(props: FiltersProps) {
 
   const fetchFilteredCharacters = async (obj: FilterParams) => {
     setLoading(true);
-    setQueryParams({ ...obj, page: '1' }); // faz com que a paginação volte para a primeira página e atualiza os values das options
-    const params = serializeParams(obj); // remove parametros não utilizados
-    const { data } = await getCharacters({ ...params, page: '1' });
-    setSearchParams({ ...params, page: '1' }); // atualiza a url
-    setCharList(data);
+    try {
+      setQueryParams({ ...obj, page: '1' }); // faz com que a paginação volte para a primeira página e atualiza os values das options
+      const params = serializeParams(obj); // remove parametros não utilizados
+      const { data } = await getCharacters({ ...params, page: '1' });
+      setSearchParams({ ...params, page: '1' }); // atualiza a url
+      setCharList(data);
+    } catch (error: any) {
+      if (error.response.status === 404) {
+        toast.error('No characters found for given filters.', {
+          toastId: 'error',
+        });
+      }
+    }
     setLoading(false);
   };
 
