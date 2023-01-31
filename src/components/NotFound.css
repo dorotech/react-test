@@ -1,0 +1,7 @@
+.not-found-container {
+    @apply flex flex-col items-center justify-evenly p-10 h-screen;
+}
+
+.not-found-container h1 {
+    @apply text-6xl font-bold text-white;
+}
