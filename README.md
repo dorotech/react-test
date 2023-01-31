@@ -9,3 +9,7 @@ O projeto foi desenvolvido em React: https://pt-br.reactjs.org/docs/getting-star
 # Como rodar:
 
 Para rodar, é necessário baixar o projeto do github, utilizar o npm install, para instalar as dependências. Após isso, rodar o comando npm run dev, que irá gerar um ip/porta. Clicar ou copiar esse ip e colocar no navegador.
+
+# Link
+
+https://rick-morty-test-yj2v.vercel.app/
