@@ -47,12 +47,7 @@ export default function Home() {
           toastId: 'error',
         });
         setReload(true);
-      } else {
-        toast.error('Something went wrong, try again later!', {
-          toastId: 'error',
-        });
-        setServiceError(true);
-      }
+      } else setServiceError(true);
     }
     setLoading(false);
   };
