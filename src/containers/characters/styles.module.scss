@@ -1,3 +1,15 @@
+.box_container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.typography {
+    display: flex;
+    justify-content: center;
+    font-family: Comic Sans MS !important;
+    font-size: 24px;
+}
+
 .card_container {
     padding: 16px;
     grid-template-columns: repeat(4, 1fr);

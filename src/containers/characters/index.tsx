@@ -15,15 +15,17 @@ const CharactersContainer = () => {
   const { mode } = useContext(ColorModeContext);
   const [characterList, setCharacterList] = useState([]);
   const [loading, setLoading] = useState("idle");
+
   const [paginationInfo, setPaginationInfo] = useState<any>([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(20);
+  const currentPage = (rowsPerPage * (page + 1)) / 20;
+
   const [nameToSearch, setNameToSearch] = useState("");
   const [genderName, setGenderName] = useState("");
   const [speciesName, setSpeciesName] = useState("");
   const [statusName, setStatusName] = useState("");
   const [openMoreFilters, setOpenMoreFilters] = useState(false);
-  const currentPage = (rowsPerPage * (page + 1)) / 20;
 
   const filters = `?page=${currentPage}${
     nameToSearch.length > 0 ? `&name=${nameToSearch}` : ""
@@ -60,28 +62,14 @@ const CharactersContainer = () => {
     setPage(0);
   };
 
+  useEffect(() => {
+    getCharactersList(`${filters}`);
+  }, [page, rowsPerPage]);
+
   const handleSearchByName = () => {
     getCharactersList(filters);
     setPage(0);
   };
-
-  const handleClearFilters = () => {
-    getCharactersList("");
-    setNameToSearch("");
-    setGenderName("");
-    setSpeciesName("");
-    setStatusName("");
-    setPage(0);
-    getCharactersList(`?page=${1}`);
-  };
-
-  const handleCloseSnackBar = () => {
-    setLoading("idle");
-  };
-
-  useEffect(() => {
-    getCharactersList(`${filters}`);
-  }, [page, rowsPerPage]);
 
   const handleChangeGender = (event: SelectChangeEvent<typeof genderName>) => {
     const {
@@ -108,18 +96,27 @@ const CharactersContainer = () => {
     setOpenMoreFilters(!openMoreFilters);
   };
 
+  const handleClearFilters = () => {
+    getCharactersList("");
+    setNameToSearch("");
+    setGenderName("");
+    setSpeciesName("");
+    setStatusName("");
+    setPage(0);
+    getCharactersList(`?page=${1}`);
+  };
+
   const handleFiltersChar = () => {
     handleToogleFilters();
     getCharactersList(filters);
   };
 
+  const handleCloseSnackBar = () => {
+    setLoading("idle");
+  };
+
   return (
-    <Box
-      style={{
-        overflowX: "auto",
-        width: "100%",
-      }}
-    >
+    <Box className={styles.box_container}>
       {loading === "loading" ? (
         <LoadingIcon />
       ) : (
@@ -144,16 +141,11 @@ const CharactersContainer = () => {
               />
             </Box>
           </Box>
-          <div>
+          <Box>
             <Typography
               component="div"
               variant="h6"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                fontFamily: "Comic Sans MS",
-                fontSize: "24px",
-              }}
+              className={styles.typography}
             >
               Galerinha do Rick e Morty
             </Typography>
@@ -172,7 +164,7 @@ const CharactersContainer = () => {
               onRowsPerPageChange={handleChangeRowsPerPage}
               style={{ color: mode === "light" ? "black" : "white" }}
             />
-          </div>
+          </Box>
         </>
       )}
       <FiltersForm
