@@ -27,6 +27,5 @@ const GENDER = [
     value: 'genderless',
   },
 ];
-]
 
-export { GENDER, STATUS}
+export { GENDER, STATUS };
