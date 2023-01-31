@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import CharDetails from "../components/CharDetails";
-import Header from "../components/Header";
-import Loading from "../components/Loading";
-import { Character } from "../interfaces/Services";
-import getCharacterDetails from "../services/get/getCharacterDetails";
-import "../components/CharDetails.css";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import CharDetails from '../components/CharDetails';
+import Header from '../components/Header';
+import Loading from '../components/Loading';
+import { Character } from '../interfaces/Services';
+import getCharacterDetails from '../services/get/getCharacterDetails';
+import '../components/CharDetails.css';
 
 export default function Charpage() {
   const { id } = useParams();

@@ -1,18 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Character, Status } from "../interfaces/Services";
-import "./CharCard.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Character } from '../interfaces/Services';
+import './CharCard.css';
 
 interface CharProps {
   character: Character;
 }
 
 export default function CharCard({ character }: CharProps) {
-  const { image, name, gender, status, location, id } = character;
+  const {
+    image, name, gender, status, location, id,
+  } = character;
 
-  let statusColor = "gray";
-  if (status === "Alive") statusColor = "green";
-  else if (status === "Dead") statusColor = "red";
+  let statusColor = 'gray';
+  if (status === 'Alive') statusColor = 'green';
+  else if (status === 'Dead') statusColor = 'red';
 
   return (
     <div className="character-card">

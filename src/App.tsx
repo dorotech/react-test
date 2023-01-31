@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='character/:id' element={<Charpage />} />
+        <Route path="character/:id" element={<Charpage />} />
         {/* <Route path='*' element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
