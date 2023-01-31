@@ -2,7 +2,7 @@ import { Button } from '@/features/common/components/button';
 
 interface IRadioFilter {
   name: string;
-  onChange(value: string): void;
+  onChange(value?: string): void;
   value?: string;
   options: { value: string; label: string }[];
 }
@@ -14,19 +14,22 @@ export function RadioFilter({ onChange, options, value, name }: IRadioFilter) {
         {name}
       </span>
 
-      {options.map((option) => (
-        <Button
-          name={name}
-          role="checkbox"
-          aria-checked={option.value === value}
-          type="button"
-          key={option.value}
-          className={`${option.value === value ? 'bg-amber-600' : undefined}`}
-          onClick={() => onChange(option.value)}
-        >
-          {option.label}
-        </Button>
-      ))}
+      {options.map((option) => {
+        const isChecked = option.value === value;
+        return (
+          <Button
+            name={name}
+            role="checkbox"
+            aria-checked={isChecked}
+            type="button"
+            key={option.value}
+            className={`${isChecked ? 'bg-amber-600' : undefined}`}
+            onClick={() => onChange(isChecked ? undefined : option.value)}
+          >
+            {option.label}
+          </Button>
+        );
+      })}
     </div>
   );
 }

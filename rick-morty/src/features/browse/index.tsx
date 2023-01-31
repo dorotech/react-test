@@ -1,21 +1,13 @@
 import { CircleNotch, X } from 'phosphor-react';
-import { useState } from 'react';
 import { Button } from '../common/components/button';
 
-import { TGetCharacter } from '../common/services/rick-morty';
 import { CharacterList } from './components/character-list';
 import { SearchCharacterForm } from './components/search-character-form';
 import { useCharacter } from './hooks/use-character';
-
-const INITIAL_STATE: TGetCharacter = {
-  name: undefined,
-  gender: undefined,
-  status: undefined,
-  species: undefined,
-};
+import { useQueryState } from './hooks/use-query-state';
 
 export function Home() {
-  const [query, setQuery] = useState(INITIAL_STATE);
+  const { query, setQuery, resetQuery } = useQueryState();
   const { data, isLoading, isError, isFetching } = useCharacter(query);
 
   const renderFetchingCharacters = () => {
@@ -37,7 +29,7 @@ export function Home() {
           <span>Ops, nothing was found for this query.</span>
 
           <span>
-            <Button className="bg-amber-500 text-white" onClick={() => setQuery(INITIAL_STATE)}>
+            <Button className="bg-amber-500 text-white" onClick={resetQuery}>
               Reset Inputs
             </Button>
           </span>
@@ -47,6 +39,8 @@ export function Home() {
   };
 
   const renderResultInfos = () => {
+    if (isLoading) return;
+
     return (
       <div className="text-zinc-400">
         {isFetching ? (
