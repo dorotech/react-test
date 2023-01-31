@@ -303,7 +303,9 @@ const CharactersContainer = () => {
         onClose={handleCloseSnackBar}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert severity="error">Não encontrado usando esse filtro!</Alert>
+        <Alert severity="error">
+          Não foram encontrado personagens usando esse filtro!
+        </Alert>
       </Snackbar>
     </Box>
   );

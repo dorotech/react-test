@@ -5,6 +5,7 @@ import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import { ColorModeContext } from "../../contexts";
+import styles from "./styles.module.scss";
 
 const TopAppBar = () => {
   const { colorMode, mode } = React.useContext(ColorModeContext);
@@ -17,19 +18,10 @@ const TopAppBar = () => {
     <AppBar
       component="nav"
       position="static"
-      style={{
-        padding: "16px",
-        display: "flex",
-        justifyContent: "space-between",
-        flexDirection: "row",
-        backgroundColor: mode === "light" ? "#5b5f97" : "#2d2f4b",
-        gridArea: "topbar",
-      }}
+      className={`${styles.container} ${mode !== "light" && styles.dark_mode}`}
     >
-      <Typography style={{ display: "flex", alignItems: "center" }}>
-        Rick e Morty Wiki
-      </Typography>
-      <FormGroup style={{ justifyContent: "center" }}>
+      <Typography className={styles.typography}>Rick e Morty Wiki</Typography>
+      <FormGroup className={styles.switch_contaier}>
         <FormControlLabel
           control={
             <Switch

@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { HomePage } from "./containers/home";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ColorModeContext } from "./contexts";
+import { Box } from "@mui/material";
+import styles from "./styles.module.scss";
 
 const App = () => {
   const [mode, setMode] = useState<"light" | "dark">("light");
@@ -29,14 +31,13 @@ const App = () => {
   return (
     <ColorModeContext.Provider value={{ colorMode, mode }}>
       <ThemeProvider theme={theme}>
-        <div
-          style={{
-            background: mode === "light" ? "#dddeeb" : "#484b78",
-            height: "100%",
-          }}
+        <Box
+          className={`${styles.app_container} ${
+            mode !== "light" && styles.dark_mode
+          }`}
         >
           <HomePage />
-        </div>
+        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
