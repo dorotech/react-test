@@ -1,7 +1,7 @@
 .page_info {
-    grid-template-areas:
-        "filters char char char char";
-    display: grid;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .container {

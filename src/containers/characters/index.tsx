@@ -1,8 +1,19 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import axios from "axios";
-import { TablePagination } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  TablePagination,
+  Typography,
+} from "@mui/material";
 import { LoadingIcon } from "../../components/loading";
+import styles from "./styles.module.scss";
+import { ColorModeContext } from "../../contexts";
+import { CharacterCard } from "../../components/characterCard";
 
 const CharactersContainer = () => {
   const [characterList, setCharacterList] = useState([]);
@@ -10,6 +21,7 @@ const CharactersContainer = () => {
   const [paginationInfo, setPaginationInfo] = useState<any>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(20);
+  const { mode } = useContext(ColorModeContext);
 
   const getCharactersList = async (query: string) => {
     try {
@@ -47,34 +59,42 @@ const CharactersContainer = () => {
   }, [page, rowsPerPage]);
 
   return (
-    <Box style={{ gridArea: "char" }}>
-      <div>Search Bar</div>
-      <div>
-        {loading === "loading" ? (
-          <LoadingIcon />
-        ) : (
+    <Box
+      style={{
+        overflowX: "auto",
+        width: "100%",
+      }}
+    >
+      {loading === "loading" ? (
+        <LoadingIcon />
+      ) : (
+        <>
+          <div>Search Bar</div>
           <div>
-            {characterList.map((char: any) => {
-              return (
-                <div>
-                  <span>{char.name}</span>
-                  <span>{char.species}</span>
-                  <span>{char.status}</span>
-                </div>
-              );
-            })}
+            <Typography
+              component="div"
+              variant="h6"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              Galerinha do Rick e Morty
+            </Typography>
+            <div className={styles.card_container}>
+              {characterList.map((char: any) => {
+                return <CharacterCard charData={char} key={char.id} />;
+              })}
+            </div>
             <TablePagination
               rowsPerPageOptions={[20]}
               component="div"
-              count={paginationInfo.count}
+              count={paginationInfo.count || 0}
               page={page}
               onPageChange={handleChangePage}
               rowsPerPage={rowsPerPage}
               onRowsPerPageChange={handleChangeRowsPerPage}
             />
           </div>
-        )}
-      </div>
+        </>
+      )}
     </Box>
   );
 };

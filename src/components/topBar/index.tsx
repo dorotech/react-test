@@ -27,7 +27,7 @@ const TopAppBar = () => {
       }}
     >
       <Typography style={{ display: "flex", alignItems: "center" }}>
-        Rick and Morty wiki
+        Rick e Morty Wiki
       </Typography>
       <FormGroup style={{ justifyContent: "center" }}>
         <FormControlLabel

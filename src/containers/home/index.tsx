@@ -4,7 +4,6 @@ import axios from "axios";
 import styles from "./styles.module.scss";
 import { CharactersContainer } from "../characters";
 import { ColorModeContext } from "../../contexts";
-import { LoadingIcon } from "../../components/loading";
 
 const HomePage = () => {
   const { mode } = useContext(ColorModeContext);
@@ -12,7 +11,6 @@ const HomePage = () => {
   return (
     <div style={{ height: "100%" }} className={styles.container}>
       <TopAppBar />
-
       <div
         className={styles.page_info}
         style={{
@@ -22,7 +20,6 @@ const HomePage = () => {
           color: mode === "light" ? "black" : "white",
         }}
       >
-        <div style={{ gridArea: "filters" }}>Filtros</div>
         <CharactersContainer />
       </div>
     </div>
