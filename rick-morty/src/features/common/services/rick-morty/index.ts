@@ -7,6 +7,7 @@ export type TGetCharacter = {
   name?: string;
   gender?: string;
   status?: string;
+  species?: string;
 };
 class RickMortyService {
   async getCharacter(query: TGetCharacter) {
