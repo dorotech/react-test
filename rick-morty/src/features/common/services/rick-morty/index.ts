@@ -1,10 +1,18 @@
-import { api } from '../../lib/axios';
+import { type } from 'os';
 
+import { api } from '../../lib/axios';
 import { TResponse } from './types';
 
-export class RickMortyService {
-  async getCharacter() {
-    const { data } = await api.get<TResponse>('/character');
+export type TGetCharacter = {
+  name?: string;
+  gender?: string;
+  status?: string;
+};
+class RickMortyService {
+  async getCharacter(query: TGetCharacter) {
+    const { data } = await api.get<TResponse>('/character', {
+      params: query,
+    });
 
     return data;
   }
