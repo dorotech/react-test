@@ -1,0 +1,21 @@
+.page_info {
+    display: flex;
+    flex-direction: row;
+    grid-area: "characters";
+    margin: 24px;
+    background: #bbbdd6;
+    color: black;
+}
+
+.container {
+    grid-template-areas: "topbar"
+        "characters";
+    display: grid;
+    grid-template-rows: 10% 90%;
+    height: 100%;
+}
+
+.dark_mode {
+    background: #36385a;
+    color: white;
+}

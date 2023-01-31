@@ -1,0 +1,28 @@
+.card_container {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    background: #dddeeb;
+    color: black;
+    box-shadow: 1px 1px 1px 1px #484b78;
+}
+
+.card_container_dark_mode {
+    background: #484b78 !important;
+    color: white !important;
+    box-shadow: 1px 1px 1px 1px #dddeeb !important;
+}
+
+.card_content {
+    padding-bottom: 0px;
+    padding: 8px;
+    width: 100%;
+    position: relative;
+}
+
+.card_actions {
+    padding: 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

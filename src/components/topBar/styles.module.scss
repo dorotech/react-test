@@ -1,0 +1,21 @@
+.container {
+    padding: 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    background-color: #5b5f97 !important;
+    grid-area: topbar !important;
+}
+
+.dark_mode {
+    background-color: #2d2f4b !important;
+}
+
+.typography {
+    display: flex;
+    align-items: center;
+}
+
+.switch_contaier {
+    justify-content: center;
+}
