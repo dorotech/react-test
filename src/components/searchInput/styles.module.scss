@@ -1,0 +1,16 @@
+.container {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    padding: 4px 8px 4px 4px;
+    border: 1px solid #36385a;
+    color: black;
+    background: #bbbdd6
+}
+
+.container_dark_mode {
+    border: 1px solid #bbbdd6 !important;
+    color: white !important;
+    background: #36385a !important
+}
