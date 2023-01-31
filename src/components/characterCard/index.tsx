@@ -87,6 +87,7 @@ const CharacterCard = ({ charData }: any) => {
         image={charData.image}
         alt="Char"
         style={{ width: "40%" }}
+        onClick={() => window.open(`${charData.image}`, "_blank")}
       />
       <CardContent
         style={{
