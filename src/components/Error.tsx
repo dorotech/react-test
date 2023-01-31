@@ -1,6 +1,6 @@
-import React from "react";
-import Morty from "../assets/morty.png";
-import "./NotFound.css";
+import React from 'react';
+import Morty from '../assets/morty.png';
+import './NotFound.css';
 
 export default function Error() {
   return (

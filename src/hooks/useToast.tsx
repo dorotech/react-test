@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,25 +8,27 @@ type IToastProps = {
 
 const ToastContext = createContext<IToastProps>({} as IToastProps);
 
-export const ToastProvider = ({ children }: any) => (
-  <ToastContext.Provider value={{ toast }}>
-    {children}
-    <div className="toast-wrapper">
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-    </div>
-  </ToastContext.Provider>
-);
+export function ToastProvider({ children }: any) {
+  return (
+    <ToastContext.Provider value={{ toast }}>
+      {children}
+      <div className="toast-wrapper">
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+      </div>
+    </ToastContext.Provider>
+  );
+}
 
 export function useToast() {
   const context = useContext(ToastContext);

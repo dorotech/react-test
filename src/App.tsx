@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import "./App.css";
-import Charpage from "./pages/Charpage";
-import NotFound from "./components/NotFound";
-import { ToastProvider } from "./hooks/useToast";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import './App.css';
+import Charpage from './pages/Charpage';
+import NotFound from './components/NotFound';
+import { ToastProvider } from './hooks/useToast';
 
 function App() {
   return (
