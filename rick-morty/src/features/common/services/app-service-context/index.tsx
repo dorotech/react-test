@@ -5,7 +5,7 @@ const SERVICES = {
   rickMorty: rickMortyService,
 };
 
-const AppServiceContext = createContext<typeof SERVICES | undefined>(undefined);
+export const AppServiceContext = createContext<typeof SERVICES | undefined>(undefined);
 
 export const useAppServiceContext = () => {
   const ctx = useContext(AppServiceContext);

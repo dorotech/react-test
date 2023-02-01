@@ -15,6 +15,7 @@ export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
   return (
     <form role="search" className="self-center flex flex-col gap-6">
       <Input
+        data-testid="character-name"
         value={query?.name}
         onChange={(e) => setQuery({ name: e.target.value })}
         type="text"

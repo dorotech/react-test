@@ -13,7 +13,10 @@ export function Home() {
   const renderFetchingCharacters = () => {
     if (isLoading) {
       return (
-        <div className="flex flex-col items-center gap-2 text-zinc-300">
+        <div
+          data-testid="loading-characters"
+          className="flex flex-col items-center gap-2 text-zinc-300"
+        >
           <CircleNotch size={32} className="animate-spin" />
           Fetching characters...
         </div>
@@ -24,7 +27,10 @@ export function Home() {
   const renderNotFoundQuery = () => {
     if (!isLoading && !data && isError) {
       return (
-        <div className="flex flex-col items-center gap-2 text-zinc-300">
+        <div
+          data-testid="not-found-message"
+          className="flex flex-col items-center gap-2 text-zinc-300"
+        >
           <X size={32} />
           <span>Ops, nothing was found for this query.</span>
 
@@ -42,7 +48,7 @@ export function Home() {
     if (isLoading) return;
 
     return (
-      <div className="text-zinc-400">
+      <div data-testid="results-info" className="text-zinc-400">
         {isFetching ? (
           <span className="">Fetching..</span>
         ) : (
@@ -60,7 +66,7 @@ export function Home() {
       {renderFetchingCharacters()}
       {renderNotFoundQuery()}
       {renderResultInfos()}
-      <CharacterList characters={data?.results || []} />
+      {!isLoading && <CharacterList characters={data?.results || []} />}
     </main>
   );
 }
