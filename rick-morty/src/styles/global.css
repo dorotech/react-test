@@ -12,4 +12,26 @@
   body {
     @apply bg-zinc-100 text-zinc-800 dark:bg-zinc-900  dark:text-zinc-100 transition-colors;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    width: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-500 rounded-lg;
+    width: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply hover:bg-zinc-400;
+  }
 }
