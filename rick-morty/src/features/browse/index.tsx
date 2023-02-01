@@ -1,5 +1,6 @@
 import { CircleNotch, X } from 'phosphor-react';
 import { Button } from '../common/components/button';
+import { Pagination } from '../common/components/pagination';
 
 import { CharacterList } from './components/character-list';
 import { SearchCharacterForm } from './components/search-character-form';
@@ -67,6 +68,17 @@ export function Home() {
       {renderNotFoundQuery()}
       {renderResultInfos()}
       {!isLoading && !isError && <CharacterList characters={data?.results || []} />}
+
+      {!!data?.info.count && (
+        <Pagination
+          pages={data.info.pages}
+          current={query.page || 1}
+          siblingQuantity={2}
+          onNext={() => setQuery({ page: (query.page || 1) + 1 })}
+          onPrev={() => setQuery({ page: (query.page || 1) - 1 })}
+          onSetPage={(newPage) => setQuery({ page: newPage })}
+        />
+      )}
     </main>
   );
 }

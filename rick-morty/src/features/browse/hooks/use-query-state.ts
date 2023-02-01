@@ -19,7 +19,7 @@ const queryReducer = (state: TGetCharacter, payload: TGetCharacter) => {
 };
 
 export const useQueryState = () => {
-  const [query, setQuery] = useReducer(queryReducer, {});
+  const [query, setQuery] = useReducer(queryReducer, { page: 1 });
 
   useEffect(() => {
     const savedParams = getSearchParamsToObject(window.location.search);

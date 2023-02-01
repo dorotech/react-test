@@ -10,6 +10,7 @@ export type TGetCharacter = {
   gender?: string;
   status?: string;
   species?: string;
+  page?: number;
 };
 
 class RickMortyService implements IRickMortyService {
