@@ -55,5 +55,14 @@ describe('<Home />', () => {
     expect(loadingCharacters).not.toBeInTheDocument();
   });
 
-  it.todo('should only display not found message');
+  it('should only display not found message', async () => {
+    const user = userEvent.setup();
+    render(<Wrapper />);
+
+    const name = 'not-found';
+    const inputName = screen.getByRole('textbox', { name: 'Name' });
+
+    await user.click(inputName);
+    await user.keyboard(name);
+  });
 });

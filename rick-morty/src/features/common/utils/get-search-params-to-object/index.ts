@@ -1,16 +1,7 @@
 export const getSearchParamsToObject = (search: string) => {
-  const [_, params] = search.split('?');
+  const searchParams = new URLSearchParams(search);
+  const paramsArray = Array.from(searchParams.entries());
+  const parsedParams = Object.fromEntries(paramsArray);
 
-  if (!params) return {};
-
-  const parsedSearch = params.split('&').reduce((object, param) => {
-    const [key, value] = param.split('=');
-
-    return {
-      ...object,
-      [key]: value,
-    };
-  }, {});
-
-  return parsedSearch;
+  return parsedParams;
 };
