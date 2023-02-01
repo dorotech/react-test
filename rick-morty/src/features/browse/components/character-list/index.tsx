@@ -1,9 +1,15 @@
 import Image from 'next/image';
 
 import { TCharacter } from '@/features/common/services/rick-morty/types';
+import { useState } from 'react';
+import { CharacterDetailsModal } from '../character-details-modal';
 
 interface ICharacterList {
   characters: TCharacter[];
+}
+
+interface ICharacterItem extends TCharacter {
+  onClick(): void;
 }
 
 const getStatusColor = (status: string) => {
@@ -19,9 +25,10 @@ const getStatusColor = (status: string) => {
   }
 };
 
-const CharacterItem = (props: TCharacter) => {
+const CharacterItem = (props: ICharacterItem) => {
   return (
     <div
+      onClick={props.onClick}
       data-testid="character-item"
       key={props.id}
       className="max-w-[170px] w-fit flex flex-col gap-4 p-3 bg-zinc-800 rounded-md shadow-md cursor-pointer transition hover:-translate-y-1 hover:shadow-amber-500"
@@ -48,15 +55,29 @@ const CharacterItem = (props: TCharacter) => {
 };
 
 export function CharacterList({ characters }: ICharacterList) {
+  const [selectedCharacter, setSelectedCharacter] = useState<TCharacter>();
+
   return (
-    <div
-      data-testid="character-list"
-      style={{ gridTemplateColumns: 'repeat(3, 170px)' }}
-      className="grid items-start place-content-center gap-5"
-    >
-      {characters.map((character) => (
-        <CharacterItem key={character.id} {...character} />
-      ))}
-    </div>
+    <>
+      <div
+        data-testid="character-list"
+        style={{ gridTemplateColumns: 'repeat(3, 170px)' }}
+        className="grid items-start place-content-center gap-5"
+      >
+        {characters.map((character) => (
+          <CharacterItem
+            key={character.id}
+            {...character}
+            onClick={() => setSelectedCharacter(character)}
+          />
+        ))}
+      </div>
+
+      <CharacterDetailsModal
+        character={selectedCharacter!}
+        isOpen={!!selectedCharacter}
+        onClose={() => setSelectedCharacter(undefined)}
+      />
+    </>
   );
 }
