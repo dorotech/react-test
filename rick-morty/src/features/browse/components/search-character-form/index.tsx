@@ -15,19 +15,22 @@ export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
   return (
     <form role="search" className="self-center flex flex-col gap-6">
       <Input
-        data-testid="character-name"
+        label="Name"
+        id="name"
+        name="name"
         value={query?.name}
         onChange={(e) => setQuery({ name: e.target.value })}
-        type="text"
-        placeholder="Search for a character"
+        placeholder="Rick, pickles, morty, mr. etc.."
         icon={<MagnifyingGlass size={20} weight="bold" />}
       />
 
       <Input
+        label="Specie"
+        id="specie"
+        name="specie"
         value={query?.species}
         onChange={(e) => setQuery({ species: e.target.value })}
-        type="text"
-        placeholder="Search for species: human, alien, etc.."
+        placeholder="human, alien, etc.."
         icon={<MagnifyingGlass size={20} weight="bold" />}
       />
 
