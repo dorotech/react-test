@@ -14,6 +14,8 @@ const getStatusColor = (status: string) => {
       return 'bg-red-500';
     case 'unknown':
       return 'bg-zinc-300';
+    default:
+      return 'bg-zinc-300';
   }
 };
 

@@ -6,6 +6,7 @@ import { Input } from '@/features/common/components/input';
 
 import { RadioFilter } from '../radio-filter';
 import { GENDER, STATUS } from '../../constants/filter-options';
+
 interface ISearchCharacterForm {
   query: TGetCharacter;
   setQuery: Dispatch<TGetCharacter>;
