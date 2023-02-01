@@ -18,7 +18,7 @@ export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
         label="Name"
         id="name"
         name="name"
-        value={query?.name}
+        value={query?.name || ''}
         onChange={(e) => setQuery({ name: e.target.value })}
         placeholder="Rick, pickles, morty, mr. etc.."
         icon={<MagnifyingGlass size={20} weight="bold" />}
@@ -28,7 +28,7 @@ export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
         label="Specie"
         id="specie"
         name="specie"
-        value={query?.species}
+        value={query?.species || ''}
         onChange={(e) => setQuery({ species: e.target.value })}
         placeholder="human, alien, etc.."
         icon={<MagnifyingGlass size={20} weight="bold" />}

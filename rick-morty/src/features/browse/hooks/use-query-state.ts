@@ -1,6 +1,6 @@
 import { TGetCharacter } from '@/features/common/services/rick-morty';
 import { getSearchParamsToObject } from '@/features/common/utils/get-search-params-to-object';
-import Router from 'next/router';
+import { setSearchParams } from '@/features/common/utils/set-search-params';
 import { useEffect, useReducer } from 'react';
 
 const queryReducer = (state: TGetCharacter, payload: TGetCharacter) => {
@@ -13,7 +13,7 @@ const queryReducer = (state: TGetCharacter, payload: TGetCharacter) => {
   };
 
   // URL params
-  Router.replace(Router.asPath, { query: newState });
+  setSearchParams(newState);
 
   return newState;
 };
