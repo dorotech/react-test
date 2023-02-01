@@ -9,7 +9,9 @@ class RickMortyMockService implements IRickMortyService {
     // Fake delay
     await new Promise((r) => setTimeout(r, 0));
 
-    if (query.name === 'not-found') return Promise.reject(new Error('Not Found'));
+    if (query.name === 'not-found') {
+      throw new Error('Not found');
+    }
 
     return response as any as TResponse;
   }

@@ -10,7 +10,7 @@ const SERVICES = {
   rickMorty: rickMortyMockService,
 };
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({ defaultOptions: { queries: { retry: 0 } } });
 
 const Wrapper = () => {
   return (
@@ -55,14 +55,24 @@ describe('<Home />', () => {
     expect(loadingCharacters).not.toBeInTheDocument();
   });
 
-  it('should only display not found message', async () => {
+  fit('should only display not found message', async () => {
     const user = userEvent.setup();
     render(<Wrapper />);
 
     const name = 'not-found';
     const inputName = screen.getByRole('textbox', { name: 'Name' });
 
-    await user.click(inputName);
-    await user.keyboard(name);
+    await user.type(inputName, name);
+
+    const notFoundMessage = await screen.findByTestId('not-found-message');
+    expect(notFoundMessage).toBeInTheDocument();
+
+    const loadingCharacters = screen.queryByTestId('loading-characters');
+    const characterList = screen.queryByTestId('character-list');
+    const resultsInfo = screen.queryByTestId('results-info');
+
+    expect(loadingCharacters).not.toBeInTheDocument();
+    expect(characterList).not.toBeInTheDocument();
+    expect(resultsInfo).not.toBeInTheDocument();
   });
 });

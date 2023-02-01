@@ -25,7 +25,7 @@ export function Home() {
   };
 
   const renderNotFoundQuery = () => {
-    if (!isLoading && !data && isError) {
+    if (isError) {
       return (
         <div
           data-testid="not-found-message"
@@ -45,7 +45,7 @@ export function Home() {
   };
 
   const renderResultInfos = () => {
-    if (isLoading) return;
+    if (isLoading || isError || !data) return;
 
     return (
       <div data-testid="results-info" className="text-zinc-400">
@@ -66,7 +66,7 @@ export function Home() {
       {renderFetchingCharacters()}
       {renderNotFoundQuery()}
       {renderResultInfos()}
-      {!isLoading && <CharacterList characters={data?.results || []} />}
+      {!isLoading && !isError && <CharacterList characters={data?.results || []} />}
     </main>
   );
 }
