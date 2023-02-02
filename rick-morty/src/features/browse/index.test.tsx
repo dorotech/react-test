@@ -55,7 +55,7 @@ describe('<Home />', () => {
     expect(loadingCharacters).not.toBeInTheDocument();
   });
 
-  fit('should only display not found message', async () => {
+  it('should only display not found message', async () => {
     const user = userEvent.setup();
     render(<Wrapper />);
 
