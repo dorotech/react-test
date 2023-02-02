@@ -10,8 +10,8 @@ interface ICharacterDetailsModal {
 
 const Detail = ({ name, value }: { name: string; value: string | number }) => (
   <div className="flex flex-col">
-    <span className="text-zinc-300">{name}</span>
-    <span className="py-1 px-3 bg-zinc-900 rounded-lg text-center overflow-hidden whitespace-nowrap overflow-ellipsis">
+    <span className="">{name}</span>
+    <span className="py-1 px-3 bg-gray-400 dark:bg-zinc-900 rounded-lg text-center overflow-hidden whitespace-nowrap overflow-ellipsis">
       {value}
     </span>
   </div>
@@ -23,7 +23,7 @@ export function CharacterDetailsModal({ character, ...rest }: ICharacterDetailsM
   return (
     <Modal {...rest}>
       <div className="relative flex flex-col gap-5 items-center justify-center">
-        <div className="absolute -top-5 translate-y-[-100%] transition-all ease-out rounded-[50%] hover:rounded-lg border-[10px] border-zinc-800 bg-zinc-800 overflow-hidden">
+        <div className="absolute -top-5 translate-y-[-100%] transition-all ease-out rounded-[50%] hover:rounded-lg border-[10px] border-gray-300 dark:border-zinc-800 dark:bg-zinc-800 bg-gray-300 overflow-hidden">
           <Image
             src={character.image}
             alt={character.name}

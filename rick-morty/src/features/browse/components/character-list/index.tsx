@@ -19,9 +19,9 @@ const getStatusColor = (status: string) => {
     case 'Dead':
       return 'bg-red-500';
     case 'unknown':
-      return 'bg-zinc-300';
+      return 'bg-zinc-500 dark:bg-zinc-300';
     default:
-      return 'bg-zinc-300';
+      return 'bg-zinc-500 dark:bg-zinc-300';
   }
 };
 
@@ -31,7 +31,7 @@ const CharacterItem = (props: ICharacterItem) => {
       onClick={props.onClick}
       data-testid="character-item"
       key={props.id}
-      className="max-w-[170px] w-fit flex flex-col gap-4 p-3 bg-zinc-800 rounded-md shadow-md cursor-pointer transition hover:-translate-y-1 hover:shadow-amber-500"
+      className="max-w-[170px] w-fit flex flex-col gap-4 p-3 bg-gray-300 border border-gray-400 dark:border-zinc-700 dark:bg-zinc-800 rounded-md shadow-md cursor-pointer transition hover:-translate-y-1 hover:shadow-amber-500"
     >
       <Image
         alt={props.name}
@@ -47,7 +47,7 @@ const CharacterItem = (props: ICharacterItem) => {
         </h1>
         <div className="flex items-center gap-1">
           <div className={`w-2 h-2 rounded-full ${getStatusColor(props.status)}`} />
-          <span className="text-zinc-300">{props.status}</span>
+          <span className="dark:text-zinc-300">{props.status}</span>
         </div>
       </div>
     </div>

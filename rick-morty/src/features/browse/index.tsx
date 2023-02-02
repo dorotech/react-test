@@ -32,13 +32,13 @@ export function Home() {
       return (
         <div
           data-testid="not-found-message"
-          className="flex flex-col items-center gap-2 text-zinc-300"
+          className="flex flex-col items-center gap-2 text-gray-500 dark:text-zinc-300"
         >
           <X size={32} />
           <span>Ops, nothing was found for this query.</span>
 
           <span>
-            <Button className="bg-amber-500 text-white" onClick={resetQuery}>
+            <Button className="dark:text-white" onClick={resetQuery}>
               Reset Inputs
             </Button>
           </span>
@@ -51,7 +51,7 @@ export function Home() {
     if (isLoading || isError || !data) return;
 
     return (
-      <div data-testid="results-info" className="text-zinc-400">
+      <div data-testid="results-info" className="dark:text-zinc-400">
         {isFetching ? (
           <span className="">Fetching..</span>
         ) : (

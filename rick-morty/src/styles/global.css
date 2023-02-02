@@ -10,7 +10,8 @@
   }
 
   body {
-    @apply bg-zinc-100 text-zinc-800 dark:bg-zinc-900  dark:text-zinc-100 transition-colors;
+    @apply bg-zinc-100 text-zinc-900 dark:bg-zinc-900  dark:text-zinc-100;
+    transition: background 100ms ease-out;
   }
 
   /* width */
@@ -26,12 +27,12 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-zinc-500 rounded-lg;
+    @apply bg-zinc-800 dark:bg-zinc-500 rounded-lg;
     width: 5px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply hover:bg-zinc-400;
+    @apply hover:bg-zinc-600 hover:dark:bg-zinc-400;
   }
 }
