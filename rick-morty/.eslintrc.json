@@ -1,0 +1,24 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": ["airbnb-base/legacy", "prettier", "next/core-web-vitals"],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": ["./src/**/*.test.tsx"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
+  "rules": {
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "no-unused-vars": "off"
+  }
+}

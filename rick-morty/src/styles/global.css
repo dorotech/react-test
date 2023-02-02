@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #__next {
+    @apply min-h-screen text-[90%] sm:text-[95%] lg:text-[100%];
+  }
+
+  body {
+    @apply bg-zinc-100 text-zinc-900 dark:bg-zinc-900  dark:text-zinc-100;
+    transition: background 100ms ease-out;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    width: 5px;
+    height: 2px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 dark:bg-zinc-500 rounded-lg;
+    width: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply hover:bg-zinc-600 hover:dark:bg-zinc-400;
+  }
+}
