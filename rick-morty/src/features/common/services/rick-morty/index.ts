@@ -1,10 +1,6 @@
 import { api } from '../../lib/axios';
 import { TResponse } from './types';
 
-export interface IRickMortyService {
-  getCharacter(query: TGetCharacter): Promise<TResponse>;
-}
-
 export type TGetCharacter = {
   name?: string;
   gender?: string;
@@ -12,6 +8,10 @@ export type TGetCharacter = {
   species?: string;
   page?: number;
 };
+
+export interface IRickMortyService {
+  getCharacter(query: TGetCharacter): Promise<TResponse>;
+}
 
 class RickMortyService implements IRickMortyService {
   async getCharacter(query: TGetCharacter) {
