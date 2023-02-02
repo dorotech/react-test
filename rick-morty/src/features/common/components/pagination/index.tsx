@@ -59,7 +59,7 @@ export const Pagination = (props: IPagination) => {
   });
 
   return (
-    <div className="flex items-center gap-4 [&>button]:w-10 [&>button]:h-10 py-3 px-5 rounded-md bg-zinc-200 dark:bg-zinc-800 border border-gray-400 dark:border-zinc-700">
+    <div className="overflow-auto w-full max-w-[600px] flex items-center justify-between gap-2 sm:gap-4 [&>button]:w-10 [&>button]:h-10 py-3 px-5 rounded-md bg-zinc-200 dark:bg-zinc-800 border border-gray-400 dark:border-zinc-700">
       <Button disabled={current === 1} onClick={onPrev}>
         <CaretLeft size={32} weight="bold" />
       </Button>

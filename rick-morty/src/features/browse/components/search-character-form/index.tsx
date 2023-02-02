@@ -14,7 +14,7 @@ interface ISearchCharacterForm {
 
 export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
   return (
-    <form role="search" className="self-center flex flex-col gap-6">
+    <form role="search" className="w-full max-w-[700px] self-center flex flex-col gap-6">
       <Input
         label="Name"
         id="name"
@@ -35,7 +35,7 @@ export function SearchCharacterForm({ setQuery, query }: ISearchCharacterForm) {
         icon={<MagnifyingGlass size={20} weight="bold" />}
       />
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <RadioFilter
           name="Status"
           value={query?.status}

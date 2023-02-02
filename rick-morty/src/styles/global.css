@@ -6,7 +6,7 @@
   html,
   body,
   #__next {
-    @apply min-h-screen;
+    @apply min-h-screen text-[90%] sm:text-[95%] lg:text-[100%];
   }
 
   body {
@@ -17,12 +17,14 @@
   /* width */
   ::-webkit-scrollbar {
     width: 5px;
+    height: 2px;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
     background: transparent;
     width: 5px;
+    height: 2px;
   }
 
   /* Handle */

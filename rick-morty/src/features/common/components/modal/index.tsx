@@ -15,7 +15,7 @@ export function Modal({ children, isOpen, onClose }: IModal) {
 
       {/* Container to center the modal */}
       <div className="fixed inset-0 flex items-center justify-center">
-        <Dialog.Panel className="w-full max-w-[41rem] bg-gray-300 dark:bg-zinc-800 p-4 py-10 rounded-md">
+        <Dialog.Panel className="w-full max-w-[41rem] bg-gray-300 dark:bg-zinc-800 px-4 py-10 rounded-md">
           {children}
         </Dialog.Panel>
       </div>

@@ -31,7 +31,7 @@ const CharacterItem = (props: ICharacterItem) => {
       onClick={props.onClick}
       data-testid="character-item"
       key={props.id}
-      className="max-w-[170px] w-fit flex flex-col gap-4 p-3 bg-gray-300 border border-gray-400 dark:border-zinc-700 dark:bg-zinc-800 rounded-md shadow-md cursor-pointer transition hover:-translate-y-1 hover:shadow-amber-500"
+      className="max-w-[10.625rem] w-fit flex flex-col gap-4 p-3 bg-gray-300 border border-gray-400 dark:border-zinc-700 dark:bg-zinc-800 rounded-md shadow-md cursor-pointer transition hover:-translate-y-1 hover:shadow-amber-500"
     >
       <Image
         alt={props.name}
@@ -61,8 +61,8 @@ export function CharacterList({ characters }: ICharacterList) {
     <>
       <div
         data-testid="character-list"
-        style={{ gridTemplateColumns: 'repeat(3, 170px)' }}
-        className="grid items-start place-content-center gap-5"
+        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(10.625rem, 10.625rem))' }}
+        className="w-full max-w-[600px] grid items-start place-content-center gap-5"
       >
         {characters.map((character) => (
           <CharacterItem

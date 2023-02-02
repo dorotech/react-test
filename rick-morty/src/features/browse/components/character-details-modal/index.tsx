@@ -33,7 +33,7 @@ export function CharacterDetailsModal({ character, ...rest }: ICharacterDetailsM
           />
         </div>
 
-        <h1 className="font-bold text-4xl">{character.name}</h1>
+        <h1 className="font-bold text-3xl sm:text-4xl">{character.name}</h1>
 
         <div className="w-full max-w-[400px] grid grid-cols-2 gap-5 place-content-center">
           <Detail value={character.status} name="Status" />

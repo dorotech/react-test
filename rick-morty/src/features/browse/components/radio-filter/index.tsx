@@ -9,7 +9,7 @@ interface IRadioFilter {
 
 export function RadioFilter({ onChange, options, value, name }: IRadioFilter) {
   return (
-    <div className="relative flex items-center gap-3 p-4 rounded border border-zinc-400 border-dashed">
+    <div className="flex-1 relative flex items-center justify-center gap-3 p-4 rounded border border-zinc-400 border-dashed">
       <span className="absolute top-0 left-2 leading-[1] translate-y-[-60%] bg-zinc-100 dark:bg-zinc-900">
         {name}
       </span>
