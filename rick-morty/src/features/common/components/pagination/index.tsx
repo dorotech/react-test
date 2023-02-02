@@ -84,7 +84,7 @@ export const Pagination = (props: IPagination) => {
           </Button>
         ))}
 
-        <Button className="bg-amber-600" disabled>
+        <Button className="dark:bg-amber-600 bg-amber-600" disabled>
           {current}
         </Button>
 

@@ -23,7 +23,7 @@ export function RadioFilter({ onChange, options, value, name }: IRadioFilter) {
             aria-checked={isChecked}
             type="button"
             key={option.value}
-            className={`${isChecked ? 'bg-amber-600' : undefined}`}
+            className={`${isChecked ? 'bg-amber-600 dark:bg-amber-600' : undefined}`}
             onClick={() => onChange(isChecked ? undefined : option.value)}
           >
             {option.label}
