@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import { TCharacter } from '@/features/common/services/rick-morty/types';
-import { BookmarksSimple } from 'phosphor-react';
-import { Button } from '@/features/common/components/button';
 import { Modal } from '@/features/common/components/modal';
 
 interface ICharacterDetailsModal {
@@ -25,13 +23,6 @@ export function CharacterDetailsModal({ character, ...rest }: ICharacterDetailsM
   return (
     <Modal {...rest}>
       <div className="relative flex flex-col gap-5 items-center justify-center">
-        <Button
-          aria-label={`Save ${character.name} to favorite.`}
-          className="absolute right-0 top-0 bg-zinc-900"
-        >
-          <BookmarksSimple size={24} />
-        </Button>
-
         <div className="absolute -top-5 translate-y-[-100%] transition-all ease-out rounded-[50%] hover:rounded-lg border-[10px] border-zinc-800 bg-zinc-800 overflow-hidden">
           <Image
             src={character.image}
