@@ -32,4 +32,4 @@ Quer fazer uma build e rodar ?
 
 ## Link
 
-Deploy:
+Deploy: https://rick-morty-beta-orpin.vercel.app/
