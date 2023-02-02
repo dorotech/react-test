@@ -1,6 +1,7 @@
 import { CircleNotch, X } from 'phosphor-react';
 import { Button } from '../common/components/button';
 import { Pagination } from '../common/components/pagination';
+import { useDebounce } from '../common/hooks/use-debounce';
 
 import { CharacterList } from './components/character-list';
 import { SearchCharacterForm } from './components/search-character-form';
@@ -9,7 +10,8 @@ import { useQueryState } from './hooks/use-query-state';
 
 export function Home() {
   const { query, setQuery, resetQuery } = useQueryState();
-  const { data, isLoading, isError, isFetching } = useCharacter(query);
+  const debouncedQuery = useDebounce(query, 300);
+  const { data, isLoading, isError, isFetching } = useCharacter(debouncedQuery);
 
   const renderFetchingCharacters = () => {
     if (isLoading) {
