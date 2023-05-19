@@ -87,3 +87,51 @@
 .filtro__container button:hover{
     background-color: #9502c2;
 }
+
+
+
+@media screen and (max-width: 1023px){
+    .filtro__nome,
+    .filtro__genero,
+    .filtro__especie,
+    .filtro__status{
+        flex-direction: column;
+    }
+    .filtro label{
+        background-color: #7d02a2;
+        padding: 1% 3%;
+        width: 47%;
+        box-shadow: none;
+    }
+    .filtro__container button{
+        margin: 4% 0 0 25%;
+    }
+    .filtro__container button:last-child{
+        margin: 9% 0 0 28%;
+    }
+    .filtro__container{
+        border-radius: 10px;
+    } 
+    .filtro select{
+        height: 3vh;
+    }
+    .filtro__nome input{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+
+
+@media screen and (max-width: 479px){
+    .filtro__container{
+        min-width: 34%;
+        max-width: 34%;
+    } 
+    .filtro__container button{
+        margin: 4% 0 0 18%;
+    }
+    .filtro__container button:last-child{
+        margin: 9% 0 0 22%;
+    }
+}

@@ -6,10 +6,6 @@ export default function Header(){
     return(
         <div className="header__container">
             <h1>The Rick and Morty</h1>
-            <div>
-                <IoSunny/>
-                <IoMoonOutline/>
-            </div>
         </div>
     )
 }

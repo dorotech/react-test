@@ -11,6 +11,7 @@ import Filtro from '../../components/Filtro';
 //COMPONENTE
 export default function Home() {
   //DEFINE OS ESTADOS UTILIZADOS
+  const [starColor, setStarColor] = useState(null);
   const [personagens, setPersonagens] = useState([]);
   const [pagina, setPagina] = useState(1);
   const [showDetails, setShowDetails] = useState(false);
@@ -79,7 +80,7 @@ export default function Home() {
   return (
     <div className="home__container">
       <Header/>
-      <div className="container__x">
+      <div className="main2 container__x">
         <div className="container__y">
           <main>
             {personagens.map((personagem) => {
@@ -92,7 +93,8 @@ export default function Home() {
                     <IoSearch />
                   </a>
                   <img src={`https://rickandmortyapi.com/api/character/avatar/${personagem.id}.jpeg`} alt={personagem.name} />
-                  <h1><IoStar/>{personagem.name}</h1>
+                  <h1><IoStar color={starColor === personagem.id ? '#FFD700' : '#fff'} onClick={() => setStarColor(personagem.id)} id={personagem.id}/>
+{personagem.name}</h1>
                   <div>
                     <p>
                       Status<span>{personagem.status}</span>
