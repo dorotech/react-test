@@ -78,10 +78,9 @@ export default function Home() {
   //RENDERIZAÇÃO DO COMPONENTE
   return (
     <div className="home__container">
-      <Header />
-      <div className="main3">
-        <Filtro onFilterChange={handleFilterChange} />
-        <div className="main2">
+      <Header/>
+      <div className="container__x">
+        <div className="container__y">
           <main>
             {personagens.map((personagem) => {
               return (
@@ -93,10 +92,7 @@ export default function Home() {
                     <IoSearch />
                   </a>
                   <img src={`https://rickandmortyapi.com/api/character/avatar/${personagem.id}.jpeg`} alt={personagem.name} />
-                  <h1>
-                    <IoStar />
-                    {personagem.name}
-                  </h1>
+                  <h1><IoStar/>{personagem.name}</h1>
                   <div>
                     <p>
                       Status<span>{personagem.status}</span>
@@ -117,11 +113,11 @@ export default function Home() {
                         Origin<span>{additionalInfo.origin.name.split(' ')[0]}</span>
                       </p>
                       <p>
-                        Location<span>{additionalInfo.location.name.split(' ').slice(0, 2).join(' ')}{additionalInfo.location.name.split(' ').length > 2 ? ' ...' : ''}</span></p>
+                        Location<span>{additionalInfo.location.name.split(' ').slice(0, 1).join(' ')}{additionalInfo.location.name.split(' ').length > 1 ? ' ...' : ''}</span></p>
                     </div>
                   )}
                   <button onClick={() => toggleDetails(personagem)}>
-                    {showDetails && additionalInfo.id === personagem.id ? 'Mostrar menos informações' : 'Mostrar mais informações'}
+                    {showDetails && additionalInfo.id === personagem.id ? 'Less' : 'More'}
                   </button>
                 </div>
               );
@@ -136,6 +132,7 @@ export default function Home() {
             </button>
           </div>
         </div>
+        <Filtro onFilterChange={handleFilterChange} />
       </div>
     </div>
   );

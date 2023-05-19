@@ -45,32 +45,8 @@ export default function Filtro({ onFilterChange }) {
       <p>Filter</p>
       <div className='filtro'>
         <div className="filtro__nome">
-          <label>Nome</label>
-          <input
-            type="text"
-            name="nome"
-            value={filtro.nome}
-            onChange={handleChange}
-            placeholder="Pesquisar por nome"
-          />
-        </div>
-        <div className="filtro__genero">
-          <label>Gênero</label>
-          <select name="genero" value={filtro.genero} onChange={handleChange}>
-            <option value="None">None</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-            <option value="Genderless">Genderless</option>
-            <option value="Unknown">Unknown</option>
-          </select>
-        </div>
-        <div className="filtro__especie">
-          <label>Espécie</label>
-          <select name="especie" value={filtro.especie} onChange={handleChange}>
-            <option value="None">None</option>
-            <option value="Human">Human</option>
-            <option value="Alien">Alien</option>
-          </select>
+          <label>Name</label>
+          <input type="text" name="nome" value={filtro.nome}onChange={handleChange} placeholder="Enter the name"/>
         </div>
         <div className="filtro__status">
           <label>Status</label>
@@ -81,10 +57,28 @@ export default function Filtro({ onFilterChange }) {
             <option value="Unknown">Unknown</option>
           </select>
         </div>
+        <div className="filtro__especie">
+          <label>Species</label>
+          <select name="especie" value={filtro.especie} onChange={handleChange}>
+            <option value="None">None</option>
+            <option value="Human">Human</option>
+            <option value="Alien">Alien</option>
+          </select>
+        </div>
+        <div className="filtro__genero">
+          <label>Gender</label>
+          <select name="genero" value={filtro.genero} onChange={handleChange}>
+            <option value="None">None</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Genderless">Genderless</option>
+            <option value="Unknown">Unknown</option>
+          </select>
+        </div>
       </div>
       <div>
         <button type="submit">Search</button>
-        <button type="button" onClick={handleLimpar}>Limpar</button>
+        <button type="button" onClick={handleLimpar}>Clean</button>
       </div>
     </form>
   );

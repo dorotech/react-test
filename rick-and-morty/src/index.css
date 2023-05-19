@@ -16,3 +16,17 @@ body {
   box-sizing: border-box;
   font-family: 'Poppins', 'Courier New', Courier, monospace;
 }
+button{
+  cursor: pointer;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: #2b9348;
+  border: none;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #fff;
+  border-radius: 50px;
+  height: 10vh;
+}
