@@ -1,0 +1,96 @@
+.home__container{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #2b9348;
+    color: #fff;
+}
+
+button{
+    cursor: pointer;
+}
+
+.main3{
+    display: flex;
+}
+
+.main2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.home__container main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card__container{
+    background-color: #45007a;
+    width: 18vw;
+    height: 48vh;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px 0 20px;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.511);
+    cursor: pointer;
+    position: relative;
+    transition: .2s linear;
+}
+.card__container.expanded {
+    height: 57vh;
+    transform: scale(1.1);
+  }
+.card__container a svg{
+    background-color: #2b9348;
+    padding: 4px;
+    font-size: 30px;
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+}
+.card__container h1{
+    position: relative;
+    top: -6%;
+    background-color: #5d007af8;
+    font-size: 17px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+.card__container h1 svg{
+    margin: 0 10px 0 20px;
+    color: #ffff00;
+}
+.card__container img{
+    width: 85%;
+    margin-left: 19px;
+}
+.card__container div p{
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7%;
+    font-size: 13px;
+}
+
+.pagination{
+    margin-bottom: 50px;
+    gap: 20px;
+}
+.pagination button{
+    border: none;
+    margin-right: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.pagination button svg{
+    font-size: 30px;
+}

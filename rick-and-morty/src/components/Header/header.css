@@ -1,0 +1,22 @@
+.header__container{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #55a630;
+    padding: 10px 40px;
+    opacity: 90%;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.511);
+}
+
+.header__container svg:first-child{
+    background-color: #696969;
+}
+.header__container svg{
+    background-color: #6969698a;
+    font-size: 35px;
+    padding: 6px;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
