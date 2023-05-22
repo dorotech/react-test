@@ -19,6 +19,3 @@ Após fazer a instalação das ferramentas, clone o repositório [rick-and-morty
 
 Iniciando o projeto 
 **npm start**
-
-### Link 
-[The Rick and Morty](https://frontend-test-mocha.vercel.app/)  
