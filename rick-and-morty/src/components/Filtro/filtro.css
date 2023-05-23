@@ -1,0 +1,137 @@
+.filtro__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    min-width: 21vw;
+    max-width: 21vw;
+    color: #fff;
+    background-color: #45007a;
+    padding: 2% 0;
+    border-radius: 4%;
+    margin-right: 15vh;
+} 
+
+.filtro{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 8% 0;
+    width: 85%;
+}
+
+.filtro__nome,
+.filtro__genero,
+.filtro__especie,
+.filtro__status{
+    background-color: #7d02a2;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filtro__nome input{
+    width: 60%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: 0;
+}
+.filtro__nome input::placeholder{
+    color: #fff;
+}
+
+.filtro label{
+    background-color: #9502c2;
+    padding: 3% 3%;
+    width: 35%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.511);
+}
+
+.filtro select{
+    border: none;
+    height: 4vh;
+    background: transparent;
+    margin-right: 4%;
+    color: #fff;
+    outline: 0;
+}
+
+.filtro select option{
+    color: #fff;
+    background-color: #7d02a2;
+}
+
+.filtro__container p{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.filtro__container button{
+    color: #fff;
+    border: none;
+    background-color: #7d02a2;
+    padding: 2px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.511);
+    transition: 0.2s ease-in-out;
+}
+.filtro__container button:first-child{
+    margin-right: 10px;
+}
+
+.filtro__container button:hover{
+    background-color: #9502c2;
+}
+
+
+
+@media screen and (max-width: 1023px){
+    .filtro__nome,
+    .filtro__genero,
+    .filtro__especie,
+    .filtro__status{
+        flex-direction: column;
+    }
+    .filtro label{
+        background-color: #7d02a2;
+        padding: 1% 3%;
+        width: 47%;
+        box-shadow: none;
+    }
+    .filtro__container button{
+        margin: 4% 0 0 25%;
+    }
+    .filtro__container button:last-child{
+        margin: 9% 0 0 28%;
+    }
+    .filtro__container{
+        border-radius: 10px;
+    } 
+    .filtro select{
+        height: 3vh;
+    }
+    .filtro__nome input{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+
+
+@media screen and (max-width: 479px){
+    .filtro__container{
+        min-width: 34%;
+        max-width: 34%;
+    } 
+    .filtro__container button{
+        margin: 4% 0 0 18%;
+    }
+    .filtro__container button:last-child{
+        margin: 9% 0 0 22%;
+    }
+}

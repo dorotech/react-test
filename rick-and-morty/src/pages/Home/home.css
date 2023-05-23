@@ -1,0 +1,157 @@
+.home__container{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #2b9348;
+    color: #fff;
+}
+
+.container__x{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container__y{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__container main{
+    width: 100%;
+    min-width: 73vw;
+    max-width: 73vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card__container{
+    background-color: #45007a;
+    width: 18vw;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 6% 20px;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.511);
+    cursor: pointer;
+    position: relative;
+    transition: .2s linear;
+}
+
+.card__container.expanded{
+    height: 65vh;
+    transform: scale(1.1);
+}
+
+.card__container a svg{
+    padding: 4px;
+    font-size: 30px;
+    border-radius: 5px;
+    color: #45007a;
+    position: absolute;
+    top: 20px;
+    right: 23px;
+    transition: 0.2s ease-in-out;
+}
+.card__container a svg:hover{
+    transform: scale(1.3);
+}
+.card__container h1{
+    position: relative;
+    top: -6%;
+    background-color: #7d02a2;
+    font-size: 17px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+.favorito {
+    color: #FFD700;
+  }
+.card__container h1 svg{
+    margin: 0 10px 0 20px;
+}
+.card__container img{
+    width: 85%;
+    margin-left: 19px;
+}
+.card__container div p{
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7%;
+    font-size: 15px;
+}
+
+.card__container button{
+    color: #fff;
+    width: 40%;
+    background-color: #7d02a2;
+    border: none;
+    height: 4vh;
+    margin: 6% 0 0 55%;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.511);
+    transition: 0.3s ease-in-out;
+}
+.card__container button:hover{
+    background-color: #9502c2;
+}
+
+.pagination{
+    margin-bottom: 50px;
+    gap: 20px;
+}
+.pagination button{
+    border: none;
+    margin-right: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.pagination button svg{
+    font-size: 30px;
+}
+
+
+
+@media screen and (max-width: 1023px){
+    .card__container{
+        width: 28vw;
+        height: 35vh;
+    }
+    .card__container.expanded{
+        height: 42vh;
+    }
+    .home__container{
+        min-height: 470vh;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 479px){
+    .card__container{
+        width: 100%;
+        height: 40vh;
+        margin: 0 20px 15% 20px;
+    }
+    .card__container.expanded{
+        height: 48vh;
+    }
+    .home__container{
+        min-height: 900vh;
+    }
+    .home__container main{
+        min-width: 60vw;
+        max-width: 60vw;
+    }
+    .card__container h1 svg{
+        margin: 0 6px 0 10px;
+    }
+}
